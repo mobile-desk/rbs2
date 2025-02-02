@@ -1,0 +1,134 @@
+{% extends 'adminbase.html' %}
+
+{% block content %}
+<div class="edit-user-container">
+    <h2 class="edit-user-title">Edit User: {{ user.username }}</h2>
+    <form method="post" class="edit-user-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="{{ user.username }}" required>
+        </div>
+
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" value="{{ user.email }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" value="{{ user.first_name }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" value="{{ user.last_name }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="middle_name">Middle Name:</label>
+            <input type="text" name="middle_name" value="{{ customer_profile.middle_name }}">
+        </div>
+
+        <div class="form-group">
+            <label for="date_of_birth">Date of Birth:</label>
+            <input type="date" name="date_of_birth" value="{{ customer_profile.date_of_birth|date:'Y-m-d' }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="postcode">Address:</label>
+            <input type="text" name="postcode" value="{{ customer_profile.postcode }}">
+        </div>
+
+        {% if passport %}
+            <div class="form-group">
+                <label for="passport_number">Passport Number:</label>
+                <input type="text" name="passport_number" value="{{ passport.passport_number }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="issue_date">Passport Issue Date:</label>
+                <input type="date" name="issue_date" value="{{ passport.issue_date|date:'Y-m-d' }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="expiry_date">Passport Expiry Date:</label>
+                <input type="date" name="expiry_date" value="{{ passport.expiry_date|date:'Y-m-d' }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="country_of_issue">Country of Issue:</label>
+                <input type="text" name="country_of_issue" value="{{ passport.country_of_issue }}" required>
+            </div>
+
+        {% else %}  
+            <p>This user doent have a passport add one at <a href="{% url 'admin_dashboard:manage_passports' %}">manage passport</a></p>
+        {% endif %}
+
+        <label for="date_joined">Date Joined:</label>
+        <input type="date" id="date_joined" name="date_joined" value="{{ user.date_joined|date:'Y-m-d' }}">
+
+
+        <div class="form-group">
+            <label for="account_status">Account Status:</label>
+            <select name="account_status" id="account_status" required>
+                {% for value, label in status_choices %}
+                    <option value="{{ value }}" {% if accounts.0.status == value %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button type="submit" class="submit-button">Save Changes</button>
+    </form>
+</div>
+
+<style>
+    .edit-user-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .edit-user-title {
+        color: #162159;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .edit-user-form {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #162159;
+        font-weight: bold;
+    }
+    .form-group input, .form-group select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    .submit-button {
+        background-color: #FF1493;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        align-self: flex-start;
+    }
+    .submit-button:hover {
+        background-color: #FF69B4;
+    }
+</style>
+{% endblock %}

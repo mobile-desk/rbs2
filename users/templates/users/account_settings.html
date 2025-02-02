@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="account-settings-container">
+    <h2>Account Settings</h2>
+    <form method="post" class="account-settings-form">
+        {% csrf_token %}
+        <h3>Update Profile</h3>
+        {% for field in user_form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <span class="error-message">{{ field.errors|join:", " }}</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" name="update_profile" class="submit-button">Update Profile</button>
+    </form>
+
+    <form method="post" class="account-settings-form">
+        {% csrf_token %}
+        <h3>Change Password</h3>
+        {% for field in password_form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <span class="error-message">{{ field.errors|join:", " }}</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" name="change_password" class="submit-button">Change Password</button>
+    </form>
+</div>
+
+
+<style>
+
+    .account-settings-container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .account-settings-form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #162159;
+        display: block;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .submit-button {
+        background-color: #FF1493;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        align-self: flex-start;
+        font-size: 16px;
+    }
+
+    .submit-button:hover {
+        background-color: #FF69B4;
+    }
+
+    .error-message {
+        color: #ff0000;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    h2, h3 {
+        color: #162159;
+        margin-bottom: 20px;
+    }
+
+</style>
+{% endblock %}

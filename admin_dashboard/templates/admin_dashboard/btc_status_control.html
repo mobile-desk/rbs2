@@ -1,0 +1,181 @@
+{% extends 'adminbase.html' %}
+
+{% block content %}
+<div class="btc-status-container">
+    <h2 class="btc-status-title">BTC Status Control</h2>
+    
+    <div class="controls">
+        <input type="text" id="userSearch" class="form-control" placeholder="Search users...">
+        <button id="toggleAll" class="btn btn-primary">Toggle All</button>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover user-btc-status-table">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Email</th>
+                    <th>Last Login</th>
+                    <th>BTC Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                {% for user_setting in user_settings %}
+                <tr>
+                    <td>{{ user_setting.user.username }}</td>
+                    <td>{{ user_setting.user.email }}</td>
+                    <td>{{ user_setting.user.last_login|date:"Y-m-d H:i" }}</td>
+                    <td class="btc-status">
+                        <span class="badge {% if user_setting.btc_active %}bg-success{% else %}bg-danger{% endif %}">
+                            {% if user_setting.btc_active %}Active{% else %}Inactive{% endif %}
+                        </span>
+                    </td>
+                    <td>
+                        <form method="post" class="btc-status-form">
+                            {% csrf_token %}
+                            <input type="hidden" name="user_id" value="{{ user_setting.user.id }}">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input btc-toggle" type="checkbox" id="btc_active_{{ user_setting.user.id }}" name="btc_active" {% if user_setting.btc_active %}checked{% endif %}>
+                                <label class="form-check-label" for="btc_active_{{ user_setting.user.id }}">BTC Active</label>
+                            </div>
+                            <button type="submit" class="btn btn-outline-primary btn-sm mt-2">Save</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmModalLabel">Confirm Action</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to change this user's BTC status?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="confirmAction">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btc-status-container {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+
+    .btc-status-title {
+        color: #003366;
+        margin-bottom: 1.5rem;
+        font-weight: bold;
+    }
+
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+    }
+
+    #userSearch {
+        width: 70%;
+    }
+
+    #toggleAll {
+        width: 25%;
+    }
+
+    .user-btc-status-table {
+        width: 100%;
+    }
+
+    .user-btc-status-table th {
+        background-color: #003366;
+        color: white;
+        font-weight: normal;
+    }
+
+    .btc-status-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-check-input {
+        width: 3rem;
+        height: 1.5rem;
+    }
+
+    .form-check-label {
+        font-size: 0.9rem;
+        margin-left: 0.5rem;
+    }
+
+    .btn-outline-primary {
+        color: #003366;
+        border-color: #003366;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #003366;
+        color: white;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const userSearch = document.getElementById('userSearch');
+        const userTableBody = document.getElementById('userTableBody');
+        const toggleAll = document.getElementById('toggleAll');
+        const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
+        let formToSubmit = null;
+
+        userSearch.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const rows = userTableBody.getElementsByTagName('tr');
+            for (let row of rows) {
+                const username = row.cells[0].textContent.toLowerCase();
+                row.style.display = username.includes(searchTerm) ? '' : 'none';
+            }
+        });
+
+        toggleAll.addEventListener('click', function() {
+            const checkboxes = document.querySelectorAll('.btc-toggle');
+            const newState = !checkboxes[0].checked;
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = newState;
+                checkbox.closest('form').submit();
+            });
+        });
+
+        userTableBody.addEventListener('submit', function(e) {
+            if (e.target.classList.contains('btc-status-form')) {
+                e.preventDefault();
+                formToSubmit = e.target;
+                confirmModal.show();
+            }
+        });
+
+        document.getElementById('confirmAction').addEventListener('click', function() {
+            if (formToSubmit) {
+                formToSubmit.submit();
+                confirmModal.hide();
+            }
+        });
+    });
+</script>
+<script>
+    // ... (JavaScript remains the same) ...
+
+</script>
+{% endblock %}

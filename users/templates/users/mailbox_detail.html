@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ message.subject }}</h2>
+<p><strong>From:</strong> {{ message.sender.username }}</p>
+<p><strong>Date:</strong> {{ message.date|date:"Y-m-d H:i" }}</p>
+<p><strong>Priority:</strong> {{ message.priority }}</p>
+<div class="message-content">
+    {{ message.content|linebreaks }}
+</div>
+<a href="{% url 'mailbox_list' %}">Back to Mailbox</a>
+{% endblock %}

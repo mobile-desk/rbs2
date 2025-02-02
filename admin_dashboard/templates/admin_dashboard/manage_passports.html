@@ -1,0 +1,136 @@
+{% extends 'adminbase.html' %}
+
+{% block title %}Manage Passports{% endblock %}
+
+{% block content %}
+<div class="passport-management-container">
+    <h2 class="passport-management-title">Manage Passports</h2>
+    
+    <div class="table-responsive">
+        <table class="passport-table">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Passport Number</th>
+                    <th>Expiry Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for passport in passports %}
+                <tr>
+                    <td data-label="User">{{ passport.user.username }}</td>
+                    <td data-label="Passport Number">{{ passport.passport_number }}</td>
+                    <td data-label="Expiry Date">{{ passport.expiry_date }}</td>
+                    <td data-label="Actions" class="action-links">
+                        <a href="{% url 'admin_dashboard:edit_passport' passport.user.id %}" class="action-link">Edit</a>
+                        <a href="{% url 'admin_dashboard:delete_passport' passport.user.id %}" class="action-link delete-link">Delete</a>
+                        <a href="{% url 'admin_dashboard:download_passport' passport.user.id %}" class="action-link">Download</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <a href="{% url 'admin_dashboard:add_passport' %}" class="add-passport-link">Add New Passport</a>
+</div>
+
+<style>
+    .passport-management-container {
+        max-width: 900px;
+        width: 95%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .passport-management-title {
+        color: #162159;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    .table-responsive {
+        overflow-x: auto;
+    }
+    .passport-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #f8f9fa;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .passport-table th, .passport-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    .passport-table th {
+        background-color: #162159;
+        color: white;
+    }
+    .passport-table tr:hover {
+        background-color: #e9ecef;
+    }
+    .action-links {
+        white-space: nowrap;
+    }
+    .action-link {
+        color: #FF1493;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+    .action-link:hover {
+        text-decoration: underline;
+    }
+    .delete-link {
+        color: #dc3545;
+    }
+    .add-passport-link {
+        display: inline-block;
+        margin-top: 20px;
+        background-color: #FF1493;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .add-passport-link:hover {
+        background-color: #FF69B4;
+    }
+
+    @media screen and (max-width: 600px) {
+        .passport-table thead {
+            display: none;
+        }
+        .passport-table, .passport-table tbody, .passport-table tr, .passport-table td {
+            display: block;
+            width: 100%;
+        }
+        .passport-table tr {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+        .passport-table td {
+            text-align: right;
+            padding-left: 50%;
+            position: relative;
+        }
+        .passport-table td::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            text-align: left;
+            font-weight: bold;
+        }
+        .action-links {
+            text-align: center;
+        }
+        .add-passport-link {
+            display: block;
+            text-align: center;
+        }
+    }
+</style>
+{% endblock %}

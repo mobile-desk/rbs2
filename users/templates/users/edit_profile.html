@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+<h2>Edit Profile</h2>
+<form method="post" class="edit-profile-form">
+    {% csrf_token %}
+    <div class="form-row">
+        <label for="id_first_name">First Name</label>
+        <input type="text" name="first_name" id="id_first_name" value="{{ user.first_name }}" class="form-control">
+    </div>
+    <div class="form-row">
+        <label for="id_last_name">Last Name</label>
+        <input type="text" name="last_name" id="id_last_name" value="{{ user.last_name }}" class="form-control">
+    </div>
+    {{ form.as_p|safe }}
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+<a href="{% url 'authenticating:profile' %}" class="btn btn-secondary">Cancel</a>
+
+
+
+<style>
+
+
+/* Styles for the profile edit form */
+.edit-profile-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile-form p {
+    margin-bottom: 15px;
+}
+
+.edit-profile-form .form-row {
+    margin-bottom: 15px;
+}
+
+.edit-profile-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.edit-profile-form input,
+.edit-profile-form select,
+.edit-profile-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.edit-profile-form .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-profile-form .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.edit-profile-form .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-profile-form .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+
+</style>
+
+
+
+{% endblock %}

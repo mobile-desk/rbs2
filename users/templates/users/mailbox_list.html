@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mailbox-container">
+    <h2 class="mailbox-title">Your Mailbox</h2>
+    {% if messages %}
+        <table class="mailbox-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Subject</th>
+                    <th>Sender</th>
+                    <th>Priority</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for message in messages %}
+                <tr class="{% if not message.read %}unread{% endif %}">
+                    <td>{{ message.date|date:"Y-m-d H:i" }}</td>
+                    <td><a href="{% url 'authenticating:mailbox_detail' message.id %}">{{ message.subject }}</a></td>
+                    <td>{{ message.sender.username }}</td>
+                    <td><span class="priority-{{ message.priority }}">{{ message.priority }}</span></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="no-mail-message">You have no messages in your mailbox.</p>
+    {% endif %}
+</div>
+
+<style>
+    .mailbox-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .mailbox-title {
+        color: #162159;
+        margin-bottom: 20px;
+    }
+
+    .mailbox-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .mailbox-table th, .mailbox-table td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .mailbox-table th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        color: #162159;
+    }
+
+    .mailbox-table tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    .mailbox-table a {
+        color: #FF1493;
+        text-decoration: none;
+    }
+
+    .mailbox-table a:hover {
+        text-decoration: underline;
+    }
+
+    .unread {
+        font-weight: bold;
+    }
+
+    .priority-high {
+        color: #ff4136;
+    }
+
+    .priority-medium {
+        color: #ff851b;
+    }
+
+    .priority-low {
+        color: #2ecc40;
+    }
+
+    .no-mail-message {
+        text-align: center;
+        color: #777;
+        font-style: italic;
+        margin-top: 20px;
+    }
+</style>
+{% endblock %}

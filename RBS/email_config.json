@@ -1,0 +1,9 @@
+{
+    "EMAIL_BACKEND": "django.core.mail.backends.smtp.EmailBackend",
+    "EMAIL_HOST": "smtp.zoho.com",
+    "EMAIL_PORT": 465,
+    "EMAIL_USE_SSL": true,
+    "EMAIL_HOST_USER": "support@nonresidentsuk.com",
+    "EMAIL_HOST_PASSWORD": "Pass@2024",
+    "DEFAULT_FROM_EMAIL": "RBS Non Resident <support@nonresidentsuk.com>"
+}

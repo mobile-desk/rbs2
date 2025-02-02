@@ -1,0 +1,80 @@
+{% extends 'adminbase.html' %}
+
+{% block content %}
+<div class="btc-wallets-container">
+    <h2 class="btc-wallets-title">BTC Wallets</h2>
+    <a href="{% url 'admin_dashboard:create_btc_wallet' %}" class="create-wallet-button">Create New Wallet</a>
+    <table class="btc-wallets-table">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Wallet Address</th>
+                <th>Balance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for wallet in wallets %}
+            <tr>
+                <td>{{ wallet.user.username }}</td>
+                <td>{{ wallet.wallet_address }}</td>
+                <td>{{ wallet.balance }}</td>
+                <td>
+                    <a href="{% url 'admin_dashboard:edit_btc_wallet' wallet.id %}" class="edit-button">Edit</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .btc-wallets-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .btc-wallets-title {
+        color: #162159;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .create-wallet-button {
+        display: inline-block;
+        background-color: #FF1493;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    .create-wallet-button:hover {
+        background-color: #FF69B4;
+    }
+    .btc-wallets-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #f8f9fa;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .btc-wallets-table th, .btc-wallets-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    .btc-wallets-table th {
+        background-color: #162159;
+        color: white;
+    }
+    .btc-wallets-table tr:hover {
+        background-color: #e9ecef;
+    }
+    .edit-button {
+        color: #FF1493;
+        text-decoration: none;
+    }
+    .edit-button:hover {
+        text-decoration: underline;
+    }
+</style>
+{% endblock %}

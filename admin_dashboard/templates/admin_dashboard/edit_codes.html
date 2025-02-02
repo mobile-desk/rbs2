@@ -1,0 +1,31 @@
+{% extends 'adminbase.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4 text-primary">{{ title }}</h2>
+    <form method="post" class="mt-4 bg-light p-4 rounded shadow">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="mb-3">
+                <label for="{{ field.id_for_label }}" class="form-label fw-bold">{{ field.label }}</label>
+                {{ field }}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary btn-lg mt-3">Save Changes</button>
+    </form>
+</div>
+
+<style>
+    .form-control {
+        min-height: 100px;
+    }
+    .btn-primary {
+        background-color: #003366;
+        border-color: #003366;
+    }
+    .btn-primary:hover {
+        background-color: #002244;
+        border-color: #002244;
+    }
+</style>
+{% endblock %}

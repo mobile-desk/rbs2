@@ -1,0 +1,72 @@
+{% extends 'adminbase.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4 text-primary">Edit Configuration</h2>
+    <form method="post" class="mt-4 bg-light p-4 rounded shadow">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="text-secondary mb-3">Email Configuration</h3>
+                {% for key, value in email_config.items %}
+                    <div class="mb-3">
+                        <label for="{{ key }}" class="form-label fw-bold">{{ key }}</label>
+                        {% if key == 'EMAIL_USE_SSL' %}
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input" id="{{ key }}" name="{{ key }}" {% if value %}checked{% endif %}>
+                            </div>
+                        {% else %}
+                            <input type="text" id="{{ key }}" name="{{ key }}" value="{{ value }}" class="form-control">
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-secondary mb-3">Session Configuration</h3>
+                {% for key, value in session_config.items %}
+                    <div class="mb-3">
+                        <label for="{{ key }}" class="form-label fw-bold">{{ key }}</label>
+                        {% if key == 'SESSION_SAVE_EVERY_REQUEST' or key == 'SESSION_EXPIRE_AT_BROWSER_CLOSE' %}
+                            <div class="form-check form-switch">
+                                <input type="checkbox" class="form-check-input" id="{{ key }}" name="{{ key }}" {% if value %}checked{% endif %}>
+                            </div>
+                        {% else %}
+                            <input type="number" id="{{ key }}" name="{{ key }}" value="{{ value }}" class="form-control">
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg mt-3">Save Changes</button>
+    </form>
+</div>
+
+<style>
+    .form-control {
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+    }
+    .form-control:focus {
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+    .form-check-input {
+        width: 2.5em;
+        height: 1.25em;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+    .text-secondary {
+        color: #6c757d;
+    }
+    .shadow {
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    }
+</style>
+{% endblock %}

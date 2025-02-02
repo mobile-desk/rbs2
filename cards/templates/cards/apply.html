@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card-application-container">
+    <h2 class="application-title">Apply for a Credit Card</h2>
+    
+    <div class="card-info">
+        <p>Choose from our range of credit cards designed to suit your needs:</p>
+        <ul>
+            <li><strong>Purchase & Balance Transfer Card:</strong> Great for paying off purchases and balances</li>
+            <li><strong>Longer Balance Transfer Card:</strong> Ideal for more time to pay off balances</li>
+            <li><strong>Balance Transfer Credit Card:</strong> No fee to transfer a balance</li>
+            <li><strong>The Royal Bank Credit Card:</strong> Perfect for saving money on your holidays</li>
+            <li><strong>Reward Credit Card:</strong> Earn rewards when you're shopping</li>
+            <li><strong>Reward Black Credit Card:</strong> Enjoy rewards at home and abroad</li>
+        </ul>
+    </div>
+
+    <form method="post" class="application-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="submit-button">Apply Now</button>
+    </form>
+
+    <div class="application-notes">
+        <p>Please note:</p>
+        <ul>
+            <li>Your application will be reviewed by our team</li>
+            <li>We may contact you for additional information</li>
+            <li>The approval process typically takes 3-5 business days</li>
+        </ul>
+    </div>
+</div>
+
+<style>
+    .card-application-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .application-title {
+        color: #003399;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .card-info {
+        background-color: #e6f2ff;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .card-info ul {
+        padding-left: 20px;
+    }
+
+    .application-form {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .application-form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .application-form select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .submit-button {
+        background-color: #003399;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .submit-button:hover {
+        background-color: #002266;
+    }
+
+    .application-notes {
+        font-size: 14px;
+        color: #666;
+    }
+</style>
+{% endblock %}

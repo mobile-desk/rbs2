@@ -1,0 +1,135 @@
+{% extends 'adminbase.html' %}
+
+{% block title %}Create User{% endblock %}
+
+{% block content %}
+<div class="create-user-container">
+    <h2 class="create-user-title">Create New User</h2>
+    <form method="post" class="create-user-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="customer_type">Customer Type:</label>
+            <select id="customer_type" name="customer_type" class="form-select" required>
+                {% for value, label in customer_types %}
+                    <option value="{{ value }}">{{ label }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="middle_name">Middle Name:</label>
+            <input type="text" id="middle_name" name="middle_name" class="form-input">
+        </div>
+        <div class="form-group">
+            <label for="date_of_birth">Date of Birth:</label>
+            <input type="date" id="date_of_birth" name="date_of_birth" class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="postcode">Postcode:</label>
+            <input type="text" id="postcode" name="postcode" class="form-input">
+        </div>
+        <div class="form-group">
+            <label for="business_postcode">Business Postcode:</label>
+            <input type="text" id="business_postcode" name="business_postcode" class="form-input">
+        </div>
+        <div class="form-group">
+            <label for="pin">PIN:</label>
+            <input type="text" id="pin" name="pin" maxlength="4" class="form-input" required>
+        </div>
+        <button type="submit" class="submit-button">Create User</button>
+    </form>
+</div>
+
+
+
+
+<style>
+    .create-user-container {
+        max-width: 600px;
+        width: 95%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .create-user-title {
+        color: #162159;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    .create-user-form {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #162159;
+        font-weight: bold;
+    }
+    .form-input, .form-select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    .submit-button {
+        background-color: #FF1493;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        align-self: flex-start;
+    }
+    .submit-button:hover {
+        background-color: #FF69B4;
+    }
+    .error-message {
+        color: #ff0000;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .create-user-container {
+            width: 100%;
+            padding: 15px;
+        }
+        .create-user-title {
+            font-size: 20px;
+        }
+        .form-input, .form-select {
+            font-size: 14px;
+        }
+        .submit-button {
+            width: 100%;
+            align-self: center;
+        }
+    }
+</style>
+
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends 'adminbase.html' %}
+
+{% block title %}Create Transaction{% endblock %}
+
+{% block content %}
+<div class="transaction-form-container">
+    <h2 class="transaction-form-title">Create New Transaction</h2>
+    <form method="post" class="transaction-form">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+
+
+                {% if field.errors %}
+                    <span class="error-message">{{ field.errors|join:", " }}</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="submit-button">Create Transaction</button>
+    </form>
+</div>
+
+<style>
+    .transaction-form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .transaction-form-title {
+        color: #162159;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .transaction-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #162159;
+        font-weight: bold;
+    }
+
+    .form-input, .form-select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .submit-button {
+        background-color: #FF1493;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        align-self: flex-start;
+    }
+
+    .submit-button:hover {
+        background-color: #FF69B4;
+    }
+
+    .error-message {
+        color: #ff0000;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+</style>
+{% endblock %}

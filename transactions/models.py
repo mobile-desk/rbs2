@@ -1,5 +1,5 @@
 from django.db import models
-from wallets.models import Account
+from accounts.models import Account
 from django.contrib.auth.models import User
 import uuid
 

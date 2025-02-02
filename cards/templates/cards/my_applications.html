@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card-applications-container">
+    <h2 class="applications-title">My Card Applications</h2>
+
+    <table class="applications-table">
+        <thead>
+            <tr>
+                <th>Card Type</th>
+                <th>Application Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for application in applications %}
+            <tr>
+                <td>{{ application.get_card_type_display }}</td>
+                <td>{{ application.application_date|date:"F d, Y" }}</td>
+                <td><span class="status-badge status-{{ application.status|lower }}">{{ application.status }}</span></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3" class="no-applications">You haven't applied for any cards yet.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'cards:apply_for_card' %}" class="apply-button">Apply for a New Card</a>
+</div>
+
+<style>
+    .card-applications-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .applications-title {
+        color: #003399;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .applications-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        background-color: #ffffff;
+    }
+
+    .applications-table th,
+    .applications-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .applications-table th {
+        background-color: #003399;
+        color: #ffffff;
+    }
+
+    .applications-table tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    .status-badge {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .status-pending {
+        background-color: #ffd700;
+        color: #000000;
+    }
+
+    .status-approved {
+        background-color: #4caf50;
+        color: #ffffff;
+    }
+
+    .status-rejected {
+        background-color: #f44336;
+        color: #ffffff;
+    }
+
+    .no-applications {
+        text-align: center;
+        font-style: italic;
+        color: #666;
+    }
+
+    .apply-button {
+        display: inline-block;
+        background-color: #003399;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .apply-button:hover {
+        background-color: #002266;
+    }
+</style>
+{% endblock %}

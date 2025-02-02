@@ -1,0 +1,61 @@
+{% extends 'adminbase.html' %}
+
+{% block content %}
+<div class="delete-user-container">
+    <h2 class="delete-user-title">Delete User</h2>
+    <p class="delete-user-message">Are you sure you want to delete {{ user.username }}?</p>
+    <form method="post" class="delete-user-form">
+        {% csrf_token %}
+        <button type="submit" class="confirm-delete-button">Confirm Delete</button>
+    </form>
+    <a href="{% url 'admin_dashboard:user_list' %}" class="cancel-link">Cancel</a>
+</div>
+
+<style>
+    .delete-user-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    .delete-user-title {
+        color: #162159;
+        margin-bottom: 20px;
+    }
+    .delete-user-message {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .delete-user-form {
+        margin-bottom: 15px;
+    }
+    .confirm-delete-button {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .confirm-delete-button:hover {
+        background-color: #c82333;
+    }
+    .cancel-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #6c757d;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .cancel-link:hover {
+        background-color: #5a6268;
+        text-decoration: none;
+    }
+</style>
+{% endblock %}

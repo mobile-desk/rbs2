@@ -21,8 +21,11 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls', namespace='core')),
-    path('auth/', include('accounts.urls', namespace='account')),
-    path('wallet/', include('wallet.urls', namespace='wallet')),
-    path('cards/', include('cards.urls', namespace='cards')),
+    path('accounts/', include('accounts.urls')),
+    path('transactions/', include(('transactions.urls', 'transactions'), namespace='transactions')),
+    path('auth/', include(('users.urls', 'authenticating'), namespace='authenticating')),
+    path('admin_dashboard/', include(('admin_dashboard.urls', 'admin_dashboard'), namespace='admin_dashboard')),
+    path('btc/', include('btc.urls')),
+    path('cards/', include('cards.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

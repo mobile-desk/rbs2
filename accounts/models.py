@@ -1,25 +1,51 @@
-from django.contrib.auth.models import AbstractUser
 from django.db import models
-import random
-import string
+from django.contrib.auth.models import User
 
-class CustomUser(AbstractUser):
-    email = models.EmailField(unique=True)
 
-class Profile(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    customer_number = models.CharField(max_length=11, unique=True, editable=False)
-    passport = models.CharField(max_length=50, blank=True, null=True)
-    contact_info = models.TextField(blank=True, null=True)
+
+
+class Account(models.Model):
+
     STATUS_CHOICES = [
+        ('on_hold', 'On Hold'),
+        ('dormant', 'Dormant'),
         ('active', 'Active'),
-        ('banned', 'Banned'),
-        ('deactivated', 'Deactivated'),
-        ('pending', 'Pending'),
+        ('inactive', 'Inactive')
     ]
-    status = models.CharField(max_length=12, choices=STATUS_CHOICES, default='pending')
 
-    def save(self, *args, **kwargs):
-        if not self.customer_number:
-            self.customer_number = ''.join(random.choices(string.digits, k=11))
-        super().save(*args, **kwargs)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    account_number = models.CharField(max_length=20, unique=True)
+    account_type = models.CharField(max_length=20)
+    balance = models.DecimalField(max_digits=10, decimal_places=2)
+    created_at = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='active')
+
+
+    
+    def __str__(self):
+        return f"{str(self.balance)} - {self.account_type} - {self.account_number}"
+
+
+class Passport(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    passport_number = models.CharField(max_length=20, unique=True)
+    issue_date = models.DateField()
+    expiry_date = models.DateField()
+    country_of_issue = models.CharField(max_length=100)
+    passport_image = models.ImageField(upload_to='passports/', null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.user.username}'s Passport"
+    
+
+
+
+
+class BTCWallet(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    wallet_address = models.CharField(max_length=100, unique=True)
+    balance = models.DecimalField(max_digits=18, decimal_places=8, default=0)
+
+    def __str__(self):
+        return f"{self.user.username}'s BTC Wallet"
+

@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import Transaction, PendingTransaction, Beneficiary,ScheduledPayment, Receipt
 
-# Register your models here.
+admin.site.register(Transaction)
+admin.site.register(Beneficiary)
+admin.site.register(ScheduledPayment)
+admin.site.register(Receipt)
+admin.site.register(PendingTransaction)

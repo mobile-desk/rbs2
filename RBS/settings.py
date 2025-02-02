@@ -39,10 +39,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'accounts',
-    'core',
-    'wallets',
-    'cards',
     'transactions',
+    'loans',
+    'investments',
+    'users',
+    'core',
+    'admin_dashboard',
+    'btc',
+    'cards',
+    
+    
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [
@@ -136,5 +143,59 @@ STATIC_ROOT = '/home/theabcgame/RBS/static'
 STATIC_URL = '/static/'
 
 
-AUTH_USER_MODEL = 'accounts.CustomUser'
+
+LOGIN_URL = 'authenticating:login'
+
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGOUT_REDIRECT_URL = 'home'
+
+AUTHENTICATION_BACKENDS = ['users.backends.EmailBackend']
+
+# Email Configuration
+'''EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_PORT = 465  # You can also use 587 if you prefer TLS
+EMAIL_USE_SSL = True  # Change to EMAIL_USE_TLS = True if using port 587
+EMAIL_HOST_USER = 'support@nonresidentsuk.com'
+EMAIL_HOST_PASSWORD = 'Pass@2024'
+DEFAULT_FROM_EMAIL = 'RBS Non Resident <support@nonresidentsuk.com>'
+
+
+SESSION_COOKIE_AGE = 120  # 2 minutes in seconds
+SESSION_SAVE_EVERY_REQUEST = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+'''
+
+
+import json
+import os
+
+# Load email configuration
+email_config_path = os.path.join(BASE_DIR, 'email_config.json')
+with open(email_config_path, 'r') as f:
+    email_config = json.load(f)
+
+# Set email settings
+EMAIL_BACKEND = email_config['EMAIL_BACKEND']
+EMAIL_HOST = email_config['EMAIL_HOST']
+EMAIL_PORT = email_config['EMAIL_PORT']
+EMAIL_USE_SSL = email_config['EMAIL_USE_SSL']
+EMAIL_HOST_USER = email_config['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = email_config['EMAIL_HOST_PASSWORD']
+DEFAULT_FROM_EMAIL = email_config['DEFAULT_FROM_EMAIL']
+
+# Load session configuration
+session_config_path = os.path.join(BASE_DIR, 'session_config.json')
+with open(session_config_path, 'r') as f:
+    session_config = json.load(f)
+
+# Set session settings
+SESSION_COOKIE_AGE = session_config['SESSION_COOKIE_AGE']
+SESSION_SAVE_EVERY_REQUEST = session_config['SESSION_SAVE_EVERY_REQUEST']
+SESSION_EXPIRE_AT_BROWSER_CLOSE = session_config['SESSION_EXPIRE_AT_BROWSER_CLOSE']
+
+
+
+
+
 

@@ -1,5 +1,5 @@
 from django import forms
-from wallets.models import Account
+from accounts.models import Account
 from django.utils import timezone
 from .models import InternationalTransfer
 

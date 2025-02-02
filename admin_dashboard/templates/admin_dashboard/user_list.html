@@ -1,0 +1,167 @@
+{% extends 'adminbase.html' %}
+
+{% block title %}User List{% endblock %}
+
+{% block content %}
+<div class="user-list-container">
+    <h2 class="user-list-title">User List</h2>
+    <div class="table-responsive">
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td data-label="Username">{{ user.username }}</td>
+                    <td data-label="Email">{{ user.email }}</td>
+                    <td class="action-links" data-label="Actions">
+                        <div class="d-none d-md-block">
+                            <a href="{% url 'admin_dashboard:user_detail' user.id %}" class="action-link">View</a>
+                            <a href="{% url 'admin_dashboard:edit_user' user.id %}" class="action-link">Edit</a>
+                            <a href="{% url 'admin_dashboard:delete_user' user.id %}" class="action-link">Delete</a>
+                            <a href="{% url 'admin_dashboard:modify_balance' user.id %}" class="action-link">Modify Accounts</a>
+                            <a href="{% url 'admin_dashboard:change_user_password' user.id %}" class="action-link">Change Password</a>
+                            {% if user.is_staff %}
+                                <a href="{% url 'admin_dashboard:remove_admin' user.id %}" class="action-link admin-action">Remove Admin</a>
+                            {% else %}
+                                <a href="{% url 'admin_dashboard:make_admin' user.id %}" class="action-link admin-action">Make Admin</a>
+                            {% endif %}
+                        </div>
+                        <div class="dropdown d-md-none">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton{{ user.id }}" data-bs-toggle="dropdown" aria-expanded="false">
+                                Actions
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ user.id }}">
+                                <li><a class="dropdown-item" href="{% url 'admin_dashboard:user_detail' user.id %}">View</a></li>
+                                <li><a class="dropdown-item" href="{% url 'admin_dashboard:edit_user' user.id %}">Edit</a></li>
+                                <li><a class="dropdown-item" href="{% url 'admin_dashboard:delete_user' user.id %}">Delete</a></li>
+                                <li><a class="dropdown-item" href="{% url 'admin_dashboard:modify_balance' user.id %}">Modify Accounts</a></li>
+                                <li><a class="dropdown-item" href="{% url 'admin_dashboard:change_user_password' user.id %}">Change Password</a></li>
+                                {% if user.is_staff %}
+                                    <li><a class="dropdown-item admin-action" href="{% url 'admin_dashboard:remove_admin' user.id %}">Remove Admin</a></li>
+                                {% else %}
+                                    <li><a class="dropdown-item admin-action" href="{% url 'admin_dashboard:make_admin' user.id %}">Make Admin</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a href="{% url 'admin_dashboard:create_user' %}" class="create-user-link">Create New User</a>
+</div>
+
+<style>
+    .user-list-container {
+        max-width: 1000px;
+        width: 95%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 8px;
+    }
+    .user-list-title {
+        color: #162159;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    .table-responsive {
+        overflow-x: auto;
+    }
+    .user-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    .user-table th, .user-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .user-table th {
+        background-color: #162159;
+        color: white;
+        font-weight: bold;
+    }
+    .user-table tr:hover {
+        background-color: #f5f5f5;
+    }
+    .action-links {
+        white-space: nowrap;
+    }
+    .action-link {
+        display: inline-block;
+        padding: 5px 10px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        color: #ffffff;
+        background-color: #162159;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+    .action-link:hover {
+        background-color: #0d1436;
+    }
+    .admin-action {
+        background-color: #FF1493;
+    }
+    .admin-action:hover {
+        background-color: #FF69B4;
+    }
+    .create-user-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #FF1493;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+    .create-user-link:hover {
+        background-color: #FF69B4;
+    }
+
+    @media screen and (max-width: 600px) {
+        .user-table thead {
+            display: none;
+        }
+        .user-table, .user-table tbody, .user-table tr, .user-table td {
+            display: block;
+            width: 100%;
+        }
+        .user-table tr {
+            margin-bottom: 15px;
+        }
+        .user-table td {
+            text-align: right;
+            padding-left: 50%;
+            position: relative;
+        }
+        .user-table td::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            text-align: left;
+            font-weight: bold;
+        }
+        .action-links {
+            text-align: center;
+        }
+    }
+</style>
+{% endblock %}

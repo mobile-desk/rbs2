@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RBS Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .sidebar {
+            background-color: #162159;
+            min-height: 100vh;
+        }
+        .sidebar-sticky {
+            position: sticky;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: .5rem;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .sidebar .nav-link {
+            color: rgba(255, 255, 255, .75);
+            padding: .5rem 1rem;
+        }
+        .sidebar .nav-link:hover {
+            color: #fff;
+            background-color: rgba(255, 255, 255, .1);
+        }
+        .sidebar .nav-link.active {
+            color: #fff;
+            background-color: rgba(255, 255, 255, .2);
+        }
+        .main-content {
+            padding: 20px;
+        }
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+        @media (max-width: 767.98px) {
+            .sidebar {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 100;
+                padding: 48px 0 0;
+                box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            }
+        }
+    </style>
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/logo.svg' %}">
+
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="position-sticky sidebar-sticky">
+                    <h2 class="text-light p-3">Admin Dashboard</h2>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'user_list' %}active{% endif %}" href="{% url 'admin_dashboard:user_list' %}">
+                                <i class="fas fa-users me-2"></i> Users
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'create_user' %}active{% endif %}" href="{% url 'admin_dashboard:create_user' %}">
+                                <i class="fas fa-user-plus me-2"></i> Create User
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'transaction_list' %}active{% endif %}" href="{% url 'admin_dashboard:transaction_list' %}">
+                                <i class="fas fa-exchange-alt me-2"></i> Transactions
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'create_transaction' %}active{% endif %}" href="{% url 'admin_dashboard:create_transaction' %}">
+                                <i class="fas fa-plus-circle me-2"></i> Create Transaction
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'send_mail' %}active{% endif %}" href="{% url 'admin_dashboard:send_mail' %}">
+                                <i class="fas fa-envelope me-2"></i> Send Mail
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'send_direct_email' %}active{% endif %}" href="{% url 'admin_dashboard:send_direct_email' %}">
+                                <i class="fas fa-paper-plane me-2"></i> Send Direct Email
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'manage_passports' %}active{% endif %}" href="{% url 'admin_dashboard:manage_passports' %}">
+                                <i class="fas fa-passport me-2"></i> Manage Passports
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'list_btc_wallets' %}active{% endif %}" href="{% url 'admin_dashboard:list_btc_wallets' %}">
+                                <i class="fas fa-wallet me-2"></i> BTC Wallets
+                            </a>
+                        </li>
+
+                        <li class="nav-item"></li>
+                            <a class="nav-link {% if request.resolver_match.url_name == 'btc_status_control' %}active{% endif %}" href="{% url 'admin_dashboard:btc_status_control' %}">
+                                <i class="fas fa-toggle-on me-2"></i> BTC Status Control
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'edit_verification_codes' %}active{% endif %}" href="{% url 'admin_dashboard:edit_verification_codes' %}">
+                                <i class="fas fa-code me-2"></i> Edit Verification Codes
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'verification_status_control' %}active{% endif %}" href="{% url 'admin_dashboard:verification_status_control' %}">
+                                <i class="fas fa-toggle-on me-2"></i> Verification Status Control
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'edit_config' %}active{% endif %}" href="{% url 'admin_dashboard:edit_config' %}">
+                                <i class="fas fa-cog me-2"></i> Edit Configuration
+                            </a>
+                        </li>
+
+                        
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <h1 class="h2">{% block title %}Admin Dashboard{% endblock %}</h1>
+                        <div class="ms-auto">
+                            <a href="{% url 'authenticating:logout' %}" class="btn btn-outline-secondary">
+                                <i class="fas fa-sign-out-alt me-2"></i>Logout
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="main-content">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+{% extends 'adminbase.html' %}
+
+{% block title %}Transaction List{% endblock %}
+
+{% block content %}
+<div class="transaction-list-container">
+    <h2 class="transaction-list-title">Transaction List</h2>
+    <div class="table-responsive">
+        <table class="transaction-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Account</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                <tr>
+                    <td data-label="Date">{{ transaction.timestamp }}</td>
+                    <td data-label="Account">{{ transaction.account.account_number }}</td>
+                    <td data-label="Amount">£{{ transaction.amount }}</td>
+                    <td data-label="Type">{{ transaction.transaction_type }}</td>
+                    <td data-label="Actions">
+                        <a href="{% url 'admin_dashboard:edit_transaction' transaction.id %}" class="action-link">Edit</a>
+                        <a href="{% url 'admin_dashboard:delete_transaction' transaction.id %}" class="action-link">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a href="{% url 'admin_dashboard:create_transaction' %}" class="create-transaction-link">Create New Transaction</a>
+</div>
+
+<style>
+    .transaction-list-container {
+        max-width: 900px;
+        width: 95%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .transaction-list-title {
+        color: #162159;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .table-responsive {
+        overflow-x: auto;
+    }
+    .transaction-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #f8f9fa;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .transaction-table th,
+    .transaction-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    .transaction-table th {
+        background-color: #162159;
+        color: white;
+    }
+    .transaction-table tr:hover {
+        background-color: #e9ecef;
+    }
+    .action-link {
+        color: #FF1493;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+    .action-link:hover {
+        text-decoration: underline;
+    }
+    .create-transaction-link {
+        display: inline-block;
+        margin-top: 20px;
+        background-color: #FF1493;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .create-transaction-link:hover {
+        background-color: #FF69B4;
+    }
+
+    @media screen and (max-width: 600px) {
+        .transaction-table thead {
+            display: none;
+        }
+        .transaction-table, .transaction-table tbody, .transaction-table tr, .transaction-table td {
+            display: block;
+            width: 100%;
+        }
+        .transaction-table tr {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+        .transaction-table td {
+            text-align: right;
+            padding-left: 50%;
+            position: relative;
+        }
+        .transaction-table td::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            text-align: left;
+            font-weight: bold;
+        }
+    }
+</style>
+{% endblock %}

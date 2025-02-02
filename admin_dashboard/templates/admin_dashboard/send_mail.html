@@ -1,0 +1,109 @@
+{% extends 'adminbase.html' %}
+
+{% block title %}Send Mail{% endblock %}
+
+{% block content %}
+<div class="mail-form-container">
+    <h2 class="mail-form-title">Send Mail to User</h2>
+    <form method="post" class="mail-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="recipient">Recipient:</label>
+            <select name="recipient" id="recipient" class="form-select" required>
+                {% for user in users %}
+                    <option value="{{ user.id }}">{{ user.email }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" name="subject" id="subject" class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea name="content" id="content" rows="5" class="form-textarea" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="priority">Priority:</label>
+            <select name="priority" id="priority" class="form-select">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+        <button type="submit" class="submit-button">Send Mail</button>
+    </form>
+</div>
+
+<style>
+    .mail-form-container {
+        max-width: 600px;
+        width: 95%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .mail-form-title {
+        color: #162159;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    .mail-form {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #162159;
+        font-weight: bold;
+    }
+    .form-input, .form-select, .form-textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    .form-textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+    .submit-button {
+        background-color: #FF1493;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        align-self: flex-start;
+    }
+    .submit-button:hover {
+        background-color: #FF69B4;
+    }
+
+    @media screen and (max-width: 600px) {
+        .mail-form-container {
+            width: 100%;
+            padding: 15px;
+        }
+        .mail-form-title {
+            font-size: 20px;
+        }
+        .form-input, .form-select, .form-textarea {
+            font-size: 14px;
+        }
+        .submit-button {
+            width: 100%;
+            align-self: center;
+        }
+    }
+</style>
+{% endblock %}
