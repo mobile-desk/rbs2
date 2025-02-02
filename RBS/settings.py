@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-e*-@hm*td&7nev*+r39w-%4^!v@2crth$czi43i%glqhcj)bm4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['rbscotlandinternational.com']
+ALLOWED_HOSTS = ['www.rbscotlandinternational.com']
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'accounts',
     'transactions',
     'loans',
@@ -47,8 +47,8 @@ INSTALLED_APPS = [
     'admin_dashboard',
     'btc',
     'cards',
-    
-    
+
+
     'widget_tweaks'
 ]
 
