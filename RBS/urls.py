@@ -23,5 +23,6 @@ urlpatterns = [
     path('', include('core.urls', namespace='core')),
     path('auth/', include('accounts.urls', namespace='account')),
     path('wallet/', include('wallet.urls', namespace='wallet')),
+    path('cards/', include('cards.urls', namespace='cards')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

@@ -1,0 +1,143 @@
+{% load static %}
+{% block content %}
+
+
+<div id="preloader" class="preloader">
+    <img src="{% static 'img/logo1.svg' %}" alt="Logo" class="preloader-logo">
+    <p>Processing payment: <span id="progress">51%</span></p>
+</div>
+
+
+
+<div id="main-content" style="display: none;">
+    <div class="verification-container">
+
+        {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        <h2 class="verification-title">Verify Anti-Money Laundering Code</h2>
+        <form method="post" class="verification-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" class="form-input"  id="anti_money_laundering_code" placeholder="Enter Anti-Money Laundering Code" name="anti_money_laundering_code" required>
+            </div>
+            <button type="submit" class="verify-button">Verify Anti-Money Laundering Code</button>
+        </form>
+    </div>
+</div>
+
+
+<style>
+    .verification-container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .verification-title {
+        color: #162159;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .verification-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .verify-button {
+        background-color: #FF1493;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        align-self: center;
+    }
+
+    .verify-button:hover {
+        background-color: #FF69B4;
+    }
+
+    @media (max-width: 768px) {
+        .verification-container {
+            width: 90%;
+            padding: 15px;
+        }
+    }
+</style>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let progress = 51;
+        const preloader = document.getElementById('preloader');
+        const mainContent = document.getElementById('main-content');
+        const progressSpan = document.getElementById('progress');
+
+        function updateProgress() {
+            progressSpan.textContent = progress + '%';
+            if (progress < 90) {
+                progress++;
+                setTimeout(updateProgress, 100);
+            } else {
+                preloader.style.display = 'none';
+                mainContent.style.display = 'block';
+            }
+        }
+
+        updateProgress();
+    });
+</script>
+
+<style>
+    .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    .preloader-logo {
+        width: 100px;
+        margin-bottom: 20px;
+    }
+</style>
+
+{% endblock %}
+
+
+
+
+
+

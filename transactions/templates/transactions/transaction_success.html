@@ -1,0 +1,8 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Transaction Successful</h2>
+<p>Your transaction has been processed successfully.</p>
+<a href="{% url 'transactions:transaction_list' %}">View Transactions</a>
+{% endblock %}

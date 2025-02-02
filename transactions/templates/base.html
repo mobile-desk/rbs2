@@ -1,0 +1,250 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Banking - Account Summary</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .main-menu {
+            background-color: #162159;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .logo {
+            color: white;
+        }
+        .logout-btn {
+            background-color: #FF1493;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            padding: 20px;
+        }
+        .sidebar h2 {
+            color: #162159;
+        }
+        .sidebar-menu li {
+            padding-bottom: 10px;
+        }
+        .sidebar-menu {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar-menu li a {
+            color: #FF1493;
+            text-decoration: none;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .account-card {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .account-card-header {
+            background-color: #162159;
+            color: white;
+            padding: 10px;
+        }
+        .account-card-body {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .account-card-footer {
+            background-color: #f1f1f1;
+            padding: 10px;
+        }
+        .account-card-footer a {
+            color: #FF1493;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .savings-goal-card {
+            background-color: #162159;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+            }
+        }
+
+        .quick-transfer-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .form-select, .form-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .form-button {
+            background-color: #1c7430;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .form-button:hover {
+            background-color: #34ce57;
+        }
+
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .products-sidebar {
+            width: 200px;
+            padding: 20px;
+            
+        }
+
+        .product-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .product-list li::before {
+            content: "➔";
+            color: #FF1493;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .products-sidebar {
+                width: 100%;
+                order: 1;
+            }
+            
+            .main-content {
+                order: 0;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            .account-card-body {
+                flex-direction: column;
+            }
+            .balance-info {
+                margin-top: 10px;
+            }
+            .account-card-footer a {
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+
+
+        
+    </style>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/logo.svg' %}">
+</head>
+<body>
+    <div class="main-menu">
+        <div class="logo">
+            <a href="{% url 'core:home' %}">
+                <img src="{% static 'img/logo1.svg' %}" width="70"  alt="Account">
+            </a>
+            
+        </div>
+        <button class="logout-btn"><a href="{% url 'authenticating:logout' %}">Logout</a></button>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Digital Banking</h2>
+            <ul class="sidebar-menu">
+                <li><a href="{% url 'authenticating:dashboard' %}">Account Summary</a></li>
+                <li><a href="{% url 'transactions:pat' %}">Payments and Transfer</a></li>
+                <li><a href="{% url 'transactions:transaction_list' %}">Statements</a></li>
+                <li><a href="{% url 'authenticating:mailbox_list' %}
+                    ">Mailbox</a></li>
+                
+                <li><a href="{% url 'cards:home' %}">Cards</a></li>
+                
+                <li><a href="{% url 'authenticating:account_settings' %}">Security</a></li>
+                <li><a href="{% url 'authenticating:logout' %}">Log out</a></li>
+            </ul>
+            
+            
+
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+
+
+
+        </div>
+        <div class="main-content">
+
+            {% block content %}
+            {% endblock %}
+        </div>
+
+
+
+
+        <div class="products-sidebar">
+            <h3 style="color: #162159;">Our Products</h3>
+            <h5 style="color: #162159;">Personal Products</h5>
+            <ul class="product-list">
+                
+                <li><a href="{% url 'core:isa' %}">Cash ISAs</a></li>
+                
+                
+                <li><a href="{% url 'cards:home' %}">Credit Cards</a></li>
+                <li><a href="{% url 'core:overdraft' %}">Overdrafts</a></li>
+                <li>Loans</li>
+                <li>Mortgages</li>
+                <li>Insurance</li>
+                <li>Travel money</li>
+                <li>Investment products</li>
+                
+            </ul>
+        </div>
+
+
+    </div>
+</body>
+</html>
+

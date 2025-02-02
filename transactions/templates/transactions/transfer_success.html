@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Transfer Successful</h2>
+<p>Your international transfer has been successfully submitted.</p>
+<a href="{% url 'transactions:transaction_list' %}">View Transactions</a>
+{% endblock %}
