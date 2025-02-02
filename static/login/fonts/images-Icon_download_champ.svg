@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>1CC84AA8-DB80-4D3B-A679-0135EB82E4BF@1x</title>
+    <g id="⚛️-Icons--**" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Web-Icons-**-WIP-**" transform="translate(-888.000000, -3386.000000)" stroke="#ffffff" stroke-width="1.2">
+            <g id="01:-Atoms-/-Icons-/-Download-/-24x24" transform="translate(888.950000, 3386.978622)">
+                <g id="Group" transform="translate(0.000000, -0.000000)">
+                    <path d="M0,11.5208763 L0,12.9557976 C0.0273186329,13.4002198 0.153038821,13.7105027 0.377160564,13.8866464 C0.601282307,14.0627902 0.899797679,14.1767428 1.27270668,14.2285043 L12.7270667,14.2285043 C13.0724402,14.2285043 13.372015,14.1145517 13.625791,13.8866464 C13.8795671,13.6587412 14.0042279,13.3484583 13.9997734,12.9557976 L13.9997734,11.5208763" id="Path-28"></path>
+                    <line x1="6.9998867" y1="0.223553582" x2="6.9998867" y2="11.1361834" id="Line"></line>
+                    <line x1="12.7270667" y1="5.95332225" x2="6.9998867" y2="11.1361834" id="Line"></line>
+                    <line x1="6.9998867" y1="5.95332225" x2="1.27270668" y2="11.1361834" id="Line" transform="translate(4.136297, 8.544753) scale(-1, 1) translate(-4.136297, -8.544753) "></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

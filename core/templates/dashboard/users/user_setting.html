@@ -1,0 +1,166 @@
+{% extends "home/users/user_base.html" %} {% block content %} {% load static %}
+<!-- ============================ Property Header Info Start================================== -->
+<section class="gray-simple">
+ <div class="container">
+  <div class="row">
+   <ul class="menu-list-users">
+    <li><a href="{{ request.path }}">Home</a></li>
+
+    {% if title %}
+    <li><i class="ti-angle-right menu-list-icon"></i> <a href="">{{title}}</a></li>
+    {% else %}
+    <li><i class="ti-angle-right menu-list-icon"></i> Reviews</li>
+    {% endif %}
+   </ul>
+  </div>
+ </div>
+</section>
+<!-- ============================ Property Header Info Start================================== -->
+<!-- ============================ Property Detail Start ================================== -->
+<section class="gray-simple">
+ <div class="container">
+  <div class="row">
+   <div class="col-lg-1 col-md-12 col-sm-12"></div>
+   <!-- property main detail -->
+   <div class="col-lg-6 col-md-12 col-sm-12">
+    <!-- Single Block Wrap -->
+
+    <div class="property_block_wrap style-2">
+     <div id="clEight" class="panel-collapse collapse show">
+      <div class="block-body">
+       <div class="author-review">
+        <!-- Basic Information -->
+        <div class="form-submit">
+         <h4>My Personal settings</h4>
+         <div class="submit-section">
+          <div class="row">
+           <div class="form-group col-md-12">
+            <label>Your Name (publicly visible)</label>
+            <input type="text" class="form-control" value="Shaurya Preet" />
+           </div>
+
+           <div class="form-group col-md-12">
+            <label>Email</label>
+            <input type="email" class="form-control" value="" readonly />
+           </div>
+
+           <div class="form-group col-md-12">
+            <label>Country</label>
+            <select class="form-control" name="country">
+             <option>Nigeria</option>
+            </select>
+           </div>
+           <div class="form-group col-md-4">
+            <div class="form-group">
+             <button type="button" class="btn btn-primary" type="submit">Save information</button>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Single Reviews Block -->
+   </div>
+   <!-- property Sidebar -->
+   <div class="col-lg-4 col-md-12 col-sm-12">
+    <!-- Like And Share -->
+
+    <div class="details-sidebar">
+     <!-- Agent Detail -->
+     <!-- Featured Property -->
+     <div class="sidebar-widgets">
+      <div class="like_share_wrap b-0">
+       <p>Click “Yes, update me” to receive emails from Trustpilot about your reviews, inspiration, tips about businesses and products, information about TrustScrin, and new features. You can opt out at any time.</p>
+
+       <div class="form-group">
+        <button type="button" class="btn btn-primary" type="submit">Yes, update me</button>
+       </div>
+      </div>
+      <div class="sidebar_featured_property">
+       <!-- List Sibar Property -->
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="col-lg-1 col-md-12 col-sm-12"></div>
+  </div>
+
+  <!-- ROW 2 -->
+
+  <div class="row">
+   <div class="col-lg-1 col-md-12 col-sm-12"></div>
+   <!-- property main detail -->
+   <div class="col-lg-6 col-md-12 col-sm-12">
+    <!-- Single Block Wrap -->
+
+    <!-- Single Block Wrap -->
+
+    <div class="property_block_wrap style-2">
+     <div class="block-body">
+      <div class="author-review">
+       <!-- Basic Information -->
+       <div class="form-submit">
+        <h4>My Email settings</h4>
+        <p>Choose which kind of emails you’d like to receive. You can unsubscribe at any time.</p>
+        <p></p>
+        <hr />
+      
+         <div class="row">
+
+            <div class="form-group col-md-12">
+               <h5>My Email settings</h5>
+               <div class="trustscrin-main-display">
+                  <p>See important updates about your account, enabled for all Trustpilot users</p>
+
+                  <div class="tgl-group">
+                  <input class="tgl tgl-light" id="display-address" type="checkbox" />
+                  <label class="tgl-btn" for="display-address"></label>
+               </div>
+            </div>
+
+         </div>
+  <!-- Reviews-->
+         <div class="form-group col-md-12">
+               <h5>Review invitations</h5>
+               <div class="trustscrin-main-display">
+                  <p>Receive invitations from companies to write reviews about your purchase or experience</p>
+
+                  <div class="tgl-group">
+                  <input class="tgl tgl-light" id="display-address" type="checkbox" />
+                  <label class="tgl-btn" for="display-address"></label>
+               </div>
+            </div>
+         </div>
+
+  <!-- Reviews-->
+         <div class="form-group col-md-12">
+               <h5>The latest news and tips</h5>
+               <div class="trustscrin-main-display">
+                    <p>Get the latest updates, recommendations, and inspiration</p>
+
+                  <div class="tgl-group">
+                  <input class="tgl tgl-light" id="display-address" type="checkbox" />
+                  <label class="tgl-btn" for="display-address"></label>
+               </div>
+            </div>
+         </div>
+
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+
+    <!-- Single Reviews Block -->
+   </div>
+   <!-- property Sidebar -->
+   <div class="col-lg-4 col-md-12 col-sm-12"></div>
+   <div class="col-lg-1 col-md-12 col-sm-12"></div>
+  </div>
+ </div>
+</section>
+<!-- ============================ Property Detail End ================================== -->
+{% endblock content %}

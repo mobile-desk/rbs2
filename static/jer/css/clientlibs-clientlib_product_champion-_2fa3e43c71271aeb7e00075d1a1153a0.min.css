@@ -1,0 +1,51 @@
+.et-shelf .pers-single-product .bar_code{height:8px;margin-top:50px}
+.et-shelf .pers-single-product .image-wrapper{margin-top:50px}
+.et-shelf .pers-single-product .bar_code{background:#dbedfa}
+.et-shelf .pers-single-product .image-wrapper{background:#dbedfa}
+.et-shelf .pers-single-product .yellow .bar_code{background:#ffeae6}
+.et-shelf .pers-single-product .yellow .image-wrapper{background:#ffeae6}
+.et-shelf .pers-single-product .blue .bar_code{background:#dbedfa}
+.et-shelf .pers-single-product .blue .image-wrapper{background:#dbedfa}
+.et-shelf .pers-single-product .red .bar_code{background:#ffdbec}
+.et-shelf .pers-single-product .red .image-wrapper{background:#ffdbec}
+.et-shelf .pers-single-product .purple .bar_code{background:#f2eaf9}
+.et-shelf .pers-single-product .purple .image-wrapper{background:#f2eaf9}
+.et-shelf .product-comp .singlelisting__compliance{display:none}
+.et-shelf .product-comp .singlelisting__compliance .shelf-textarea{margin-bottom:0}
+.et-shelf .product-comp .single-img .image-wrapper{width:93.6%;height:100%;position:relative;overflow:hidden;border-radius:8px;aspect-ratio:3/2}
+.et-shelf .product-comp .single-img .image-wrapper .comp-img-generic{width:100%;height:100%}
+.et-shelf .product-comp .single-img .image-wrapper .svg{text-align:center;padding:calc(251px * 0.12)}
+.et-shelf .product-comp .single-img .image-wrapper .rbsTwill{width:100%;display:none;height:10px;position:absolute;background:url("../fonts/images-twill-rbos-pattern.svg")}
+.et-shelf .product-comp .single-img .image-wrapper .rbsTwill.rbsTwill--personalzation{background:url("../fonts/images-twill-rbos-pattern.svg")}
+.et-shelf .pers-single-product.product-comp .single-img{float:none;padding-bottom:20px;margin-top:50px}
+.et-shelf .product-comp .image{height:100%}
+.et-shelf .product-comp .single-content .title-wrapper h4,.et-shelf .product-comp .single-content .section.title.cq-Editable-dom h4{color:#5a287d;font-family:"RNHouseSansBold",sans-serif;font-weight:bold}
+.et-shelf .product-comp .single-content#hide_cta{padding-bottom:24px}
+.et-shelf .product-comp .single-content .comp-rich-text h3{font-size:26px;line-height:34px;display:inline-block;width:100%;margin-bottom:20px}
+.et-shelf .product-comp .single-content .cta.cta-primary,.et-shelf .product-comp .single-content .cta.cta-secondary{padding-top:8px}
+.et-shelf .pers-single-product.product-comp .single-content{float:none}
+.et-shelf .product-comp.pers-single-product{padding:50px}
+.et-shelf .product-comp.pers-single-product .pers-product-row{margin-left:-12px;margin-right:-12px}
+.et-shelf .product-comp.pers-single-product .pers-product-row:before,.et-shelf .product-comp.pers-single-product .pers-product-row:after{content:" ";display:table}
+.et-shelf .product-comp.pers-single-product .pers-product-row:after{clear:both}
+.et-shelf .product-comp .title-above-image{width:100%;padding:0 24px 12px}
+.et-shelf .pers-single-product.product-comp .title-above-image{width:unset;padding-left:12px}
+.et-shelf .productlistingmultiple .product-comp .title-above-image{width:100%;padding:24px 24px 12px}
+@media(min-width:1024px) and (max-width:1255px){.et-shelf .product-comp .single-img .image-wrapper{width:91.6%}
+.et-shelf .product-comp .single-img .image-wrapper .svg{padding:calc(203px * 0.12);text-align:center}
+.et-shelf .product-comp .single-content .comp-rich-text h3{font-size:24px;line-height:32px}
+}
+@media(min-width:768px) and (max-width:1023px){.et-shelf .product-comp .single-img .image-wrapper{width:92.6%}
+.et-shelf .product-comp .single-img .image-wrapper .svg{padding:calc(147px * 0.12);text-align:center}
+.et-shelf .product-comp .single-content .comp-rich-text h3{font-size:24px;line-height:32px}
+.et-shelf .product-comp .single-content#hide_cta{padding-bottom:24px !important}
+.et-shelf .product-comp .single-content .cta.cta-primary,.et-shelf .product-comp .single-content .cta.cta-secondary{padding-top:8px}
+.et-shelf .product-comp .title-above-image{padding-right:61px}
+}
+@media(max-width:767px){.et-shelf .product-comp .single-img .image-wrapper{width:100%}
+.et-shelf .product-comp .single-img .image-wrapper .svg{text-align:center;padding:calc(179px * 0.12)}
+.et-shelf .product-comp .image{height:100%}
+.et-shelf .product-comp .single-content .comp-rich-text h3{font-size:24px;line-height:32px}
+.et-shelf .product-comp .single-content .cta.cta-primary,.et-shelf .product-comp .single-content .cta.cta-secondary{padding-top:8px}
+.et-shelf .product-comp .title-above-image{padding:0 0 20px 0}
+}

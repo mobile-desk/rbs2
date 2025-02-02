@@ -1,0 +1,85 @@
+@-moz-keyframes fadein{100%{opacity:1}
+}
+@-webkit-keyframes fadein{100%{opacity:1}
+}
+@keyframes fadein{100%{opacity:1}
+}
+.et-shelf .link-card__download .cmp-download{position:relative}
+.et-shelf .link-card__download .cmp-download:after{background:url("../fonts/images-icon-downloadlinks_champion.svg") no-repeat !important;content:" ";display:inline-block;height:24px;width:24px;position:absolute;top:2px}
+.et-shelf .link-card__accordion{background-color:#f2f2f8}
+.et-shelf .link-card__accordion .animated_underline{position:relative;display:inline-block}
+.et-shelf .link-card__accordion .animated_underline::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background-color:#5e10b1;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.et-shelf .link-card__accordion:hover .animated_underline::after{transform:scaleX(1)}
+.et-shelf .theme-white .grey-card .link-card__accordion{background-color:#fff}
+.et-shelf .theme-white .link-card__accordion{background-color:#f2f2f8}
+.et-shelf .theme-white .link-card__cta{margin-bottom:16px;text-decoration:underline;text-underline-offset:5px;color:#5e10b1}
+.et-shelf .theme-white .link-card__cta .cta.cta-tertiary .cta-button{padding:0}
+.et-shelf .theme-grey .grey-card .link-card__accordion{background-color:#f2f2f8}
+.et-shelf .theme-grey .link-card__accordion,.et-shelf .theme-purple .link-card__accordion,.et-shelf .theme-rose .link-card__accordion,.et-shelf .theme-aqua .link-card__accordion,.et-shelf .theme-gold .link-card__accordion{background-color:#fff}
+.et-shelf .theme-grey .link-card__cta,.et-shelf .theme-purple .link-card__cta,.et-shelf .theme-rose .link-card__cta,.et-shelf .theme-aqua .link-card__cta,.et-shelf .theme-gold .link-card__cta{margin-bottom:16px;text-decoration:underline;text-underline-offset:5px;color:#5e10b1}
+.et-shelf .theme-grey .link-card__cta .cta.cta-tertiary .cta-button,.et-shelf .theme-purple .link-card__cta .cta.cta-tertiary .cta-button,.et-shelf .theme-rose .link-card__cta .cta.cta-tertiary .cta-button,.et-shelf .theme-aqua .link-card__cta .cta.cta-tertiary .cta-button,.et-shelf .theme-gold .link-card__cta .cta.cta-tertiary .cta-button{padding:0}
+.et-shelf .link-card__accordion{border-radius:8px;padding:16px 20px;cursor:pointer}
+.et-shelf .accordion-wrap{margin:0 0 8px 2px}
+.et-shelf .accordion-wrap .card-accordion .product-acr-header{width:100%}
+.cq-wcm-edit.et-shelf .accordion-wrap .card-accordion .product-acr-header{overflow:hidden}
+.aem-AuthorLayer-Edit.et-shelf .accordion-wrap .card-accordion .product-acr-header{overflow:hidden}
+.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header{position:relative}
+.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header a{text-decoration:none;color:#5e10b1;font-family:"RNHouseSansRegular",sans-serif;display:inline-block;position:relative;line-height:26px;overflow:hidden;vertical-align:bottom}
+.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header a .acordion-header-icon{display:block;margin-left:36px}
+.ipad.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header a .acordion-header-icon{background-position-y:6px}
+.iphone.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header a .acordion-header-icon{background-position-y:6px}
+.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header a .acordion-icon{display:none}
+.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header a .acordion-crossicon{background-image:url("../fonts/images-Plus.svg");line-height:26px;background-size:22px;background-repeat:no-repeat;width:24px;height:24px;float:left;-webkit-transform:rotate(0);transform:rotate(0);-webkit-transition:400ms ease-in-out;-moz-transition:400ms ease-in-out;-o-transition:400ms ease-in-out;transition:400ms ease-in-out;position:absolute;left:0}
+.iphone.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header a .acordion-crossicon{margin-top:1px}
+.ipad.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header a .acordion-crossicon{margin-top:1px}
+.mac.safari.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header a .acordion-crossicon{margin-top:1px}
+.mac.chrome.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header a .acordion-crossicon{margin-top:1px}
+.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header a:focus{display:inline-block}
+html:not(.firefox).et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header a:focus{outline:1px auto #5e10b1}
+html:not(.firefox).et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header a:focus:hover{outline:1px auto #5e10b1}
+.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header.active a .acordion-crossicon{-webkit-transform:rotate(45deg);transform:rotate(45deg)}
+.mac.safari.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header.active a .acordion-crossicon{margin-top:1px}
+.mac.chrome.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header.active a .acordion-crossicon{margin-top:1px}
+.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header.active a .acordion-icon{display:inline-block;margin-left:29px}
+.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header.active a .acordion-icon .animated_underline{width:100%;width:-moz-calc(100%);width:-webkit-calc(100%);width:-o-calc(100%);width:calc(100%);background-image:-webkit-linear-gradient(transparent 95%,#5e10b1 10px,#5e10b1);background-image:-moz-linear-gradient(transparent -moz-calc(100% - 1px),#5e10b1 10px,#5e10b1);background-image:-o-linear-gradient(transparent -o-calc(100% - 1px),#5e10b1 10px,#5e10b1);background-image:linear-gradient(transparent calc(100% - 1px),#5e10b1 10px,#5e10b1);background-repeat:no-repeat;background-size:100% 100%;-webkit-transition:background-size ease-in-out 180ms;-moz-transition:background-size ease-in-out 180ms;-o-transition:background-size ease-in-out 180ms;transition:background-size ease-in-out 180ms;padding-bottom:3px}
+.et-shelf .accordion-wrap .card-accordion .product-acr-header .acc-header.active a:hover .acordion-icon .animated_underline{background-size:0 100%}
+.et-shelf .accordion-wrap .card-accordion .acc-content{display:none}
+.cq-wcm-edit.et-shelf .accordion-wrap .card-accordion .acc-content{display:block !important}
+.aem-AuthorLayer-Edit.et-shelf .accordion-wrap .card-accordion .acc-content{display:block !important}
+.et-shelf .accordion-wrap .card-accordion .acc-content.active{display:block;padding-bottom:0}
+.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-container{height:auto;padding-top:20px;padding-bottom:8px;display:block;width:100%;position:relative;word-break:break-word;border-radius:8px 8px 0 0}
+.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-container .accordian-content-wrapper{padding-left:0;width:100%}
+.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-container .accordian-content-wrapper .h3-custom{padding-bottom:20px}
+.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-container .accordian-content-wrapper .titleWrapper{margin-left:36px !important;padding-bottom:16px}
+.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-container .accordian-content-wrapper .text-wapper{margin-left:36px}
+.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-container .accordian-content-wrapper .text-wapper .text p{margin-bottom:20px}
+.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-container .accordian-content-wrapper .text-wapper .text ul li{padding-left:24px;margin-top:15px}
+.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-container .accordian-content-wrapper .text-wapper p:last-child,.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-container .accordian-content-wrapper .text-wapper ul:last-child{margin-bottom:0}
+.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-container .accordian-content-wrapper .text-wapper h3{font-weight:normal;font-size:26px;line-height:34px;margin-top:35px;margin-bottom:20px}
+.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-container .closeBtn.text-right a{display:inline-block;width:14px;height:14px;background-size:18px;background-image:url("../fonts/images-iconclose-champi.svg");position:absolute;right:28px;top:28px;cursor:pointer}
+html:not(.firefox).et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-container .closeBtn.text-right a:focus,.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-container .closeBtn.text-right a:focus:hover{outline:1px auto #5e10b1}
+.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-footer{background:#5e10b1;padding-top:8px;padding-bottom:10px;text-align:center;max-height:40px;border-radius:8px}
+.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-footer a{color:#fff;font-family:"RNHouseSansRegular",sans-serif;line-height:26px}
+.iphone.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-footer a{display:block}
+.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-footer a:hover{text-decoration:none}
+.mac.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-footer a .footer__close-text{display:inline-block;line-height:18px}
+.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-footer a .close-footer{display:inline-block;width:10px;height:10px;margin-left:6px;background-image:url("../fonts/images-iconclose-white-14.svg");background-size:13px;background-repeat:no-repeat}
+.et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-footer a:focus{text-decoration:none}
+html:not(.firefox).et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-footer a:focus{outline:1px auto #fff}
+html:not(.firefox).et-shelf .accordion-wrap .card-accordion .acc-content .product-acr-footer a:focus:hover{outline:1px auto #fff}
+@media(min-width:1024px) and (max-width:1255px){.et-shlef .accordion-wrap .card-accordion .product-acr-header{width:73.4%}
+.et-shlef .accordion-wrap .card-accordion .acc-content .product-acr-container .accordian-content-wrapper{width:58.33333%}
+.et-shlef .accordion-wrap .card-accordion .acc-content .product-acr-container .accordian-content-wrapper .text-wapper h3{font-size:24px;line-height:32px;margin-bottom:20px}
+}
+@media(min-width:768px) and (max-width:1023px){.et-shlef .accordion-wrap{margin:30px 0 50px}
+.et-shlef .accordion-wrap .card-accordion .product-acr-header{width:73%}
+.et-shlef .accordion-wrap .card-accordion .acc-content .product-acr-container .accordian-content-wrapper{width:75%}
+.et-shlef .accordion-wrap .card-accordion .acc-content .product-acr-container .accordian-content-wrapper .text-wapper h3{font-size:24px;line-height:32px;margin-bottom:20px;margin-top:30px}
+}
+@media(max-width:767px){.et-shlef .accordion-wrap{margin:30px 0 50px}
+.et-shlef .accordion-wrap .card-accordion .product-acr-header{width:100%}
+.et-shlef .accordion-wrap .card-accordion .product-acr-header .acc-header.active:after{left:28px}
+.et-shlef .accordion-wrap .card-accordion .acc-content .product-acr-container .accordian-content-wrapper{margin-left:auto;width:100%}
+.et-shlef .accordion-wrap .card-accordion .acc-content .product-acr-container .accordian-content-wrapper .text-wapper h3{font-size:24px;line-height:32px;margin-bottom:20px;margin-top:30px}
+.et-shlef .accordion-wrap .card-accordion .acc-content .product-acr-footer{padding-top:13px;max-height:50px;padding-bottom:15px}
+}

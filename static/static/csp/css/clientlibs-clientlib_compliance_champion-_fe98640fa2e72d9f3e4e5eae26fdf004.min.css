@@ -1,0 +1,4 @@
+.compliance_wrapper{position:relative}
+.compliance_wrapper .compliance_icon{background:url("../fonts/images-Icon.svg") no-repeat;width:24px;height:24px;position:absolute;left:0}
+.compliance_wrapper .cmp-text p,.compliance_wrapper .cmp-text li{font-size:16px}
+.compliance_wrapper .compliance-text{margin-left:39px}

@@ -1,0 +1,2253 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en-US" class="no-js et-shelf sb_enable  responsive_rbs_business responsive__publish">
+
+<head>
+
+    <!-- OneTrust Cookies Consent Notice start -->
+    <script src="{% static 'csp/js/scripttemplates-otSDKStub.js' %}" type="text/javascript" charset="UTF-8"
+        data-domain-script="c14e41a6-cdb0-41f3-a380-a54837336bf6"></script>
+    <script type="text/javascript">
+        function OptanonWrapper() {
+            if (customerAlreadyDecided()) {
+
+                readCustomerChoice() && globalUtil.faqSearchCookie && globalUtil.faqSearchCookie.init();
+            }
+            function customerAlreadyDecided() {
+                return -1 < document.cookie.indexOf('OptanonAlertBoxClosed=');
+            }
+            function readCustomerChoice() {
+                // We just need to agree which group of the customer should mean the he wants to use the support center with all the cookies
+                // EXAMPLE: if the user has the C0004 it means we can start with all the cookies
+                return OptanonActiveGroups.includes('C0002');
+            }
+            if (document.location.href.indexOf('cookie') > -1) {
+                $('#onetrust-pc-sdk, .onetrust-pc-dark-filter, #onetrust-banner-sdk').hide();
+                $('.ot-sdk-show-settings').show();
+            }
+
+            if (window.optanonActiveGroupsAux === undefined) {
+                window.optanonActiveGroupsAux = window.OptanonActiveGroups;
+            }
+            var currentActiveGroups = OptanonActiveGroups.split(',').slice(1, OptanonActiveGroups.split(',').length - 1);
+            for (var i = 0; i < currentActiveGroups.length; i++) {
+                if (optanonActiveGroupsAux.indexOf(currentActiveGroups[i]) == -1) {
+                    switch (currentActiveGroups[i]) {
+                        case 'C0002':
+                            _satellite.track("DCRPerformance");
+                            break;
+                        case 'C0003':
+                            _satellite.track("DCRFunctional");
+                            break;
+                        case 'C0004':
+                            _satellite.track("DCRTargeting");
+                            break;
+                        case 'C0005':
+                            _satellite.track("DCRSocialMedia");
+                            break;
+                        case 'C0009':
+                            _satellite.track("DCRAnonAnalytics");
+                            break;
+                    }
+                }
+            }
+            optanonActiveGroupsAux = window.OptanonActiveGroups;
+        }
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords">
+
+
+
+
+
+
+
+
+
+
+
+
+    <meta http-equiv="Last-Modified" content="24 May 2024 15:11:25 BST">
+    <meta name="title" content="Corporate Services | Institutional Banking | RBS International">
+    <meta name="subtitle">
+    <meta name="description"
+        content="From fund administrators to family wealth offices to insurers, we work with our customers to provide tailored solutions for corporate service providers.">
+    <meta name="navigation-title" content="Corporate Service Providers">
+    <meta property="og:title" content="Corporate Services | Institutional Banking | RBS International">
+    <meta property="og:type">
+
+
+    <meta property="og:image" content="{% static 'RBSI_Secondary.svg' %}">
+
+
+    <meta property="og:description"
+        content="From fund administrators to family wealth offices to insurers, we work with our customers to provide tailored solutions for corporate service providers.">
+
+
+    <meta class="swiftype" name="swiftTitle" data-type="string"
+        content="Corporate Services | Institutional Banking | RBS International">
+
+    <meta class="swiftype" name="swiftDescription" data-type="string"
+        content="From fund administrators to family wealth offices to insurers, we work with our customers to provide tailored solutions for corporate service providers.">
+
+    <meta class="swiftype" name="swiftPublished_at" data-type="date" content="Fri May 24 15:18:53 BST 2024">
+
+    <meta class="swiftype" name="swiftBrand" data-type="string" content="RBSINTERNATIONAL_COM">
+    <meta class="swiftype" name="swiftSegment" data-type="string" content="corporate">
+
+
+    <link rel="shortcut icon" type="image/x-icon"
+        href="{% static 'csp/favicons/resources-responsive_rbs_business_favicon.ico' %}">
+
+
+    <title>Corporate Services | Institutional Banking | RBS International</title>
+
+
+    <script src="{% static 'csp/js/launch-EN36e7398f32914ad28e21b622457f151b.min.js' %}">  </script>
+    <script src="{% static 'csp/js/granite-jquery.min.js' %}"></script>
+    <script src="{% static 'csp/js/granite-utils.min.js' %}"></script>
+    <script src="{% static 'csp/js/jquery-granite.min.js' %}"></script>
+    <script src="{% static 'csp/js/clientlibs-jquery.min.js' %}"></script>
+    <script src="{% static 'csp/js/clientlibs-shared.min.js' %}"></script>
+    <script src="{% static 'csp/js/clientlibs-clientlib_base-_025bf73d3f167c1293f796d0f14e6166.min.js' %}"></script>
+    <script src="{% static 'csp/js/clientlibs-clientlib_base_two-_1de43f954463f8fa5dd6a63c9251c3ae.min.js' %}"></script>
+    <script src="{% static 'csp/js/clientlibs-viewer-_0b630974eed76fcb47715a27083b4f7f.min.js' %}" defer></script>
+    <script
+        src="{% static 'csp/js/clientlibs-clientlib_base_three-_349e7ae5cf4eedf7a6686283641ada58.min.js' %}"></script>
+    <script src="{% static 'csp/js/clientlibs-utils.min.js' %}"></script>
+    <script src="{% static 'csp/js/clientlibs-imageDynamicMedia.min.js' %}"></script>
+    <script src="{% static 'csp/js/clientlibs-site.min.js' %}"></script>
+
+
+
+    <link rel="stylesheet" href="{% static 'csp/css/clientlibs-clientlib_base_champion-_d6f19b6f85e82fcc30b51365cae5a12b.min.css' %}"
+        type="text/css">
+    <link rel="stylesheet"
+        href="{% static 'csp/css/clientlibs-clientlib_editable_champion-_8aaaa0960558a90ac1a050d2cbbaac42.min.css' %}"
+        type="text/css">
+    <link rel="stylesheet"
+        href="{% static 'csp/css/clientlibs-clientlib_base-_5360fd92ed88140022e20a1444c982da.min.css' %}"
+        type="text/css">
+
+
+
+
+
+</head>
+
+<body>
+    <div></div>
+
+    <!--<sly data-sly-use.templatedContainer="com.day.cq.wcm.foundation.TemplatedContainer"
+        data-sly-repeat.child=""
+        data-sly-resource=""></sly>-->
+
+
+    <input type="hidden" id="dumpParams" value="alloy_redirect">
+    <div></div>
+
+    <div>
+
+        <input type="hidden" name="navigationTag" id="navigationTag" value="nav:rbsinternational/institutional">
+        <link rel="stylesheet"
+            href="{% static 'csp/css/clientlib_smartbanner-clientlib_smartbanner_champion-_fe98640fa2e72d9f3e4e5eae26fdf004.min.css' %}"
+            type="text/css">
+        <meta name="apple-itunes-app">
+        <meta name="google-play-app">
+        <link rel="apple-touch-icon">
+        <link rel="andriod-icon">
+        <meta name="apple-target-url">
+        <meta name="android-target-url">
+
+        <div class="main-wrapper">
+            <div class="site-content">
+                <ul class="skip-links reset" id="skiplinks">
+                    <li>
+                        <a accesskey="a" class="txt-p-1" href="">Jump to Accessibility</a>
+                    </li>
+                    <li>
+                        <a accesskey="c" class="txt-p-1" href="#main-content-wrapper">Jump to Content</a>
+                    </li>
+                </ul>
+                <header>
+                    <div class="iah iah--responsive">
+                        <link rel="stylesheet"
+                            href="{% static 'csp/css/clientlibs-clientlib_ia_headernavigation_champion-_349e7ae5cf4eedf7a6686283641ada58.min.css' %}"
+                            type="text/css">
+
+                        <div class="ia__main-content  l3_hide">
+
+                            <div class="iah__share container-fluid desktop--rbscom desktop--natwestgroup"
+                                data-domain="responsive_champion"
+                                data-contentpath="/content/rbsinternational_com/en_uk/institutional-banking/iaheaderchampion">
+                                <div class="iah__container  container">
+                                    <div class="iah__l0__riht pull-right">
+                                        <nav aria-label="Level zero Navigation">
+                                            <ul class="ia__nav ia__navbar-nav ia__noprice">
+                                                <li class="share_price desktop">
+                                                </li>
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="iah__l1 iah__l1--visible-xl iah__l1--visible-lg  ">
+                                <div class="iah__container">
+                                    <div class="iah__l1__left">
+                                        <nav aria-label="Main Navigation">
+                                            <ul class="ia__nav ia__navbar-nav">
+
+                                                <li>
+                                                    <a href="{% url 'core:home' %}"
+                                                        data-navid="institutional banking"><span>Institutional
+                                                            Banking</span></a>
+                                                </li>
+
+                                                <li class="hide__desktop">
+                                                    <a href="" data-navid="institutional"><span>Institutional</span></a>
+                                                </li>
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div class="iah__l1__right">
+                                        <div class="iah__login_l1">
+                                            <link rel="stylesheet"
+                                                href="{% static 'csp/css/clientlibs-clientlib_ia_global_login_champion-_9f70e377798d49ec9c7a90a25b5fa070.min.css' %}"
+                                                type="text/css">
+
+                                            <a class="iah__login-link" href="{% url 'account:login' %}">
+                                                Log in
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="iah__l2 iah__l2--visible-md iah__l2--visible-sm ">
+                                <div class="iah__container">
+                                    <div class="iah__l2__main-links">
+                                        <div class="iah__login">
+                                            <a class="iah__login-link" href="{% url 'account:login' %}">
+                                                Log in
+                                            </a>
+                                            <div class="bussiness__login">
+
+                                            </div>
+                                        </div>
+                                        <div>
+
+                                            <link rel="stylesheet"
+                                                href="{% static 'csp/css/clientlibs-clientlib_ia_global_logo_champion-_9f70e377798d49ec9c7a90a25b5fa070.min.css' %}"
+                                                type="text/css">
+
+                                            <div class="iah__logo">
+                                                <a class="iah__logo-link" href="{% url 'core:home' %}"
+                                                    title="RBS International">
+                                                    <img src="{% static 'csp/images/championlogos-RBSI_Secondary_Horizontal_Stacked_RGB_NEG_NEW.svg' %}"
+                                                        alt="RBS International">
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="mobile__hamburger">
+                                            <button aria-expanded="false" aria-label="More options menu"
+                                                class="iah__menu-link menu-open">
+                                                <span class="icon-menu"></span>
+                                                <span class="opened" aria-hidden="true">Menu</span>
+                                                <span class="icon-close"></span>
+                                                <span class="closed" aria-hidden="true">Close</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="iah__l1__l2__holder">
+                                            <div class="header-top-mobile visible-xs visible-sm">
+                                                <div class="brand-logo">
+                                                    <div class="iah__logo mobile_logo">
+                                                        <a class="iah__logo-link mobile-logo-link"
+                                                            href="{% url 'core:home' %}" title="RBS International">
+
+                                                            <img src="{% static 'csp/images/championlogos-RBSI_Secondary_Horizontal_Stacked_RGB_NEG_NEW.svg' %}"
+                                                                alt="RBS International">
+
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <button aria-expanded="false" aria-label="Close menu"
+                                                class="iah__menu-link menu-open">
+                                                <span class="icon-close"></span>
+                                                <span class="closed">Close</span>
+                                            </button>
+
+
+                                            <div class="iah__l1 ">
+                                                <nav aria-label="Main Navigation">
+                                                    <ul class="ia__nav ia__navbar-nav">
+                                                        <li class="ia-active hide__mobile">
+                                                            <a href="{% url 'core:home' %}"
+                                                                data-navid="institutional banking"><span>Institutional
+                                                                    Banking</span></a>
+                                                        </li>
+
+                                                        <li class=" ">
+                                                            <a href="" data-navid="institutional"><span>Institutional
+                                                                    Banking</span></a>
+                                                        </li>
+
+                                                    </ul>
+                                                </nav>
+                                            </div>
+
+                                            <nav aria-label="Site Navigation" class="iah__nav-l2 iah__premium">
+                                                <div class="iah__product-title" data-navid="institutional banking">
+                                                    Institutional Banking</div>
+                                                <div class="iah__product-title" data-navid="institutional">Institutional
+                                                    Banking</div>
+
+                                                <!-- Menu -->
+                                                {% include 'core/includes/menu.html' %}
+
+                                            </nav>
+
+                                        </div>
+
+
+                                        <div class="loginbus">
+                                            <div class="bussiness__login bussiness__login--mobile"></div>
+                                            <div>
+                                                <div>
+                                                    <link rel="stylesheet"
+                                                        href="{% static 'csp/css/clientlibs-clientlib_ia_global_search_champion-_9f70e377798d49ec9c7a90a25b5fa070.min.css' %}"
+                                                        type="text/css">
+
+                                                    <div class="iah__search">
+
+                                                        <div class="back-to-menu visible-xs visible-sm">
+                                                            <a href="javascript:void(0)" class="back-to-menu-link">
+                                                                <span>
+                                                                    Back to main menu
+                                                                </span>
+                                                            </a>
+                                                        </div>
+
+                                                        <div class="iah-search-active">
+                                                            <a href="#" class="iah-search-title">Search</a>
+                                                        </div>
+
+                                                        <div style="" id="navbar" class="iah__search__navbar-collapse">
+                                                            <div class="iah__search__wrap">
+                                                                <div class="iah__search-title">Search</div>
+                                                                <form class="iah__search__form cf" autocomplete="off"
+                                                                    method="GET " action=""
+                                                                    role="search">
+                                                                    <div class="iah__search-area">
+                                                                        <label class="iah__search-label"
+                                                                            for="Search">Search</label>
+                                                                        <input type="text" value="" aria-label="Search"
+                                                                            class="iah__search-input" id="Search"
+                                                                            name="q">
+                                                                        <button type="submit"
+                                                                            class="iah__search_submt_btn search-desktop-icon">
+                                                                            <span
+                                                                                class="iah__search_btn-box">Search</span>
+                                                                            <span class="iah__search_focusicon"
+                                                                                aria-label="submit search"></span>
+                                                                            <img src="{% static 'csp/images/images-search_icon.svg' %}"
+                                                                                alt="Search">
+                                                                        </button>
+                                                                        <button type="submit"
+                                                                            class="iah__search_submt_btn search-mobile-icon">
+                                                                            <span
+                                                                                class="iah__search_btn-box">Search</span>
+                                                                            <span class="iah__search_focusicon"
+                                                                                aria-label="submit search"></span>
+                                                                            <img src="{% static 'csp/images/images-search_icon.svg' %}"
+                                                                                alt="Search">
+                                                                        </button>
+
+                                                                        <input type="hidden" name="brand"
+                                                                            value="RBSINTERNATIONAL_COM">
+
+                                                                        <input type="hidden" name="section"
+                                                                            value="corporate">
+
+                                                                        <input type="hidden" name="enginekey"
+                                                                            value="EysLHS_5j5sgTs1MkBwT">
+                                                                    </div>
+
+
+                                                                    <div class="iah__search__error-mess"
+                                                                        aria-label="errormessage">
+                                                                        Enter a valid search term
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <script
+                                                        src="{% static 'csp/js/clientlibs-clientlib_ia_global_search_base-_9f70e377798d49ec9c7a90a25b5fa070.min.js' %}"
+                                                        async></script>
+
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="lah__search__show">
+                                            <div class="iah__mb__search ">
+                                                <div class="iah__mb__login">
+
+                                                    <a type="button" role="button" data-target="login"
+                                                        class="iah__btn__tabs" href="{% url 'account:login' %}">
+
+                                                        <span class="iah__btn__tabs_wrap">
+                                                            <span>
+                                                                <img src="{% static 'csp/images/images-Login-white.svg' %}"
+                                                                    role="presentation" alt="">
+                                                                <span class="">Log in</span>
+
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+
+                                                <div>
+                                                    <div class="iah__search-tab">
+                                                        <button type="button" class="iah__btn__tabs"
+                                                            data-target="search">
+                                                            <span class="iah__btn__tabs_wrap">
+                                                                <span>
+                                                                    <img src="{% static 'csp/images/images-searchicon_mob.svg' %}"
+                                                                        role="presentation" alt="">
+
+                                                                    <span class="iah__search_btn-box">Search</span>
+                                                                </span>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="iah__over-lay">Overlay</div>
+                        <script
+                            src="{% static 'csp/js/clientlibs-clientlib_ia_headernavigation_base-_349e7ae5cf4eedf7a6686283641ada58.min.js' %}"
+                            async></script>
+                    </div>
+                </header>
+
+                <div>
+                    <link rel="stylesheet"
+                        href="{% static 'csp/css/clientlibs-clientlib_notification_champion-_8cb0e9906d6efb6b60c6dd8b12aa69a6.min.css' %}"
+                        type="text/css">
+                    <script
+                        src="{% static 'csp/js/clientlibs-clientlib_notification_base-_7ad603327c300d88c7efdd686a27d4b6.min.js' %}"
+                        async></script>
+
+                </div>
+
+                <main class="responsive_base" id="main-content-wrapper">
+                    <div id="breadrumb">
+                        <link rel="stylesheet"
+                            href="{% static 'csp/css/clientlibs-clientlib_breadcrumb_champion-_9f70e377798d49ec9c7a90a25b5fa070.min.css' %}"
+                            type="text/css">
+
+                        <section class="container-fluid comp-breadcrumb">
+                            <div class="container">
+                                <div class="row ">
+                                    <div class="col-xs-12">
+                                        <div class="breadcrumb scrolling-text">
+                                            <nav class="overflow-item" aria-label="Breadcrumb">
+                                                <ul class="breadcrumb-list">
+
+                                                    <li>
+                                                        <a href="{% url 'core:home' %}"
+                                                            title="Institutional Banking"><span>Institutional
+                                                                Banking</span></a>
+                                                        <span class="breadcrumb-arrow"></span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="" title="Sector Expertise"><span>Sector
+                                                                Expertise</span></a>
+                                                        <span class="breadcrumb-arrow"></span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0)" tabindex="-1"
+                                                            title="Corporate Service Providers" class="currentlink"
+                                                            aria-current="page">Corporate Service Providers</a>
+                                                    </li>
+                                                    <li class="collapsed-items">
+                                                        <a class="bredcrumb-dropdown" href="javascript:void(0)"
+                                                            aria-expanded="false">
+                                                            &nbsp;.&nbsp;.&nbsp;.&nbsp;
+                                                        </a>
+                                                        <span class="breadcrumb-arrow"></span>
+                                                        <div class="dropdown-items"></div>
+                                                    </li>
+
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <script
+                            src="{% static 'csp/js/clientlibs-clientlib_breadcrumb_dtm-_8aaaa0960558a90ac1a050d2cbbaac42.min.js' %}"
+                            defer></script>
+                        <script
+                            src="{% static 'csp/js/clientlibs-clientlib_breadcrumb-_8aaaa0960558a90ac1a050d2cbbaac42.min.js' %}"
+                            defer></script>
+
+                    </div>
+
+
+
+
+
+
+                    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                        <section class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
+                            <div id="container-f2175a85ec" class="cmp-container">
+
+                                <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                    <div class="herobanner aem-GridColumn aem-GridColumn--default--12">
+                                        <!-- premier background colors-->
+                                        <!-- non-premier background colors-->
+
+                                        <section class="hero-banner shelf-container  championPurple"
+                                            data-shelf-name="Hero Banner (Editable)">
+
+                                            <link rel="stylesheet"
+                                                href="{% static 'csp/css/clientlibs-clientlib_herobanner_champion-_e68696e7cf252cf0c0d4c506e3bb4994.min.css' %}"
+                                                type="text/css">
+
+
+
+                                            <div class="herobanner__imagewrapper herobanner__illust  ">
+                                                <div class="herobanner__imagecontainer ">
+
+                                                    <div class="herobanner__image-content hero-wrapper-dmm ">
+                                                        <div class="inner-grid short_hero  photographic_hero ">
+
+                                                            <div class="photographic_div">
+                                                                <div class="image">
+                                                                    <script
+                                                                        src="{% static 'csp/js/clientlibs-clientlib_global_image_base-_d50122aa25f15e46d6102870b4c20749.min.js' %}"
+                                                                        defer></script>
+
+                                                                    <div data-cmp-is="image"
+                                                                        data-cmp-widths="360,480,667,768,992,1024,1255"
+                                                                        data-cmp-src="{% static 'csp/images/1716559643909-photo-web-bus-hero-two-colleagues-walking-thorugh-storage-room-holding-cardboard-box-and-looking-at-digital-tablet-1920x960.jpeg' %}"
+                                                                        data-asset-id="477b0f29-97bd-4d36-af81-8d376c672736"
+                                                                        id="image-5e57977d69"
+                                                                        data-cmp-hook-image="imageV3"
+                                                                        class="comp-img-generic jpeg cmp-image"
+                                                                        itemscope
+                                                                        itemtype="http://schema.org/ImageObject">
+                                                                        <img src="{% static 'csp/images/1716559643909-photo-web-bus-hero-two-colleagues-walking-thorugh-storage-room-holding-cardboard-box-and-looking-at-digital-tablet-1920x960.jpeg' %}"
+                                                                            srcset="{% static 'csp/images/1716559643909-photo-web-bus-hero-two-colleagues-walking-thorugh-storage-room-holding-cardboard-box-and-looking-at-digital-tablet-1920x960.jpeg' %}"
+                                                                            loading="lazy" class="image-wrap"
+                                                                            itemprop="contentUrl" width="1920"
+                                                                            height="960"
+                                                                            sizes="(min-width:1024px) 667px, (min-width:993px) 480px, (min-width:768px) 480px, (min-width:668px) 480px, (min-width:481px) 480px"
+                                                                            alt>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="content-wrapper photographic_layout    ">
+                                                                <div class="title-wrapper">
+
+                                                                    <div class="credit_card_title ">
+                                                                        <span class="text-comp">Tailored solutions to
+                                                                            fit your needs</span>
+                                                                    </div>
+
+                                                                    <div class="header_one--title">
+                                                                        <div class="title">
+
+                                                                            <link rel="stylesheet"
+                                                                                href="{% static 'csp/css/clientlibs-clientlib_title-_8aaaa0960558a90ac1a050d2cbbaac42.min.css' %}"
+                                                                                type="text/css">
+
+                                                                            <div class="cmp-title title">
+
+                                                                                <h1
+                                                                                    class="title-comp  h1 cmp-title__text title_underline ">
+                                                                                </h1>
+                                                                                <p>Corporate Service Providers</p>
+
+                                                                            </div>
+
+
+                                                                            <script
+                                                                                src="{% static 'csp/js/clientlibs-clientlib_title_base-_1de43f954463f8fa5dd6a63c9251c3ae.min.js' %}"
+                                                                                defer></script>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="cta-wrapper"></div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+                                            <script
+                                                src="{% static 'csp/js/clientlibs-clientlib_herobanner_base-_3b063b269c93cb6a989f50ab3f7050ee.min.js' %}"
+                                                defer></script>
+
+                                        </section>
+
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </section>
+
+                        <section class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+                            <div id="container-cf949a2c5e" class="cmp-container">
+
+                                <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                    <div
+                                        class="inpagenavigation cmp-layout-container--fixed aem-GridColumn aem-GridColumn--default--12">
+
+                                        <!-- premier background colors-->
+
+                                        <div class="inpagenav-main-wrapper shelf-container"
+                                            data-shelf-name="On Page Navigation (Editable)">
+                                            <div class="in-page-nav ">
+                                                <div class="shelf-wrapper">
+                                                    <link rel="stylesheet"
+                                                        href="{% static 'csp/css/clientlibs-clientlib_inpagenavigation_champion_editable-_8aaaa0960558a90ac1a050d2cbbaac42.min.css' %}"
+                                                        type="text/css">
+
+                                                    <div class="pagenav-wrapper">
+
+                                                        <div
+                                                            class="aem-Grid aem-Grid--12 aem-Grid--default--12 tableRow">
+                                                            <div
+                                                                class="aem-GridColumn aem-GridColumn--lg--8 aem-GridColumn--sm--12 aem-GridColumn--md--7 aem-GridColumn--default--9 vcenter">
+                                                                <div
+                                                                    class="title-wrapper aem-Grid aem-Grid--12 aem-Grid--default--12">
+                                                                    <div class="text">
+                                                                        <link rel="stylesheet"
+                                                                            href="{% static 'csp/css/clientlibs-clientlib_text_champion-_8aaaa0960558a90ac1a050d2cbbaac42.min.css' %}"
+                                                                            type="text/css">
+
+                                                                        <script
+                                                                            src="{% static 'csp/js/clientlibs-clientlib_rtedynamicnumber_base-_7ad603327c300d88c7efdd686a27d4b6.min.js' %}"
+                                                                            defer></script>
+                                                                        <div id="text-538d37f819"
+                                                                            class="cmp-text tooltip_text comp-rich-text ">
+                                                                            <p>On this page</p>
+                                                                        </div>
+
+                                                                        <script
+                                                                            src="{% static 'csp/js/clientlibs-clientlib_text_base_dtm-_d50122aa25f15e46d6102870b4c20749.min.js' %}"
+                                                                            defer></script>
+                                                                        <script
+                                                                            src="{% static 'csp/js/clientlibs-clientlib_text_base-_349e7ae5cf4eedf7a6686283641ada58.min.js' %}"
+                                                                            defer></script>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div
+                                                                    class="aem-Grid aem-Grid--12 aem-Grid--default--12 in-page-nav-links">
+                                                                    <div
+                                                                        class="aem-GridColumn--default--4  aem-GridColumn aem-GridColumn--sm--12 aem-GridColumn--lg--6 aem-GridColumn--md--6 aem-GridColumn--xs--12">
+                                                                        <div class="cta button cta-tertiary">
+                                                                            <link rel="stylesheet"
+                                                                                href="{% static 'csp/css/clientlibs-clientlib_cta_champion-_83fcaf140e17653765eaf3d204000e03.min.css' %}"
+                                                                                type="text/css">
+                                                                            <a type="button" id="button-25086d03ce"
+                                                                                class="cta-button"
+                                                                                aria-label="Our proposition"
+                                                                                data-disable-blank="false"
+                                                                                title="Our proposition"
+                                                                                href="#our-proposition" target="_self">
+                                                                                <span class="cta-text">Our
+                                                                                    proposition</span>
+                                                                                <span class="new-tab-icon"> Open in new
+                                                                                    window</span>
+                                                                            </a>
+
+                                                                            <script
+                                                                                src="{% static 'csp/js/clientlibs-clientlib_cta_base_dtm-_d50122aa25f15e46d6102870b4c20749.min.js' %}"
+                                                                                defer></script>
+                                                                            <script
+                                                                                src="{% static 'csp/js/clientlibs-clientlib_cta_base-_fe98640fa2e72d9f3e4e5eae26fdf004.min.js' %}"
+                                                                                defer></script>
+
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div
+                                                                        class="aem-GridColumn--default--4  aem-GridColumn aem-GridColumn--sm--12 aem-GridColumn--lg--6 aem-GridColumn--md--6 aem-GridColumn--xs--12">
+                                                                        <div class="cta button cta-tertiary">
+
+                                                                            <a type="button" id="button-520bd6f861"
+                                                                                class="cta-button"
+                                                                                aria-label="Our solutions"
+                                                                                data-disable-blank="false"
+                                                                                title="Our solutions"
+                                                                                href="#our-solutions" target="_self">
+                                                                                <span class="cta-text">Our
+                                                                                    solutions</span>
+                                                                                <span class="new-tab-icon"> Open in new
+                                                                                    window</span>
+                                                                            </a>
+
+                                                                        </div>
+
+                                                                    </div>
+
+
+                                                                    <div class="clearfix visible-md"></div>
+
+                                                                    <div class="clearfix visible-sm"></div>
+
+                                                                    <div
+                                                                        class="aem-GridColumn--default--4  aem-GridColumn aem-GridColumn--sm--12 aem-GridColumn--lg--6 aem-GridColumn--md--6 aem-GridColumn--xs--12">
+                                                                        <div class="cta button cta-tertiary">
+
+                                                                            <a type="button" id="button-c06413713b"
+                                                                                class="cta-button"
+                                                                                data-disable-blank="false"
+                                                                                title="Read our latest insights"
+                                                                                href="#corporate-services-insights"
+                                                                                target="_self">
+                                                                                <span class="cta-text">Read our latest
+                                                                                    insights</span>
+                                                                                <span class="new-tab-icon"> Open in new
+                                                                                    window</span>
+                                                                            </a>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="clearfix visible-lg"></div>
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div
+                                                                class="aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--lg--4 aem-GridColumn--md--5 aem-GridColumn--sm--12 vcenter">
+                                                                <div
+                                                                    class="aem-Grid aem-Grid--12 aem-Grid--default--12 navCta">
+                                                                    <div class="cta-wrapper">
+                                                                        <div class="cta button cta-primary">
+
+                                                                            <a type="button" id="button-f3f788aac1"
+                                                                                class="cta-button"
+                                                                                aria-label="Key contacts"
+                                                                                data-disable-blank="false"
+                                                                                title="Key contacts"
+                                                                                href="#key-contacts" target="_self">
+                                                                                <span class="cta-text">Key
+                                                                                    contacts</span>
+                                                                                <span class="new-tab-icon"> Open in new
+                                                                                    window</span>
+                                                                            </a>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <script
+                                                        src="{% static 'csp/js/clientlibs-clientlib_inpagenavigation_base-_1de43f954463f8fa5dd6a63c9251c3ae.min.js' %}"
+                                                        defer></script>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </section>
+
+
+                        <section class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
+                            <div id="container-6c51806d43" class="cmp-container">
+
+                                <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                    <div
+                                        class="singlearticle theme-white img-right cmp-layout-container--fixed aem-GridColumn aem-GridColumn--default--12">
+                                        <div class="singlearticle shelf-container">
+
+                                            <link rel="stylesheet"
+                                                href="{% static 'csp/css/clientlibs-clientlib_singlearticle_champion_editable-_8aaaa0960558a90ac1a050d2cbbaac42.min.css' %}"
+                                                type="text/css">
+
+                                            <div id="our-proposition"
+                                                class="single-article-shelf  hideDesktopMobileImage       fifty-fifty  "
+                                                data-shelf-name="Single Article (Editable)">
+                                                <div class="shelf-wrapper ">
+                                                    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12      ">
+
+                                                        <div
+                                                            class="aem-GridColumn--sm--12 aem-GridColumn aem-GridColumn--md--12 aem-GridColumn--lg--12 aem-GridColumn--default--12   ">
+
+                                                            <div class="title-wrapper">
+
+                                                                <div class="title custom">
+
+                                                                    <div class="cmp-title title">
+
+                                                                        <h2 class="title-comp  h2 cmp-title__text  ">
+                                                                            Your one stop-shop solution</h2>
+
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                            </div>
+                                                            <div class="rte-wrapper">
+                                                                <div class="text">
+
+                                                                    <div id="text-c3908b647d"
+                                                                        class="cmp-text tooltip_text comp-rich-text ">
+                                                                        <p>From fund administrators, to wealth managers,
+                                                                            to insurers, our dedicated, knowledgeable,
+                                                                            locally-based relationship management teams
+                                                                            work in partnership with you,&nbsp;helping
+                                                                            with everything from strategic input to
+                                                                            operational requirements. This collaboration
+                                                                            is enhanced by a joined up approach that
+                                                                            provides access to the specialist knowledge
+                                                                            of our colleagues and partners across the
+                                                                            wider bank network.</p>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="cta-wrapper">
+                                                                <div class="cta button cta-tertiary">
+
+                                                                    <a type="button" id="button-617ab94a1c"
+                                                                        class="cta-button"
+                                                                        aria-label="View our solutions"
+                                                                        data-disable-blank="false"
+                                                                        title="View our solutions" href="#our-solutions"
+                                                                        target="_self">
+                                                                        <span class="cta-text">View our solutions</span>
+                                                                        <span class="new-tab-icon"> Open in new
+                                                                            window</span>
+                                                                    </a>
+
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <script
+                                                src="{% static 'csp/js/clientlibs-clientlib_singlearticle_base-_d50122aa25f15e46d6102870b4c20749.min.js' %}"
+                                                defer></script>
+
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+
+                        </section>
+
+
+                        <section class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
+                            <div id="container-644da2d659" class="cmp-container">
+
+                                <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                                    <div
+                                        class="productlistingsingle theme-white cmp-layout-container--fixed aem-GridColumn aem-GridColumn--default--12">
+                                        <section class="productlistingsingle shelf-container">
+
+                                            <link rel="stylesheet"
+                                                href="{% static 'csp/css/clientlibs-clientlib_productlistingsingle-shelf_champion-_83fcaf140e17653765eaf3d204000e03.min.css' %}"
+                                                type="text/css">
+
+                                            <div id="our-solutions"
+                                                class="productcomp-single-shelf   complianceOff flt__shlf"
+                                                data-shelf-name="Single Listing Card (Editable)">
+                                                <div class="  hideShelfInfo ">
+                                                    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+                                                        <div
+                                                            class="aem-GridColumn aem-GridColumn--sm--12 aem-GridColumn--md--12 aem-GridColumn--lg--12 aem-GridColumn--default--12">
+                                                            <div class="shelf-titleWrapper">
+                                                                <div class="title custom">
+                                                                    <div class="cmp-title title">
+
+                                                                        <h2 class="title-comp  h2 cmp-title__text  ">
+                                                                            Tailored to your needs</h2>
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+                                                        <div
+                                                            class="aem-GridColumn aem-GridColumn--sm--12 aem-GridColumn--md--12 aem-GridColumn--lg--12 aem-GridColumn--default--11">
+                                                            <div class="shelf-textWrapper">
+                                                                <div class="text">
+                                                                    <div id="text-20f7c8ffaa"
+                                                                        class="cmp-text tooltip_text comp-rich-text ">
+                                                                        <p>We&rsquo;ll match you with a relationship
+                                                                            director who&rsquo;ll be your single point
+                                                                            of contact for anything you need from us.
+                                                                            You'll get timely decisions from a trusted
+                                                                            partner and they&rsquo;ll act as a financial
+                                                                            sounding board bringing you ideas to
+                                                                            generate more business and returns for your
+                                                                            clients and investors.</p>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+                                                <div class="product-comp single-bgcolor">
+                                                    <div class="product">
+                                                        <link rel="stylesheet"
+                                                            href="{% static 'csp/css/clientlibs-clientlib_product_champion-_2fa3e43c71271aeb7e00075d1a1153a0.min.css' %}"
+                                                            type="text/css">
+
+                                                        <div
+                                                            class="aem-Grid aem-Grid--12 aem-Grid--default--12 aligncta">
+                                                            <div
+                                                                class="aem-GridColumn aem-GridColumn--sm--12 aem-GridColumn--md--4 aem-GridColumn--lg--4 aem-GridColumn--default--4 single-img multi-img        ">
+                                                                <div class="image-wrapper">
+                                                                    <div class="image">
+                                                                        <div data-cmp-is="image"
+                                                                            data-cmp-widths="360,480,667,768,992,1024,1255"
+                                                                            data-cmp-src="{% static 'csp/images/1685436060773-two-women-office-workers-article-res-rbsi.jpeg' %}"
+                                                                            id="image-e27495017d"
+                                                                            data-cmp-hook-image="imageV3"
+                                                                            class="comp-img-generic jpeg cmp-image"
+                                                                            itemscope
+                                                                            itemtype="http://schema.org/ImageObject">
+
+                                                                            <img src="{% static 'csp/images/1685436060773-two-women-office-workers-article-res-rbsi.jpeg' %}"
+                                                                                srcset="{% static 'csp/images/1685436060773-two-women-office-workers-article-res-rbsi.jpeg' %}"
+                                                                                loading="lazy" class="image-wrap"
+                                                                                itemprop="contentUrl" width="849"
+                                                                                height="472"
+                                                                                sizes="(min-width:1024px) 667px, (min-width:993px) 480px, (min-width:768px) 480px, (min-width:668px) 480px, (min-width:481px) 480px"
+                                                                                alt>
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="aem-GridColumn aem-GridColumn--sm--12 aem-GridColumn--md--8 aem-GridColumn--lg--8 aem-GridColumn--default--8 single-content multi-content flt__item "
+                                                                data-keywords="com.responsive.services.filtersort.models.ProductFilterModel@3089b200">
+
+                                                                <div class="title-wrapper">
+                                                                    <div class="title custom">
+
+                                                                        <div class="cmp-title title">
+                                                                            <h3
+                                                                                class="title-comp  h3 cmp-title__text  ">
+                                                                                Our solutions</h3>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="text-wrapper">
+                                                                    <div class="h4">
+                                                                        <div class="text">
+
+                                                                            <div id="text-ee65e572b9"
+                                                                                class="cmp-text tooltip_text comp-rich-text ">
+
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="rte-wrapper">
+                                                                    <div class="text">
+                                                                        <div id="text-29f95e8b74"
+                                                                            class="cmp-text tooltip_text comp-rich-text ">
+                                                                            <ul>
+                                                                                <li>Banking</li>
+                                                                                <li>Financing</li>
+                                                                                <li>Depositary Services</li>
+                                                                                <li>Foreign Exchange (FX)</li>
+                                                                                <li>Interest Rate and Liquidity Risk
+                                                                                    Management</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                                <div class="singlelisting__compliance">
+                                                                    <div class="shelf-textarea">
+                                                                        <div class="compliance">
+                                                                            <link rel="stylesheet"
+                                                                                href="{% static 'csp/css/clientlibs-clientlib_compliance_champion-_fe98640fa2e72d9f3e4e5eae26fdf004.min.css' %}"
+                                                                                type="text/css">
+
+
+                                                                            <div class="compliance_wrapper">
+                                                                                <div class="compliance_icon_wrapper">
+                                                                                    <span
+                                                                                        class="compliance_icon"></span>
+                                                                                    <span class="sr-only">Information
+                                                                                        Message</span>
+                                                                                </div>
+                                                                                <div class="compliance-text">
+                                                                                    <div class="text">
+                                                                                        <div id="text-2db1a31551"
+                                                                                            class="cmp-text tooltip_text comp-rich-text ">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="cta-wrapper">
+                                                                    <div class="cta button cta-tertiary">
+                                                                        <a id="button-927d2c8a60" class="cta-button"
+                                                                            aria-label="More about our solutions"
+                                                                            data-disable-blank="false"
+                                                                            title="More about our solutions"
+                                                                            href="{% url 'core:why_rbs' %}" target="_self">
+                                                                            <span class="cta-text">More about our
+                                                                                solutions</span>
+                                                                            <span class="new-tab-icon"> Open in new
+                                                                                window</span>
+                                                                        </a>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+
+
+                        <section class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
+                            <div id="container-c920ee9011" class="cmp-container">
+
+                                <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+
+                                    <div
+                                        class="linkcardwithpromo theme-grey cmp-layout-container--fixed aem-GridColumn aem-GridColumn--default--12">
+
+                                        <section id="key-contacts" class="shelf-container acclink-promo"
+                                            data-shelf-name="Link/Accordion Card Shelf(Editable)">
+
+                                            <link rel="stylesheet"
+                                                href="{% static 'csp/css/clientlibs-clientlib_linkcardpromo_editable_champion-_3b063b269c93cb6a989f50ab3f7050ee.min.css' %}"
+                                                type="text/css">
+                                            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+                                                <div
+                                                    class="aem-GridColumn aem-GridColumn--default--10 aem-GridColumn--lg--12 aem-GridColumn--md--12 aem-GridColumn--sm--12">
+                                                    <div class="acclink-promo_title">
+                                                        <div class="title custom">
+
+                                                            <div class="cmp-title title">
+
+                                                                <h2 class="title-comp  h2 cmp-title__text  ">Get in
+                                                                    touch to find out more</h2>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="acclink-promo_text">
+                                                        <div class="text">
+                                                            <div id="text-255334c237"
+                                                                class="cmp-text tooltip_text comp-rich-text ">
+                                                                <p>To speak to one of the team, please call:</p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div
+                                                    class="linkpromo_compliance aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--lg--12 aem-GridColumn--md--12 aem-GridColumn--sm--12">
+                                                    <div class="compliance_wrapper">
+                                                        <div class="compliance_icon_wrapper">
+                                                            <span class="compliance_icon"></span>
+                                                            <span class="sr-only">Information Message</span>
+                                                        </div>
+                                                        <div class="compliance-text">
+                                                            <div class="text">
+                                                                <div id="text-2dee4d6034"
+                                                                    class="cmp-text tooltip_text comp-rich-text ">
+                                                                    <p>Calls may be recorded</p>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div
+                                                    class="acclink-wrapper accordion-wrap aem-Grid aem-Grid--12 aem-Grid--default--12">
+
+                                                    <div
+                                                        class="aem-GridColumn aem-GridColumn--default--9  aem-GridColumn--lg--10 aem-GridColumn--md--12 aem-GridColumn--sm--12 positionSelect ">
+                                                        <div class="acclink-promo__list-card one">
+                                                            <div class="linkscard">
+
+
+                                                                <div class="list-card__title">
+                                                                    <div class="cmp-title title">
+                                                                        <h4
+                                                                            class="title-comp  h4 cmp-title__text title_underline ">
+                                                                            Choose your location</h4>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="link-card__accordion-cta">
+                                                                    <div class="link-card_acc-cta accordion-card">
+
+                                                                        <div class="accordion-wrap">
+                                                                            <div class="link-card__accordion">
+                                                                                <script
+                                                                                    src="{% static 'csp/js/clientlibs-clientlib_editable_linkdetail_accordion_base-_8aaaa0960558a90ac1a050d2cbbaac42.min.js' %}"
+                                                                                    defer></script>
+                                                                                <link rel="stylesheet"
+                                                                                    href="{% static 'csp/css/clientlibs-clientlib_editable_linkdetail_accordion_champion-_349e7ae5cf4eedf7a6686283641ada58.min.css' %}"
+                                                                                    type="text/css">
+
+                                                                                <div class="card-accordion">
+                                                                                    <div class="product-acr-header">
+                                                                                        <div class="acc-header">
+                                                                                            <a href="javascript:void(0)"
+                                                                                                role="button"
+                                                                                                aria-expanded="false">
+
+                                                                                                <span
+                                                                                                    class="acordion-crossicon"></span>
+                                                                                                <span
+                                                                                                    class="acordion-header-icon"><span
+                                                                                                        class="animated_underline">Jersey</span></span>
+
+                                                                                            </a>
+
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="acc-content"
+                                                                                        aria-hidden="true">
+                                                                                        <div
+                                                                                            class="product-acr-container">
+                                                                                            <div
+                                                                                                class="product-acr-content-animation">
+                                                                                                <div
+                                                                                                    class="closeBtn text-right">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="composite-comp-wrapper">
+                                                                                                    <div
+                                                                                                        class="composite-comp-block">
+                                                                                                        <div
+                                                                                                            class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+
+                                                                                                            <div
+                                                                                                                class="aem-GridColumn aem-GridColumn--sm--12  aem-GridColumn--md--9 aem-GridColumn--lg--9 aem-GridColumn--default--9 accordian-content-wrapper">
+                                                                                                                <div
+                                                                                                                    class="text-wapper">
+                                                                                                                    <div
+                                                                                                                        class="text">
+                                                                                                                        <div id="text-685ef9f85a"
+                                                                                                                            class="cmp-text tooltip_text comp-rich-text ">
+
+                                                                                                                            <p>
+                                                                                                                                <b>Paul
+                                                                                                                                    Rogan</b><br>
+                                                                                                                                Director<br>
+                                                                                                                                Tel:
+                                                                                                                                <span
+                                                                                                                                    class="rte-click-to-call">+44
+                                                                                                                                    (0)1534
+                                                                                                                                    285440</span><br>
+                                                                                                                                Email:
+                                                                                                                                <a
+                                                                                                                                    href="mailto:paul.rogan@rbsint.com">paul.rogan@rbsint.com</a><br>
+                                                                                                                                <br>
+                                                                                                                                <b>Paul
+                                                                                                                                    Tandy</b><br>
+                                                                                                                                Director<br>
+                                                                                                                                Tel:
+                                                                                                                                <span
+                                                                                                                                    class="rte-click-to-call">+44
+                                                                                                                                    (0)1534
+                                                                                                                                    285341</span><br>
+                                                                                                                                Email:
+                                                                                                                                <a
+                                                                                                                                    href="mailto:%20paul.tandy@rbsint.com">paul.tandy@rbsint.com</a>
+                                                                                                                            </p>
+
+                                                                                                                        </div>
+                                                                                                                    </div>
+
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="link-card_acc-cta accordion-card">
+
+                                                                        <div class="accordion-wrap">
+                                                                            <div class="link-card__accordion">
+
+
+                                                                                <div class="card-accordion">
+                                                                                    <div class="product-acr-header">
+                                                                                        <div class="acc-header">
+                                                                                            <a href="javascript:void(0)"
+                                                                                                role="button"
+                                                                                                aria-expanded="false">
+
+                                                                                                <span
+                                                                                                    class="acordion-crossicon"></span>
+                                                                                                <span
+                                                                                                    class="acordion-header-icon"><span
+                                                                                                        class="animated_underline">Isle
+                                                                                                        of
+                                                                                                        Man</span></span>
+
+                                                                                            </a>
+
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="acc-content"
+                                                                                        aria-hidden="true">
+                                                                                        <div
+                                                                                            class="product-acr-container">
+                                                                                            <div
+                                                                                                class="product-acr-content-animation">
+                                                                                                <div
+                                                                                                    class="closeBtn text-right">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="composite-comp-wrapper">
+                                                                                                    <div
+                                                                                                        class="composite-comp-block">
+                                                                                                        <div
+                                                                                                            class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+
+                                                                                                            <div
+                                                                                                                class="aem-GridColumn aem-GridColumn--sm--12  aem-GridColumn--md--9 aem-GridColumn--lg--9 aem-GridColumn--default--9 accordian-content-wrapper">
+                                                                                                                <div
+                                                                                                                    class="text-wapper">
+                                                                                                                    <div
+                                                                                                                        class="text">
+
+                                                                                                                        <div id="text-0c87862520"
+                                                                                                                            class="cmp-text tooltip_text comp-rich-text ">
+                                                                                                                            <p>
+                                                                                                                                <b>Stuart
+                                                                                                                                    Watson</b><br>
+                                                                                                                                Senior
+                                                                                                                                Director<br>
+                                                                                                                                Tel:<b>
+                                                                                                                                </b><span
+                                                                                                                                    class="rte-click-to-call">+44
+                                                                                                                                    (0)1624
+                                                                                                                                    637440</span><br>
+                                                                                                                                Email:
+                                                                                                                                <a
+                                                                                                                                    href="mailto:stuart.watson@rbsint.com">stuart.watson@rbsint.com</a>
+                                                                                                                            </p>
+
+                                                                                                                        </div>
+
+                                                                                                                    </div>
+
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+
+                                                                    <div class="link-card_acc-cta accordion-card">
+
+                                                                        <div class="accordion-wrap">
+                                                                            <div class="link-card__accordion">
+
+                                                                                <div class="card-accordion">
+                                                                                    <div class="product-acr-header">
+                                                                                        <div class="acc-header">
+                                                                                            <a href="javascript:void(0)"
+                                                                                                role="button"
+                                                                                                aria-expanded="false">
+
+                                                                                                <span
+                                                                                                    class="acordion-crossicon"></span>
+                                                                                                <span
+                                                                                                    class="acordion-header-icon"><span
+                                                                                                        class="animated_underline">Luxembourg</span></span>
+
+                                                                                            </a>
+
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="acc-content"
+                                                                                        aria-hidden="true">
+                                                                                        <div
+                                                                                            class="product-acr-container">
+                                                                                            <div
+                                                                                                class="product-acr-content-animation">
+                                                                                                <div
+                                                                                                    class="closeBtn text-right">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="composite-comp-wrapper">
+                                                                                                    <div
+                                                                                                        class="composite-comp-block">
+                                                                                                        <div
+                                                                                                            class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+
+                                                                                                            <div
+                                                                                                                class="aem-GridColumn aem-GridColumn--sm--12  aem-GridColumn--md--9 aem-GridColumn--lg--9 aem-GridColumn--default--9 accordian-content-wrapper">
+                                                                                                                <div
+                                                                                                                    class="text-wapper">
+                                                                                                                    <div
+                                                                                                                        class="text">
+
+                                                                                                                        <div id="text-98ccf08a0f"
+                                                                                                                            class="cmp-text tooltip_text comp-rich-text ">
+
+                                                                                                                            <p>
+                                                                                                                                <b>Christine
+                                                                                                                                    Jacquemart</b><span
+                                                                                                                                    class="subheader"><br>
+                                                                                                                                </span>Director<span
+                                                                                                                                    class="subheader"><br>
+                                                                                                                                </span>Tel:&nbsp;<span
+                                                                                                                                    class="rte-click-to-call">+352
+                                                                                                                                    621
+                                                                                                                                    223
+                                                                                                                                    384</span><b><br>
+                                                                                                                                </b>Email:
+                                                                                                                                <a
+                                                                                                                                    href="mailto:christine.jacquemart@rbsint.com">christine.jacquemart@rbsint.com</a>
+                                                                                                                            </p>
+
+                                                                                                                        </div>
+                                                                                                                    </div>
+
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+
+                                                                    <div class="link-card_acc-cta accordion-card">
+
+                                                                        <div class="accordion-wrap">
+                                                                            <div class="link-card__accordion">
+
+
+                                                                                <div class="card-accordion">
+                                                                                    <div class="product-acr-header">
+                                                                                        <div class="acc-header">
+                                                                                            <a href="javascript:void(0)"
+                                                                                                role="button"
+                                                                                                aria-expanded="false">
+
+                                                                                                <span
+                                                                                                    class="acordion-crossicon"></span>
+                                                                                                <span
+                                                                                                    class="acordion-header-icon"><span
+                                                                                                        class="animated_underline">Guernsey</span></span>
+
+                                                                                            </a>
+
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="acc-content"
+                                                                                        aria-hidden="true">
+                                                                                        <div
+                                                                                            class="product-acr-container">
+                                                                                            <div
+                                                                                                class="product-acr-content-animation">
+                                                                                                <div
+                                                                                                    class="closeBtn text-right">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="composite-comp-wrapper">
+                                                                                                    <div
+                                                                                                        class="composite-comp-block">
+                                                                                                        <div
+                                                                                                            class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+
+                                                                                                            <div
+                                                                                                                class="aem-GridColumn aem-GridColumn--sm--12  aem-GridColumn--md--9 aem-GridColumn--lg--9 aem-GridColumn--default--9 accordian-content-wrapper">
+                                                                                                                <div
+                                                                                                                    class="text-wapper">
+                                                                                                                    <div
+                                                                                                                        class="text">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                        <div id="text-c559709a67"
+                                                                                                                            class="cmp-text tooltip_text comp-rich-text ">
+
+                                                                                                                            <p><b>Peter
+                                                                                                                                    Fernandez</b><br>
+                                                                                                                                Director<br>
+                                                                                                                                Tel:
+                                                                                                                                <span
+                                                                                                                                    class="rte-click-to-call">+44
+                                                                                                                                    (0)
+                                                                                                                                    1481
+                                                                                                                                    706
+                                                                                                                                    631</span><br>
+                                                                                                                                Email:
+                                                                                                                                <a
+                                                                                                                                    href="mailto:%20%20peter.fernandez@rbsint.com">peter.fernandez@rbsint.com</a>
+                                                                                                                            </p>
+
+                                                                                                                        </div>
+
+
+
+
+
+
+
+
+                                                                                                                    </div>
+
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="link-card_acc-cta accordion-card">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                        <div class="accordion-wrap">
+                                                                            <div class="link-card__accordion">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                <div class="card-accordion">
+                                                                                    <div class="product-acr-header">
+                                                                                        <div class="acc-header">
+                                                                                            <a href="javascript:void(0)"
+                                                                                                role="button"
+                                                                                                aria-expanded="false">
+
+                                                                                                <span
+                                                                                                    class="acordion-crossicon"></span>
+                                                                                                <span
+                                                                                                    class="acordion-header-icon"><span
+                                                                                                        class="animated_underline">Gibraltar</span></span>
+
+                                                                                            </a>
+
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="acc-content"
+                                                                                        aria-hidden="true">
+                                                                                        <div
+                                                                                            class="product-acr-container">
+                                                                                            <div
+                                                                                                class="product-acr-content-animation">
+                                                                                                <div
+                                                                                                    class="closeBtn text-right">
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="composite-comp-wrapper">
+                                                                                                    <div
+                                                                                                        class="composite-comp-block">
+                                                                                                        <div
+                                                                                                            class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+
+                                                                                                            <div
+                                                                                                                class="aem-GridColumn aem-GridColumn--sm--12  aem-GridColumn--md--9 aem-GridColumn--lg--9 aem-GridColumn--default--9 accordian-content-wrapper">
+                                                                                                                <div
+                                                                                                                    class="text-wapper">
+                                                                                                                    <div
+                                                                                                                        class="text">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                        <div id="text-b2eec0461a"
+                                                                                                                            class="cmp-text tooltip_text comp-rich-text ">
+
+                                                                                                                            <p><b>Gareth
+                                                                                                                                    Cross</b><br>
+                                                                                                                                Senior
+                                                                                                                                Director<br>
+                                                                                                                                Tel:
+                                                                                                                                <span
+                                                                                                                                    class="rte-click-to-call">+350
+                                                                                                                                    200
+                                                                                                                                    144
+                                                                                                                                    12</span><br>
+                                                                                                                                Email:
+                                                                                                                                <a
+                                                                                                                                    href="mailto:%20gareth.cross@natwestint.com">gareth.cross@natwestint.com</a>
+                                                                                                                            </p>
+
+                                                                                                                        </div>
+
+
+
+
+
+
+
+
+                                                                                                                    </div>
+
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+
+
+
+
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+
+                        <link rel="stylesheet"
+                            href="{% static 'csp/css/clientlibs-clientlib_automatedlistshelf_champion-_0b630974eed76fcb47715a27083b4f7f.min.css' %}"
+                            type="text/css">
+
+
+
+                        <section id="corporate-services-insights"
+                            class="automated-listShelf theme--white shelf-margin-automatedlist-shelf"
+                            data-shelf-name="Automated List Shelf">
+                            <div class="shelf__inner container-fluid">
+
+                                <link rel="stylesheet"
+                                    href="{% static 'csp/css/clientlibs-clientlib_automatedlist_champion-_8cb0e9906d6efb6b60c6dd8b12aa69a6.min.css' %}"
+                                    type="text/css">
+
+                                <div class="automated-list-wrap">
+                                    <input type="hidden" id="clientlib-imgpath"
+                                        value="/etc.clientlibs/responsive/components/foundation/automatedlist/clientlibs/clientlib_automatedlist_champion/resources/images/dummyimage.png">
+                                    <input type="hidden" id="image-required" value="true">
+                                    <input type="hidden" id="date-required" value="true">
+                                    <input type="hidden" id="desc-required" value="true">
+                                    <input type="hidden" id="tag-required" value="true">
+                                    <input type="hidden" id="comp-path"
+                                        value="/content/rbsinternational_com/en_uk/institutional-banking/sectors/corporate-services/jcr:content/root/responsivegrid/automatedlistshelf_c/shelveautomated/">
+                                    <input type="hidden" id="search-in-path"
+                                        value="/content/rbsinternational_com/en_uk/institutional-banking/insights.html">
+
+
+                                    <div class="container">
+                                        <div class="row">
+
+                                            <div class="automated-list alc-horizontal column-3">
+
+                                                <div class="automated-list__heading" tabindex="-1">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                                                        <link rel="stylesheet"
+                                                            href="{% static 'csp/css/clientlibs-clientlib_title-_8aaaa0960558a90ac1a050d2cbbaac42.min.css' %}"
+                                                            type="text/css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                        <h3 class="title-comp    ">
+
+
+
+                                                            Keeping you up-to-date with our expert insights
+
+                                                        </h3>
+
+
+
+
+                                                        <script
+                                                            src="{% static 'csp/js/clientlibs-clientlib_title_base-_1de43f954463f8fa5dd6a63c9251c3ae.min.js' %}"
+                                                            defer></script>
+
+
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="automated-list__row clearfix">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    <div
+                                                        class="automated-list__item col-xs-12 col-sm-5 col-md-4 col-lg-4">
+
+
+                                                        <div class="automated-list__image ">
+
+                                                            <div class="image-wrapper"
+                                                                data-url="/content/rbsinternational_com/en_uk/institutional-banking/insights/2025/01/is-nature-ready-to-move-in-to-the-mainstream.html">
+                                                                <div class="comp-img-generic">
+                                                                    <img class="image-wrap" role="presentation"
+                                                                        src="{% static 'csp/images/hero-forest-cut-out-arrow-target-board.png' %}">
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+
+
+                                                        <div class="automated-list__info ">
+                                                            <h3><a href=""
+                                                                    class="automated-list__item-title"><span>Is nature
+                                                                        ready to move into the mainstream? </span></a>
+                                                            </h3>
+
+                                                            <p class="automated-list__item-desc elipsis-container">
+
+                                                                Nature may be a sideline investment strategy for many
+                                                                asset managers but initiatives to protect the natural
+                                                                world are taking root.
+
+                                                            </p>
+
+                                                            <div class="automated-list__item-bottom">
+
+                                                                <p class="automated-list__publish-date">
+
+                                                                    16 Jan 2025
+
+                                                                </p>
+
+                                                                <div class="automated-list__tags">
+
+
+
+                                                                    <input data-id="esg-&amp;-sustainability"
+                                                                        type="hidden"
+                                                                        value="/content/rbsinternational_com/en_uk/institutional-banking/insights.html?tag=esg-&amp;-sustainability&amp;tagname=ESG &amp; Sustainability">
+                                                                    <a class="tag-list-item" href="#"
+                                                                        data-id="esg-&amp;-sustainability_anchor"
+                                                                        title="ESG &amp; Sustainability">ESG &amp;
+                                                                        Sustainability</a>
+
+
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div
+                                                        class="automated-list__item col-xs-12 col-sm-5 col-md-4 col-lg-4">
+
+
+                                                        <div class="automated-list__image ">
+
+                                                            <div class="image-wrapper"
+                                                                data-url="/content/rbsinternational_com/en_uk/institutional-banking/insights/2025/01/preparing-asset-managers-for-nature-reporting.html">
+                                                                <div class="comp-img-generic">
+                                                                    <img class="image-wrap" role="presentation"
+                                                                        src="{% static 'csp/images/hero-woman-on-laptop-hero-rbsi.jpg' %}">
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+
+
+                                                        <div class="automated-list__info ">
+                                                            <h3><a href=""
+                                                                    class="automated-list__item-title"><span>Preparing
+                                                                        alternative funds for nature
+                                                                        reporting</span></a>
+                                                            </h3>
+
+                                                            <p class="automated-list__item-desc elipsis-container">
+
+                                                                Pressure is mounting on financial institutions to
+                                                                educate their employees and clients on the importance of
+                                                                nature-related reporting.
+
+                                                            </p>
+
+                                                            <div class="automated-list__item-bottom">
+
+                                                                <p class="automated-list__publish-date">
+
+                                                                    16 Jan 2025
+
+                                                                </p>
+
+                                                                <div class="automated-list__tags">
+
+
+
+                                                                    <input data-id="esg-&amp;-sustainability"
+                                                                        type="hidden"
+                                                                        value="/content/rbsinternational_com/en_uk/institutional-banking/insights.html?tag=esg-&amp;-sustainability&amp;tagname=ESG &amp; Sustainability">
+                                                                    <a class="tag-list-item" href="#"
+                                                                        data-id="esg-&amp;-sustainability_anchor"
+                                                                        title="ESG &amp; Sustainability">ESG &amp;
+                                                                        Sustainability</a>
+
+
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div
+                                                        class="automated-list__item col-xs-12 col-sm-5 col-md-4 col-lg-4">
+
+
+                                                        <div class="automated-list__image ">
+
+                                                            <div class="image-wrapper"
+                                                                data-url="/content/rbsinternational_com/en_uk/institutional-banking/insights/2025/01/how-sectors-are-tackling-nature-related-risks.html">
+                                                                <div class="comp-img-generic">
+                                                                    <img class="image-wrap" role="presentation"
+                                                                        src="{% static 'csp/images/hero-road-cutting-through-countryside-hero-rbsi.jpg' %}">
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+
+
+                                                        <div class="automated-list__info ">
+                                                            <h3><a href=""
+                                                                    class="automated-list__item-title"><span>How sectors
+                                                                        are tackling nature-related risks</span></a>
+                                                            </h3>
+
+                                                            <p class="automated-list__item-desc elipsis-container">
+
+                                                                As nature preservation becomes an urgent priority,
+                                                                sectors with direct impacts on ecosystems are stepping
+                                                                up to address nature-related risks.
+
+                                                            </p>
+
+                                                            <div class="automated-list__item-bottom">
+
+                                                                <p class="automated-list__publish-date">
+
+                                                                    16 Jan 2025
+
+                                                                </p>
+
+                                                                <div class="automated-list__tags">
+
+
+
+                                                                    <input data-id="esg-&amp;-sustainability"
+                                                                        type="hidden"
+                                                                        value="/content/rbsinternational_com/en_uk/institutional-banking/insights.html?tag=esg-&amp;-sustainability&amp;tagname=ESG &amp; Sustainability">
+                                                                    <a class="tag-list-item" href="#"
+                                                                        data-id="esg-&amp;-sustainability_anchor"
+                                                                        title="ESG &amp; Sustainability">ESG &amp;
+                                                                        Sustainability</a>
+
+
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="automated-list-cta clearfix">
+
+
+
+
+
+
+                                            <link rel="stylesheet"
+                                                href="{% static 'csp/css/clientlibs-clientlib_cta_champion-_83fcaf140e17653765eaf3d204000e03.min.css' %}"
+                                                type="text/css">
+                                            <link rel="stylesheet"
+                                                href="{% static 'csp/css/clientlibs-clientlib_subscription_shelf_champion-_8cb0e9906d6efb6b60c6dd8b12aa69a6.min.css' %}"
+                                                type="text/css">
+                                            <link rel="stylesheet"
+                                                href="{% static 'csp/css/clientlibs-clientlib_featured_block_shelf_champion-_8cb0e9906d6efb6b60c6dd8b12aa69a6.min.css' %}"
+                                                type="text/css">
+                                            <link rel="stylesheet"
+                                                href="{% static 'csp/css/clientlibs-clientlib_download_report_shelf_champion-_8cb0e9906d6efb6b60c6dd8b12aa69a6.min.css' %}"
+                                                type="text/css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            <a class="cta cta-secondary  " href="{% url 'core:insights' %}"
+                                                title="Read more insights" target="_self">
+                                                <span class="cta-text">Read more insights</span>
+                                            </a>
+
+
+
+
+                                            <script
+                                                src="{% static 'csp/js/clientlibs-clientlib_cta_base_dtm-_52116cc441fb90cd2ca76a1f6ec77915.min.js' %}"
+                                                defer></script>
+                                            <script
+                                                src="{% static 'csp/js/clientlibs-clientlib_cta_base-_9c0a0f0a76061e2ba98574ca8a0ce1bc.min.js' %}"
+                                                defer></script>
+
+
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+                                    <script
+                                        src="{% static 'csp/js/clientlibs-clientlib_keywordtags_base-_d45022b46072a080708e79f108570aa4.min.js' %}"
+                                        defer></script>
+
+
+
+
+                                </div>
+
+
+                            </div>
+                        </section>
+
+
+                    </div>
+
+                </main>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="ia__footer ia__footer--responsive">
+
+
+
+
+
+
+
+
+
+        <link rel="stylesheet"
+            href="{% static 'csp/css/clientlibs-clientlib_ia_footer_champion-_9f70e377798d49ec9c7a90a25b5fa070.min.css' %}"
+            type="text/css">
+
+
+
+
+
+
+        <footer class="flex-rw">
+            <div class="iah__container">
+                <nav aria-label="footer navigation" class=" listtwohide  footer__premier">
+                    
+                    {% include 'core/includes/footermenu.html' %}
+
+                </nav>
+            </div>
+        </footer>
+
+
+
+        <script src="{% static 'csp/js/clientlibs-clientlib_footer_base-_7ad603327c300d88c7efdd686a27d4b6.min.js' %}" defer></script>
+
+
+
+
+
+        <script src="{% static 'csp/js/clientlibs-clientlib_ia_footer_base-_7ad603327c300d88c7efdd686a27d4b6.min.js' %}" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+    <div class="globaldropdown"></div>
+    <div hidden>
+        <span id="new-window-0">Opens in a new window</span>
+    </div>
+    <input type="hidden" id="pagePathEditable"
+        data-value="/content/rbsinternational_com/en_uk/institutional-banking/sectors/corporate-services/jcr:content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

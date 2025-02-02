@@ -1,0 +1,199 @@
+ {% load static %}
+{% load app_filters %}
+{% include "dashboard/include/header.html" %}	
+{% include "dashboard/include/header_loader.html" %}
+
+<!-- Page -->
+<div class="page custom-index">
+	<div>
+		{% include "dashboard/include/main_header.html" %}
+		{% include "dashboard/include/main_sidebar.html" %}
+
+	</div>
+<!-- main-content -->
+	<div class="main-content app-content">
+
+		<!-- container -->
+		<div class="main-container container-fluid">
+
+			<!-- breadcrumb -->
+			<div class="breadcrumb-header justify-content-between">
+				<div class="my-auto">
+					<h4 class="page-title">{{title}}</h4>
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="javascript:void(0);">{{title}}</a></li>
+						<li class="breadcrumb-item active" aria-current="page">page</li>
+					</ol>
+				</div>
+			</div>
+			<!-- breadcrumb -->
+
+			<!-- row -->
+<!-- row -->
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-md-12">
+                            <form id="content-form" method="post" action="{% url 'add_post' %}">
+                                {% csrf_token %}
+                                <div class="card blog-edit">
+                                    <div class="card-body">
+                                         {% if draft_message %}
+									         <div class="alert alert-warning alert-dismissible fade show" role="alert">
+										    {{ draft_message }}
+											<button type="button" class="close" data-bs-dismiss="alert"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+                                         {% endif %}
+                                         {% if success_message %}
+									         <div class="alert alert-success alert-dismissible fade show" role="alert">
+										    {{ success_message }}
+											<button type="button" class="close" data-bs-dismiss="alert"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+                                         {% endif %}
+
+                                        {% if error_message %}
+									         <div class="alert alert-danger alert-dismissible fade show" role="alert">
+										    {{ error_message }}
+											<button type="button" class="close" data-bs-dismiss="alert"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+                                         {% endif %}
+
+
+                                        <div class="form-group">
+                                            <label class="form-label text-dark"> Title</label>
+                                            <input type="text" class="form-control"  name="title"  value="{{blog_post.title}}">
+                                            <input type="hidden" name= "_token" value="{{token}}">
+											<input type="hidden" name= "_blog_id" value="{{blog_post.id}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label text-dark">Category</label>
+                                            <select class="form-control select2 form-select" name="category">
+                                                <option value="1">Blog</option>
+                                                <option value="2">Fantasy</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-label text-dark">Type of mode</label>
+                                            <div class="d-md-flex ad-post-details">
+                                                <label class="custom-control form-radio mb-2 me-4">
+                                                    <input type="radio" class="custom-control-input" name="blog_status" value="1" >
+                                                    <span class="custom-control-label"><a href="javascript:void(0);" class="">Online </a></span>
+                                                </label>
+                                                <label class="custom-control form-radio mb-2">
+                                                    <input type="radio" class="custom-control-input" name="blog_status" value="0" checked="">
+                                                    <span class="custom-control-label"><a href="javascript:void(0);" class="">Offline</a></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <div class="ql-wrapper">
+                                                <div id="quillEditor">
+                                                    <p><strong>Quill</strong> </p>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                         <input type="hidden" id="quill-content" name="content">
+                                        <div class="p-4 border mb-4 form-group">
+                                            <div>
+                                                <input id="img_file" type="file" name="files" accept=" image/jpeg, image/png, text/html, application/zip, text/css, text/js" multiple>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label">Upload Video URL</label>
+                                            <input type="text" name="video_url" class="form-control" placeholder="https://videos.com" value="https://www.youtube.com/embed/tMWkeBIohBs">
+                                        </div>
+
+                                    </div>
+                                    <div class="card-footer ">
+                                       
+                                       <button type="submit" id="submit-btn"  class="btn btn-primary float-end">Publish Now</button>
+                                    </div>
+                                </div>
+                         </form>
+                        </div>
+					</div>
+					<!-- /row -->
+			<!-- row closed -->
+
+		</div>
+		<!-- Container closed -->
+	</div>
+	<!-- main-content closed -->	
+
+<!-- {% include "dashboard/include/sidebar.html" %}-->						
+{% include "dashboard/include/footer.html" %}
+
+<!--========= Scripts ===========-->
+	<!-- JQuery min js -->
+		<script src="{% static 'dashboard/plugins/jquery/jquery.min.js' %}"></script>
+
+		<!-- Bootstrap Bundle js -->
+		<script src="{% static 'dashboard/plugins/bootstrap/js/popper.min.js' %}"></script>
+		<script src="{% static 'dashboard/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+		<!-- Moment js -->
+		<script src="{% static 'dashboard/plugins/moment/moment.js' %}"></script>
+
+		<!-- P-scroll js -->
+		<script src="{% static 'dashboard/plugins/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+		<script src="{% static 'dashboard/plugins/perfect-scrollbar/p-scroll.js' %}"></script>
+
+		<!-- Sidebar js -->
+		<script src="{% static 'dashboard/plugins/side-menu/sidemenu.js' %}"></script>
+
+		<!-- Right-sidebar js -->
+		<script src="{% static 'dashboard/plugins/sidebar/sidebar.js' %}"></script>
+		<script src="{% static 'dashboard/plugins/sidebar/sidebar-custom.js' %}"></script>
+
+		<!-- Sticky js -->
+		<script src="{% static 'dashboard/js/sticky.js' %}"></script>
+
+		<!-- eva-icons js -->
+		<script src="{% static 'dashboard/js/eva-icons.min.js' %}"></script>
+
+		<!--themecolor js-->
+		<script src="{% static 'dashboard/js/themecolor.js' %}"></script>
+
+		<!-- custom js -->
+		<script src="{% static 'dashboard/js/custom.js' %}"></script>
+
+		<!-- switcher-styles js -->
+		<script src="{% static 'dashboard/js/swither-styles.js' %}"></script>
+
+
+        	<!--Internal quill js -->
+		<script src="{% static 'dashboard/plugins/quill/quill.min.js' %}"></script>
+
+		<!--Internal Fileuploads js-->
+		<script src="{% static 'dashboard/plugins/fileuploads/js/fileupload.js' %}"></script>
+        <script src="{% static 'dashboard/plugins/fileuploads/js/file-upload.js' %}"></script>
+
+		<!--Internal Fancy uploader js-->
+		<script src="{% static 'dashboard/plugins/fancyuploder/jquery.ui.widget.js' %}"></script>
+        <script src="{% static 'dashboard/plugins/fancyuploder/jquery.fileupload.js' %}"></script>
+        <script src="{% static 'dashboard/plugins/fancyuploder/jquery.iframe-transport.js' %}"></script>
+        <script src="{% static 'dashboard/plugins/fancyuploder/jquery.fancy-fileupload.js' %}"></script>
+
+		<!-- Internal Summernote js-->
+		<script src="{% static 'dashboard/plugins/summernote/summernote-bs4.js' %}"></script>
+
+		<!-- Internal Select2.min js -->
+		<script src="{% static 'dashboard/plugins/select2/js/select2.min.js' %}"></script>
+		<script src="{% static 'dashboard/js/select2.js' %}"></script>
+
+         <!--custom-js-->
+        <script src="{% static 'dashboard/custom-js/fancy-uploader.js' %}"></script>
+         <script src="{% static 'dashboard/custom-js/post-upload.js' %}"></script>
+
+</body>
+</html>

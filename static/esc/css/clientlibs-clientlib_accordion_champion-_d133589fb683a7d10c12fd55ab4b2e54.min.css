@@ -1,0 +1,46 @@
+@-moz-keyframes fadein{100%{opacity:1}
+}
+@-webkit-keyframes fadein{100%{opacity:1}
+}
+@keyframes fadein{100%{opacity:1}
+}
+.et-shelf .accordion-comp .panel-group{margin-bottom:0}
+.et-shelf .accordion-comp .panel-group .panel{border-radius:unset;border:0;margin:0;box-shadow:none}
+.et-shelf .accordion-comp .panel-group .panel .panel-heading{border:0;padding:0 0 20px 0;background:0}
+.et-shelf .accordion-comp .panel-group .panel .panel-heading a{display:inline-block;position:relative;overflow:hidden;vertical-align:bottom}
+.et-shelf .accordion-comp .panel-group .panel .panel-heading a:hover{text-decoration:none}
+.et-shelf .accordion-comp .panel-group .panel .panel-heading a:hover:focus{outline-offset:0;text-decoration:none}
+.et-shelf .accordion-comp .panel-group .panel .panel-heading a:focus{text-decoration:none;outline-offset:0}
+.et-shelf .accordion-comp .panel-group .panel .panel-heading a .acordion-crossicon{background-image:url("../fonts/images-Plus.svg");background-size:24px;background-repeat:no-repeat;width:24px;height:24px;display:inline-block;float:left;-webkit-transform:rotate(0);transform:rotate(0);-webkit-transition:400ms ease-in-out;-moz-transition:400ms ease-in-out;-o-transition:400ms ease-in-out;transition:400ms ease-in-out;position:absolute;left:0}
+.mac .et-shelf .accordion-comp .panel-group .panel .panel-heading a .acordion-crossicon{margin-top:5px}
+.et-shelf .accordion-comp .panel-group .panel .panel-heading a:hover .acordion-animation h3,.et-shelf .accordion-comp .panel-group .panel .panel-heading a .tableheader{text-decoration:none;background-size:0 100%}
+.et-shelf .accordion-comp .panel-group .panel .panel-heading a .acordion-animation{margin-left:30px}
+.et-shelf .accordion-comp .panel-group .panel .panel-heading a .acordion-animation h3,.et-shelf .accordion-comp .panel-group .panel .panel-heading a .acordion-animation .tableheader{font-size:18px;line-height:26px;color:#5e10b1;font-family:"RNHouseSansRegular",sans-serif;font-weight:normal;text-decoration:none}
+.et-shelf .accordion-comp .panel-group .panel .panel-heading a .acordion-animation h3:focus,.et-shelf .accordion-comp .panel-group .panel .panel-heading a .acordion-animation .tableheader:focus{display:inline-block}
+html:not(.firefox).et-shelf .accordion-comp .panel-group .panel .panel-heading a .acordion-animation h3:focus,.et-shelf .accordion-comp .panel-group .panel .panel-heading a .acordion-animation .tableheader:focus{outline:1px auto #5e10b1}
+.et-shelf .accordion-comp .panel-group .panel .panel-heading a .acordion-animation h3:hover{font-size:18px;line-height:26px;color:#5e10b1;display:inline;font-family:"RNHouseSansRegular",sans-serif;font-weight:normal;width:100%;width:-moz-calc(100%);width:-webkit-calc(100%);width:-o-calc(100%);width:calc(100%);background-image:-webkit-linear-gradient(transparent 95%,#5e10b1 10px,#5e10b1);background-image:-moz-linear-gradient(transparent -moz-calc(100% - 1px),#5e10b1 10px,#5e10b1);background-image:-o-linear-gradient(transparent -o-calc(100% - 1px),#5e10b1 10px,#5e10b1);background-image:linear-gradient(transparent calc(100% - 1px),#5e10b1 10px,#5e10b1);background-repeat:no-repeat;background-size:100% 100%;-webkit-transition:background-size ease-in-out 180ms;-moz-transition:background-size ease-in-out 180ms;-o-transition:background-size ease-in-out 180ms;transition:background-size ease-in-out 180ms;padding-bottom:3px}
+.et-shelf .accordion-comp .panel-group .panel .panel-heading a .acordion-animation h3:hover:focus{display:inline-block}
+html:not(.firefox).et-shelf .accordion-comp .panel-group .panel .panel-heading a .acordion-animation h3:hover:focus{outline:1px auto #5e10b1}
+.et-shelf.aem-AuthorLayer-Edit .accordion-comp .panel-group .panel .panel-heading a .accordion_title h3,.et-shelf.aem-AuthorLayer-Edit .accordion-comp .panel-group .panel .panel-heading a .accordion_title .tableheader{font-size:18px;line-height:26px;color:#5e10b1;display:inline;font-family:"RNHouseSansRegular",sans-serif;font-weight:normal;width:100%;width:-moz-calc(100%);width:-webkit-calc(100%);width:-o-calc(100%);width:calc(100%);background-image:-webkit-linear-gradient(transparent 95%,#5e10b1 10px,#5e10b1);background-image:-moz-linear-gradient(transparent -moz-calc(100% - 1px),#5e10b1 10px,#5e10b1);background-image:-o-linear-gradient(transparent -o-calc(100% - 1px),#5e10b1 10px,#5e10b1);background-image:linear-gradient(transparent calc(100% - 1px),#5e10b1 10px,#5e10b1);background-repeat:no-repeat;background-size:100% 100%;-webkit-transition:background-size ease-in-out 180ms;-moz-transition:background-size ease-in-out 180ms;-o-transition:background-size ease-in-out 180ms;transition:background-size ease-in-out 180ms;padding-bottom:3px}
+.et-shelf.aem-AuthorLayer-Edit .accordion-comp .panel-group .panel .panel-heading a .accordion_title h3:focus,.et-shelf.aem-AuthorLayer-Edit .accordion-comp .panel-group .panel .panel-heading a .accordion_title .tableheader:focus{display:inline-block}
+html:not(.firefox).et-shelf.aem-AuthorLayer-Edit .accordion-comp .panel-group .panel .panel-heading a .accordion_title h3:focus,.et-shelf.aem-AuthorLayer-Edit .accordion-comp .panel-group .panel .panel-heading a .accordion_title .tableheader:focus{outline:1px auto #5e10b1}
+.et-shelf .accordion-comp .panel-group .panel .panel-heading a[aria-expanded="true"] .acordion-crossicon{-webkit-transform:rotate(45deg);transform:rotate(45deg)}
+.et-shelf .accordion-comp .panel-group .panel .panel-heading a[aria-expanded="true"] h3{font-size:18px;line-height:26px;color:#5e10b1;display:inline;font-family:"RNHouseSansRegular",sans-serif;font-weight:normal;width:100%;width:-moz-calc(100%);width:-webkit-calc(100%);width:-o-calc(100%);width:calc(100%);background-image:-webkit-linear-gradient(transparent 95%,#5e10b1 10px,#5e10b1);background-image:-moz-linear-gradient(transparent -moz-calc(100% - 1px),#5e10b1 10px,#5e10b1);background-image:-o-linear-gradient(transparent -o-calc(100% - 1px),#5e10b1 10px,#5e10b1);background-image:linear-gradient(transparent calc(100% - 1px),#5e10b1 10px,#5e10b1);background-repeat:no-repeat;background-size:100% 100%;-webkit-transition:background-size ease-in-out 180ms;-moz-transition:background-size ease-in-out 180ms;-o-transition:background-size ease-in-out 180ms;transition:background-size ease-in-out 180ms;padding-bottom:3px}
+.et-shelf .accordion-comp .panel-group .panel .panel-heading a[aria-expanded="true"] h3:focus{display:inline-block}
+html:not(.firefox).et-shelf .accordion-comp .panel-group .panel .panel-heading a[aria-expanded="true"] h3:focus{outline:1px auto #5e10b1}
+.et-shelf.cq-wcm-edit .accordion-comp .panel-group .panel .panel-heading a{display:block !important}
+.et-shelf.cq-wcm-edit .accordion-comp .panel-group .panel .panel-heading a .auth--info{color:#646068 !important;text-decoration:none}
+.et-shelf.cq-wcm-edit .accordion-comp .panel-group .panel .panel-heading a:hover{color:#646068 !important;text-decoration:none}
+.et-shelf.aem-AuthorLayer-Edit .accordion-comp .panel-group .panel .panel-heading a{display:block !important}
+.et-shelf.aem-AuthorLayer-Edit .accordion-comp .panel-group .panel .panel-heading a .auth--info{color:#646068 !important;text-decoration:none}
+.et-shelf.aem-AuthorLayer-Edit .accordion-comp .panel-group .panel .panel-heading a:hover{color:#646068 !important;text-decoration:none}
+.et-shelf .accordion-comp .panel-group .panel .panel-collapse{padding:4px 16px 14px}
+.et-shelf.cq-wcm-edit:not(.aem-AuthorLayer-Preview) .accordion-comp .panel-group .panel .panel-collapse{display:block !important}
+.et-shelf.aem-AuthorLayer-Edit .accordion-comp .panel-group .panel .panel-collapse{display:block !important}
+.et-shelf .accordion-comp .panel-group .panel .panel-collapse .panel-body{padding:0 0 20px 32px;border:0;font-size:18px;line-height:26px}
+.et-shelf .accordion-comp .panel-group .panel .panel-collapse .panel-body p{margin-bottom:20px}
+.et-shelf .accordion-comp .panel-group .panel .panel-collapse p:last-child{margin-bottom:0}
+.et-shelf .accordion-comp .panel-group .panel .panel-collapse:last-child{padding-bottom:0}
+.et-shelf .theme-purple .accordion-comp .panel-group .panel .panel-heading a .acordion-animation .title-comp,.et-shelf .theme-rose .accordion-comp .panel-group .panel .panel-heading a .acordion-animation .title-comp,.et-shelf .theme-aqua .accordion-comp .panel-group .panel .panel-heading a .acordion-animation .title-comp{color:#007377}
+.et-shelf .theme-purple .accordion-comp .panel-group .panel .panel-heading a .acordion-animation .title-comp:hover,.et-shelf .theme-rose .accordion-comp .panel-group .panel .panel-heading a .acordion-animation .title-comp:hover,.et-shelf .theme-aqua .accordion-comp .panel-group .panel .panel-heading a .acordion-animation .title-comp:hover{color:#007377}
+.et-shelf .theme-purple .accordion-comp .panel-group .panel .panel-heading a .acordion-crossicon,.et-shelf .theme-rose .accordion-comp .panel-group .panel .panel-heading a .acordion-crossicon,.et-shelf .theme-aqua .accordion-comp .panel-group .panel .panel-heading a .acordion-crossicon{background-image:url("../fonts/images-Plus.svg")}

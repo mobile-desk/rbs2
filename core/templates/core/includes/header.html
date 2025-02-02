@@ -1,0 +1,1461 @@
+{% load static %}
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="no-js responsive-shelf sb_enable responsive_rbs_business responsive__publish"
+>
+  <head>
+    <!--One trust cookie configuration updated here -->
+    <!-- OneTrust Cookies Consent Notice start -->
+    <script
+      src="{% static custom_path|default:'home/' %}js/scripttemplates-otSDKStub.js"
+      type="text/javascript"
+      charset="UTF-8"
+      data-domain-script="c14e41a6-cdb0-41f3-a380-a54837336bf6"
+    ></script>
+    <script type="text/javascript">
+      function OptanonWrapper() {
+        if (customerAlreadyDecided()) {
+          readCustomerChoice() &&
+            globalUtil.faqSearchCookie &&
+            globalUtil.faqSearchCookie.init();
+        }
+        function customerAlreadyDecided() {
+          return -1 < document.cookie.indexOf("OptanonAlertBoxClosed=");
+        }
+        function readCustomerChoice() {
+          // We just need to agree which group of the customer should mean the he wants to use the support center with all the cookies
+          // EXAMPLE: if the user has the C0004 it means we can start with all the cookies
+          return OptanonActiveGroups.includes("C0002");
+        }
+        if (document.location.href.indexOf("cookie") > -1) {
+          $(
+            "#onetrust-pc-sdk, .onetrust-pc-dark-filter, #onetrust-banner-sdk"
+          ).hide();
+          $(".ot-sdk-show-settings").show();
+        }
+
+        if (window.optanonActiveGroupsAux === undefined) {
+          window.optanonActiveGroupsAux = window.OptanonActiveGroups;
+        }
+        var currentActiveGroups = OptanonActiveGroups.split(",").slice(
+          1,
+          OptanonActiveGroups.split(",").length - 1
+        );
+        for (var i = 0; i < currentActiveGroups.length; i++) {
+          if (optanonActiveGroupsAux.indexOf(currentActiveGroups[i]) == -1) {
+            switch (currentActiveGroups[i]) {
+              case "C0002":
+                _satellite.track("DCRPerformance");
+                break;
+              case "C0003":
+                _satellite.track("DCRFunctional");
+                break;
+              case "C0004":
+                _satellite.track("DCRTargeting");
+                break;
+              case "C0005":
+                _satellite.track("DCRSocialMedia");
+                break;
+              case "C0009":
+                _satellite.track("DCRAnonAnalytics");
+                break;
+            }
+          }
+        }
+        optanonActiveGroupsAux = window.OptanonActiveGroups;
+      }
+    </script>
+    <!-- OneTrust Cookies Consent Notice end -->
+    <!--One trust cookie configuration updated -->
+
+    <link rel="preconnect" href="https://nw.scene7.com" crossorigin />
+    <link rel="dns-prefetch" href="https://nw.scene7.com" crossorigin />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="RBS International" />
+    <meta http-equiv="Last-Modified" content="6 Nov 2024 18:20:25 GMT" />
+    <meta name="title" content="Institutional Banking | RBS International" />
+    <meta name="subtitle" />
+    <meta
+      name="description"
+      content="Welcome to RBS International. From real estate and asset management to funds, private debt and private equity we can provide specialist, tailored services for your business."
+    />
+    <meta name="navigation-title" content="Institutional Banking" />
+    <meta
+      property="og:title"
+      content="Institutional Banking | RBS International"
+    />
+    <meta property="og:type" />
+    <meta
+      property="og:description"
+      content="Welcome to RBS International. From real estate and asset management to funds, private debt and private equity we can provide specialist, tailored services for your business."
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="{% static 'RBSI_Secondary.svg' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static custom_path|default:'home/' %}css/clientlibs-clientlib_base_champion-_d6f19b6f85e82fcc30b51365cae5a12b.min.css"
+      type="text/css"
+    />
+    <title>Institutional Banking | RBS International</title>
+    <script src="{% static custom_path|default:'home/' %}js/launch-EN36e7398f32914ad28e21b622457f151b.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="{% static custom_path|default:'home/' %}css/clientlibs-clientlib_base-_5360fd92ed88140022e20a1444c982da.min.css"
+      type="text/css"
+    />
+    <script src="{% static custom_path|default:'home/' %}js/granite-jquery.min.js"></script>
+    <script src="{% static custom_path|default:'home/' %}js/granite-utils.min.js"></script>
+    <script src="{% static custom_path|default:'home/' %}js/jquery-granite.min.js"></script>
+    <script src="{% static custom_path|default:'home/' %}js/clientlibs-jquery.min.js"></script>
+    <script src="{% static custom_path|default:'home/' %}js/clientlibs-shared.min.js"></script>
+    <script src="{% static custom_path|default:'home/' %}js/clientlibs-clientlib_base-_025bf73d3f167c1293f796d0f14e6166.min.js"></script>
+    <script src="{% static custom_path|default:'home/' %}js/clientlibs-clientlib_base_two-_1de43f954463f8fa5dd6a63c9251c3ae.min.js"></script>
+    <script
+      src="{% static custom_path|default:'home/' %}js/clientlibs-viewer-_0b630974eed76fcb47715a27083b4f7f.min.js"
+      defer
+    ></script>
+    <script src="{% static custom_path|default:'home/' %}js/clientlibs-clientlib_base_three-_e68696e7cf252cf0c0d4c506e3bb4994.min.js"></script>
+    <script src="{% static custom_path|default:'home/' %}js/granite-csrf.min.js"></script>
+  </head>
+
+  <body>
+    <input type="hidden" id="dumpParams" value="alloy_redirect" />
+    <div></div>
+
+    <div>
+      <link
+        rel="stylesheet"
+        href="{% static custom_path|default:'home/' %}css/clientlib_smartbanner-clientlib_smartbanner_champion-_fe98640fa2e72d9f3e4e5eae26fdf004.min.css"
+        type="text/css"
+      />
+      <meta name="apple-itunes-app" />
+      <meta name="google-play-app" />
+      <link rel="apple-touch-icon" />
+      <link rel="andriod-icon" />
+      <meta name="apple-target-url" />
+      <meta name="android-target-url" />
+
+      <input
+        type="hidden"
+        name="navigationTag"
+        id="navigationTag"
+        value="nav:rbsinternational/institutional"
+      />
+      <div class="main-wrapper">
+        <div class="site-content">
+          <ul class="skip-links reset" id="skiplinks">
+            <li>
+              <a accesskey="a" class="txt-p-1" href="{% url 'core:home' %}"
+                >Jump to Accessibility</a
+              >
+            </li>
+            <li>
+              <a accesskey="c" class="txt-p-1" href="#main-content-wrapper"
+                >Jump to Content</a
+              >
+            </li>
+          </ul>
+          <header>
+            <div class="iah iah--responsive">
+              <link
+                rel="stylesheet"
+                href="{% static custom_path|default:'home/' %}css/clientlibs-clientlib_ia_headernavigation_champion-_9f70e377798d49ec9c7a90a25b5fa070.min.css"
+                type="text/css"
+              />
+
+              <div class="ia__main-content l3_hide">
+                <div
+                  class="iah__share container-fluid desktop--rbscom desktop--natwestgroup"
+                  data-domain="responsive_champion"
+                  data-contentpath="/content/rbsinternational_com/en_uk/institutional-banking/iaheaderchampion"
+                >
+                  <div class="iah__container container">
+                    <div class="iah__l0__right pull-right">
+                      <nav aria-label="Level zero Navigation">
+                        <ul class="ia__nav ia__navbar-nav ia__noprice">
+                          <li class="share_price desktop"></li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="iah__l1 iah__l1--visible-xl iah__l1--visible-lg">
+                  <div class="iah__container">
+                    <div class="iah__l1__left">
+                      <nav aria-label="Main Navigation">
+                        <ul class="ia__nav ia__navbar-nav">
+                          <li>
+                            <a
+                              href="{% url 'core:home' %}"
+                              data-navid="institutional banking"
+                              ><span>Institutional Banking</span></a
+                            >
+                          </li>
+
+                          <li class="hide__desktop">
+                            <a
+                              href="{% url 'core:home' %}"
+                              data-navid="institutional"
+                              ><span>Institutional</span></a
+                            >
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                    <div class="iah__l1__right">
+                      <div class="iah__login_l1">
+                        <link
+                          rel="stylesheet"
+                          href="{% static custom_path|default:'home/' %}css/clientlibs-clientlib_ia_global_login_champion-_9f70e377798d49ec9c7a90a25b5fa070.min.css"
+                          type="text/css"
+                        />
+                        {% if user.is_authenticated %}
+                        <a
+                          class="iah__login-link"
+                          href="{% url 'authenticating:dashboard' %}"
+                        >
+                          Dashboard
+                        </a>
+                        {% else %}
+                        <a
+                          class="iah__login-link"
+                          href="{% url 'authenticating:prelogin' %}"
+                        >
+                          Log in
+                        </a>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="iah__l2 iah__l2--visible-md iah__l2--visible-sm">
+                  <div class="iah__container">
+                    <div class="iah__l2__main-links">
+                      <div class="iah__login">
+                        {% if user.is_authenticated %}
+                        <a
+                          class="iah__login-link"
+                          href="{% url 'authenticating:dashboard' %}"
+                        >
+                          Dashboard
+                        </a>
+                        {% else %}
+                        <a
+                          class="iah__login-link"
+                          href="{% url 'authenticating:prelogin' %}"
+                        >
+                          Log in
+                        </a>
+                        {% endif %}
+                        <div class="bussiness__login"></div>
+                      </div>
+
+                      <div>
+                        <link
+                          rel="stylesheet"
+                          href="{% static 'home/css/clientlibs-clientlib_ia_global_logo_champion-_9f70e377798d49ec9c7a90a25b5fa070.min.css' %}"
+                          type="text/css"
+                        />
+                        <div class="iah__logo">
+                          <a
+                            class="iah__logo-link"
+                            href="{% url 'core:home' %}"
+                            title="RBS International"
+                          >
+                            <img
+                              src="{% static 'RBSI_Secondary_Horizontal_Stacked_RGB_NEG_NEW.svg' %}"
+                              alt="RBS International"
+                            />
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="mobile__hamburger">
+                        <button
+                          aria-expanded="false"
+                          aria-label="More options menu"
+                          class="iah__menu-link menu-open"
+                        >
+                          <span class="icon-menu"></span>
+                          <span class="opened" aria-hidden="true">Menu</span>
+                          <span class="icon-close"></span>
+                          <span class="closed" aria-hidden="true">Close</span>
+                        </button>
+                      </div>
+                      <div class="iah__l1__l2__holder">
+                        <div class="header-top-mobile visible-xs visible-sm">
+                          <div class="brand-logo">
+                            <div class="iah__logo mobile_logo">
+                              <a
+                                class="iah__logo-link mobile-logo-link"
+                                href="{% url 'core:home' %}"
+                                title="RBS International"
+                              >
+                                <img
+                                  src="{% static 'RBSI_Secondary_Horizontal_Stacked_RGB_NEG_NEW.svg' %}"
+                                  alt="RBS International"
+                                />
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button
+                          aria-expanded="false"
+                          aria-label="Close menu"
+                          class="iah__menu-link menu-open"
+                        >
+                          <span class="icon-close"></span>
+                          <span class="closed">Close</span>
+                        </button>
+
+                        <div class="iah__l1">
+                          <nav aria-label="Main Navigation">
+                            <ul class="ia__nav ia__navbar-nav">
+                              <li class="ia-active hide__mobile">
+                                <a
+                                  href="{% url 'core:home' %}"
+                                  data-navid="institutional banking"
+                                  ><span>Institutional Banking</span></a
+                                >
+                              </li>
+
+                              <li class=" ">
+                                <a
+                                  href="{% url 'core:home' %}"
+                                  data-navid="institutional"
+                                  ><span>Institutional Banking</span></a
+                                >
+                              </li>
+                            </ul>
+                          </nav>
+                        </div>
+
+                        <nav
+                          aria-label="Site Navigation"
+                          class="iah__nav-l2 iah__premium"
+                        >
+                          <div
+                            class="iah__product-title"
+                            data-navid="institutional banking"
+                          >
+                            Institutional Banking
+                          </div>
+
+                          <div
+                            class="iah__product-title"
+                            data-navid="institutional"
+                          >
+                            Institutional Banking
+                          </div>
+
+                          <ul class="ia__nav ia__navbar-nav__l2">
+                            <li class="share_price mobile ia__noprice"></li>
+
+                            <li class=" ">
+                              <a
+                                aria-expanded="false"
+                                href="#"
+                                data-level="l2"
+                                aria-haspopup="true"
+                                data-navid="who we are"
+                                ><span>Who we are</span></a
+                              >
+
+                              <div class="skip-link-wrap skip-links-inl2"></div>
+
+                              <div class="iah__nav-l3">
+                                <div class="ia-l2-active">
+                                  <a href="javascript:void(0)"
+                                    ><span>Who we are</span></a
+                                  >
+                                </div>
+                                <div class="iah__container">
+                                  <ul class="ia__nav ia__navbar-nav__l3">
+                                    <li class="iah__l3-column-holder">
+                                      <div class="iah__nav-l4">
+                                        <div class="iah__container">
+                                          <ul
+                                            class="ia__nav ia__navbar-nav__l4"
+                                          >
+                                            <li
+                                              class="iah__l4-column-holder iah__l4-top"
+                                            >
+                                              <div
+                                                href="javascript:void(0)"
+                                                class="iah__l4-column-title"
+                                                tabindex="0"
+                                              >
+                                                Overview
+                                              </div>
+
+                                              <ol role="list">
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:why_rbs' %}"
+                                                    data-navid="who we are"
+                                                  >
+                                                    <span>
+                                                      Why RBS International?
+                                                    </span>
+                                                  </a>
+                                                </li>
+                                              </ol>
+                                            </li>
+
+                                            <li
+                                              class="iah__l4-column-holder iah__l4-top"
+                                            >
+                                              <div
+                                                class="iah__l4-column-title iah__l4-column-title-left"
+                                              >
+                                                Sector Expertise
+                                              </div>
+
+                                              <ol role="list">
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:corporate_service_providers' %}"
+                                                    data-navid="who we are"
+                                                  >
+                                                    <span>
+                                                      Corporate Service
+                                                      Providers
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:real_estate_finance' %}"
+                                                    data-navid="who we are"
+                                                  >
+                                                    <span>
+                                                      Real Estate Finance
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:private_equity' %}"
+                                                    data-navid="who we are"
+                                                  >
+                                                    <span>
+                                                      Private Equity
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:asset_management' %}"
+                                                    data-navid="who we are"
+                                                  >
+                                                    <span>
+                                                      Asset Management
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:private_debt' %}"
+                                                    data-navid="who we are"
+                                                  >
+                                                    <span> Private Debt </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:infrastructure_renewables' %}"
+                                                    data-navid="who we are"
+                                                  >
+                                                    <span>
+                                                      Infrastructure &amp;
+                                                      Renewables
+                                                    </span>
+                                                  </a>
+                                                </li>
+                                              </ol>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </li>
+
+                            <li class=" ">
+                              <a
+                                aria-expanded="false"
+                                href="#"
+                                data-level="l2"
+                                aria-haspopup="true"
+                                data-navid="locations"
+                                ><span>Locations</span>
+                              </a>
+
+                              <div class="skip-link-wrap skip-links-inl2"></div>
+
+                              <div class="iah__nav-l3">
+                                <div class="ia-l2-active">
+                                  <a href="javascript:void(0)">
+                                    <span>Locations</span>
+                                  </a>
+                                </div>
+                                <div class="iah__container">
+                                  <ul class="ia__nav ia__navbar-nav__l3">
+                                    <li class="iah__l3-column-holder">
+                                      <div class="iah__nav-l4">
+                                        <div class="iah__container">
+                                          <ul
+                                            class="ia__nav ia__navbar-nav__l4"
+                                          >
+                                            <li
+                                              class="iah__l4-column-holder iah__l4-top"
+                                            >
+                                              <div
+                                                href="javascript:void(0)"
+                                                class="iah__l4-column-title"
+                                                tabindex="0"
+                                              >
+                                                Overview
+                                              </div>
+
+                                              <ol role="list">
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:where_we_are' %}"
+                                                    data-navid="locations"
+                                                  >
+                                                    <span> Where we are </span>
+                                                  </a>
+                                                </li>
+                                              </ol>
+                                            </li>
+
+                                            <li
+                                              class="iah__l4-column-holder iah__l4-top"
+                                            >
+                                              <div
+                                                class="iah__l4-column-title iah__l4-column-title-left"
+                                              >
+                                                Our offices and teams
+                                              </div>
+
+                                              <ol role="list">
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:jersey' %}"
+                                                    data-navid="locations"
+                                                  >
+                                                    <span>Jersey</span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:guernsey' %}"
+                                                    data-navid="locations"
+                                                  >
+                                                    <span>Guernsey </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:gibraltar' %}"
+                                                    data-navid="locations"
+                                                  >
+                                                    <span>Gibraltar</span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:isle_of_man' %}"
+                                                    data-navid="locations"
+                                                  >
+                                                    <span> Isle of Man </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:luxembourg' %}"
+                                                    data-navid="locations"
+                                                  >
+                                                    <span>Luxembourg</span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:london' %}"
+                                                    data-navid="locations"
+                                                  >
+                                                    <span>London</span>
+                                                  </a>
+                                                </li>
+                                              </ol>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </li>
+
+                            <li class=" ">
+                              <a
+                                aria-expanded="false"
+                                href="#"
+                                data-level="l2"
+                                aria-haspopup="true"
+                                data-navid="what we do"
+                              >
+                                <span> What we do </span>
+                              </a>
+                              <div class="skip-link-wrap skip-links-inl2"></div>
+
+                              <div class="iah__nav-l3">
+                                <div class="ia-l2-active">
+                                  <a href="javascript:void(0)">
+                                    <span> What we do </span>
+                                  </a>
+                                </div>
+                                <div class="iah__container">
+                                  <ul class="ia__nav ia__navbar-nav__l3">
+                                    <li class="iah__l3-column-holder">
+                                      <div class="iah__nav-l4">
+                                        <div class="iah__container">
+                                          <ul
+                                            class="ia__nav ia__navbar-nav__l4"
+                                          >
+                                            <li
+                                              class="iah__l4-column-holder iah__l4-top"
+                                            >
+                                              <div
+                                                href="javascript:void(0)"
+                                                class="iah__l4-column-title"
+                                                tabindex="0"
+                                              >
+                                                Banking
+                                              </div>
+
+                                              <ol role="list">
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:bank_accounts_overdrafts' %}"
+                                                    data-navid="what we do"
+                                                  >
+                                                    <span>
+                                                      Bank Accounts &amp;
+                                                      Overdrafts
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:cash_management' %}"
+                                                    data-navid="what we do"
+                                                  >
+                                                    <span>
+                                                      Cash Management
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:cards_payments' %}"
+                                                    data-navid="what we do"
+                                                  >
+                                                    <span>
+                                                      Cards &amp; Payments
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:financing' %}"
+                                                    data-navid="what we do"
+                                                  >
+                                                    <span>Financing</span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:sustainable_finance' %}"
+                                                    data-navid="what we do"
+                                                  >
+                                                    <span>
+                                                      Sustainable Finance
+                                                    </span>
+                                                  </a>
+                                                </li>
+                                              </ol>
+                                            </li>
+
+                                            <li
+                                              class="iah__l4-column-holder iah__l4-top"
+                                            >
+                                              <div
+                                                class="iah__l4-column-title iah__l4-column-title-left"
+                                              >
+                                                Fund Governance &amp; Oversight
+                                              </div>
+
+                                              <ol role="list">
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:depositary_services' %}"
+                                                    data-navid="what we do"
+                                                  >
+                                                    <span>
+                                                      Depositary Services
+                                                    </span>
+                                                  </a>
+                                                </li>
+                                              </ol>
+                                            </li>
+
+                                            <li
+                                              class="iah__l4-column-holder iah__l4-top"
+                                            >
+                                              <div
+                                                class="iah__l4-column-title iah__l4-column-title-left"
+                                              >
+                                                Foreign Exchange &amp; Liquidity
+                                                Risk Management
+                                              </div>
+
+                                              <ol role="list">
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:markets' %}"
+                                                    data-navid="what we do"
+                                                  >
+                                                    <span>Markets</span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:foreign_exchange' %}"
+                                                    data-navid="what we do"
+                                                  >
+                                                    <span>
+                                                      Foreign Exchange (FX)
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:money_market_deposits' %}"
+                                                    data-navid="what we do"
+                                                  >
+                                                    <span>
+                                                      Money Market Deposits
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:notice_deposits' %}"
+                                                    data-navid="what we do"
+                                                  >
+                                                    <span>
+                                                      Notice Deposits
+                                                    </span>
+                                                  </a>
+                                                </li>
+                                              </ol>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </li>
+
+                            <li class=" ">
+                              <a
+                                data-level="l2"
+                                href="{% url 'core:insights' %}"
+                                data-navid="insights"
+                              >
+                                <span>Insights</span>
+                              </a>
+
+                              <div class="skip-link-wrap skip-links-inl2"></div>
+
+                              <div class="iah__nav-l3">
+                                <div class="ia-l2-active">
+                                  <a href="javascript:void(0)">
+                                    <span>Insights</span>
+                                  </a>
+                                </div>
+
+                                <div class="iah__container">
+                                  <ul class="ia__nav ia__navbar-nav__l3"></ul>
+                                </div>
+                              </div>
+                            </li>
+
+                            <li class=" ">
+                              <a
+                                data-level="l2"
+                                href="{% url 'core:news' %}"
+                                data-navid="news"
+                              >
+                                <span>News</span>
+                              </a>
+
+                              <div class="skip-link-wrap skip-links-inl2"></div>
+
+                              <div class="iah__nav-l3">
+                                <div class="ia-l2-active">
+                                  <a href="javascript:void(0)">
+                                    <span>News</span>
+                                  </a>
+                                </div>
+                                <div class="iah__container">
+                                  <ul class="ia__nav ia__navbar-nav__l3"></ul>
+                                </div>
+                              </div>
+                            </li>
+
+                            <li class=" ">
+                              <a
+                                aria-expanded="false"
+                                href="#"
+                                data-level="l2"
+                                aria-haspopup="true"
+                                data-navid="eq digital banking"
+                              >
+                                <span> eQ Digital Banking </span>
+                              </a>
+
+                              <div class="skip-link-wrap skip-links-inl2"></div>
+
+                              <div class="iah__nav-l3">
+                                <div class="ia-l2-active">
+                                  <a href="javascript:void(0)">
+                                    <span> eQ Digital Banking </span>
+                                  </a>
+                                </div>
+                                <div class="iah__container">
+                                  <ul class="ia__nav ia__navbar-nav__l3">
+                                    <li class="iah__l3-column-holder">
+                                      <div class="iah__nav-l4">
+                                        <div class="iah__container">
+                                          <ul
+                                            class="ia__nav ia__navbar-nav__l4"
+                                          >
+                                            <li
+                                              class="iah__l4-column-holder iah__l4-top"
+                                            >
+                                              <div
+                                                href="javascript:void(0)"
+                                                class="iah__l4-column-title"
+                                                tabindex="0"
+                                              >
+                                                More about
+                                              </div>
+
+                                              <ol role="list">
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:eq_online_banking' %}"
+                                                    data-navid="eq digital banking"
+                                                  >
+                                                    <span>
+                                                      eQ Online Banking
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:eq_mobile' %}"
+                                                    data-navid="eq digital banking"
+                                                  >
+                                                    <span> eQ Mobile </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:eq_account_opening' %}"
+                                                    data-navid="eq digital banking"
+                                                  >
+                                                    <span>
+                                                      eQ Account Opening
+                                                    </span>
+                                                  </a>
+                                                </li>
+                                              </ol>
+                                            </li>
+
+                                            <li
+                                              class="iah__l4-column-holder iah__l4-top"
+                                            >
+                                              <div
+                                                class="iah__l4-column-title iah__l4-column-title-left"
+                                              >
+                                                eQ Support
+                                              </div>
+
+                                              <ol role="list">
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:eq_support_centre' %}"
+                                                    data-navid="eq digital banking"
+                                                  >
+                                                    <span>
+                                                      eQ Support Centre
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:smartcard_support' %}"
+                                                    data-navid="eq digital banking"
+                                                  >
+                                                    <span>
+                                                      Smartcard and Reader
+                                                      support for eQ
+                                                    </span>
+                                                  </a>
+                                                </li>
+                                              </ol>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </li>
+
+                            <li class=" ">
+                              <a
+                                aria-expanded="false"
+                                href="#"
+                                data-level="l2"
+                                aria-haspopup="true"
+                                data-navid="help &amp; support"
+                              >
+                                <span> Help &amp; Support </span>
+                              </a>
+
+                              <div class="skip-link-wrap skip-links-inl2"></div>
+
+                              <div class="iah__nav-l3">
+                                <div class="ia-l2-active">
+                                  <a href="javascript:void(0)">
+                                    <span> Help &amp; Support </span>
+                                  </a>
+                                </div>
+                                <div class="iah__container">
+                                  <ul class="ia__nav ia__navbar-nav__l3">
+                                    <li class="iah__l3-column-holder">
+                                      <div class="iah__nav-l4">
+                                        <div class="iah__container">
+                                          <ul
+                                            class="ia__nav ia__navbar-nav__l4"
+                                          >
+                                            <li
+                                              class="iah__l4-column-holder iah__l4-top"
+                                            >
+                                              <div
+                                                href="javascript:void(0)"
+                                                class="iah__l4-column-title"
+                                                tabindex="0"
+                                              >
+                                                Support Centre
+                                              </div>
+
+                                              <ol role="list">
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:eq_support_centre' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      eQ Support Centre
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:fraud_security' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      Fraud &amp; Security
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:debit_card_support' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      Debit card payment support
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:report_fraud' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      Report a fraud or scam
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:corporate_account_reclaims' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      Corporate Account Reclaims
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:account_changes' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      Make a change to your
+                                                      account(s)
+                                                    </span>
+                                                  </a>
+                                                </li>
+                                              </ol>
+                                            </li>
+
+                                            <li
+                                              class="iah__l4-column-holder iah__l4-top"
+                                            >
+                                              <div
+                                                class="iah__l4-column-title iah__l4-column-title-left"
+                                              >
+                                                Useful information
+                                              </div>
+
+                                              <ol role="list">
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:results_centre' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      Results Centre
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:bank_base_rate' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      Bank Base Rate
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:key_information_priips' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      Key Information Documents
+                                                      for PRIIPS
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:tax_information_exchange' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      How automatic exchange of
+                                                      tax information affects
+                                                      you
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:fees_and_charges' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      Account fees and charges
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:psd2' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      Payment Services Directive
+                                                      2
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:luxembourg_ownership' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      Luxembourg intermediate
+                                                      ownership changes
+                                                    </span>
+                                                  </a>
+                                                </li>
+                                              </ol>
+                                            </li>
+
+                                            <li
+                                              class="iah__l4-column-holder iah__l4-top"
+                                            >
+                                              <div
+                                                class="iah__l4-column-title iah__l4-column-title-left"
+                                              >
+                                                Get in touch
+                                              </div>
+
+                                              <ol role="list">
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:contact' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span> Contact us </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:complaints' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      How to make a complaint
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:feedback' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      Leave us feedback
+                                                    </span>
+                                                  </a>
+                                                </li>
+
+                                                <li class=" ">
+                                                  <a
+                                                    href="{% url 'core:nominate_staff' %}"
+                                                    data-navid="help &amp; support"
+                                                  >
+                                                    <span>
+                                                      Nominate a member of staff
+                                                    </span>
+                                                  </a>
+                                                </li>
+                                              </ol>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+
+                          <div
+                            class="iah__share container-fluid mobile--rbscom mobile--natwestgroup"
+                            data-domain="responsive_champion"
+                          >
+                            <div class="iah__container container">
+                              <div class="iah__l0__right">
+                                <nav
+                                  aria-label="Level zero Navigation"
+                                  class="hide__desktop--rbscom hide__desktop--natwestgroup"
+                                >
+                                  <ul class="ia__nav ia__navbar-nav__l2"></ul>
+                                </nav>
+                              </div>
+                            </div>
+                          </div>
+                        </nav>
+                      </div>
+
+                      <div class="loginbus">
+                        <div
+                          class="bussiness__login bussiness__login--mobile"
+                        ></div>
+
+                        <div>
+                          <div>
+                            <link
+                              rel="stylesheet"
+                              href="{% static 'home/css/clientlibs-clientlib_ia_global_search_champion-_9f70e377798d49ec9c7a90a25b5fa070.min.css' %}"
+                              type="text/css"
+                            />
+
+                            <div class="iah__search">
+                              <div class="back-to-menu visible-xs visible-sm">
+                                <a
+                                  href="javascript:void(0)"
+                                  class="back-to-menu-link"
+                                >
+                                  <span> Back to main menu </span>
+                                </a>
+                              </div>
+
+                              <div class="iah-search-active">
+                                <a href="#" class="iah-search-title">Search</a>
+                              </div>
+
+                              <div
+                                style=""
+                                id="navbar"
+                                class="iah__search__navbar-collapse"
+                              >
+                                <div class="iah__search__wrap">
+                                  <div class="iah__search-title">Search</div>
+                                  <form
+                                    class="iah__search__form cf"
+                                    autocomplete="off"
+                                    method="GET "
+                                    action=""
+                                    role="search"
+                                  >
+                                    <div class="iah__search-area">
+                                      <label
+                                        class="iah__search-label"
+                                        for="Search"
+                                        >Search</label
+                                      >
+                                      <input
+                                        type="text"
+                                        value=""
+                                        aria-label="Search"
+                                        class="iah__search-input"
+                                        id="Search"
+                                        name="q"
+                                      />
+                                      <button
+                                        type="submit"
+                                        class="iah__search_submt_btn search-desktop-icon"
+                                      >
+                                        <span class="iah__search_btn-box"
+                                          >Search</span
+                                        >
+
+                                        <span
+                                          class="iah__search_focusicon"
+                                          aria-label="submit search"
+                                        ></span>
+
+                                        <img
+                                          src="{% static 'home/images/images-search_icon.svg' %}"
+                                          alt="Search"
+                                        />
+                                      </button>
+                                      <button
+                                        type="submit"
+                                        class="iah__search_submt_btn search-mobile-icon"
+                                      >
+                                        <span class="iah__search_btn-box"
+                                          >Search</span
+                                        >
+                                        <span
+                                          class="iah__search_focusicon"
+                                          aria-label="submit search"
+                                        ></span>
+                                        <img
+                                          src="{% static 'home/images/images-search_icon.svg' %}"
+                                          alt="Search"
+                                        />
+                                      </button>
+
+                                      <input
+                                        type="hidden"
+                                        name="brand"
+                                        value="RBSINTERNATIONAL_COM"
+                                      />
+
+                                      <input
+                                        type="hidden"
+                                        name="section"
+                                        value="corporate"
+                                      />
+
+                                      <input
+                                        type="hidden"
+                                        name="enginekey"
+                                        value="EysLHS_5j5sgTs1MkBwT"
+                                      />
+                                    </div>
+                                    <div
+                                      class="iah__search__error-mess"
+                                      aria-label="errormessage"
+                                    >
+                                      Enter a valid search term
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+
+                            <script
+                              src="{% static 'home/js/clientlibs-clientlib_ia_global_search_base-_9f70e377798d49ec9c7a90a25b5fa070.min.js' %}"
+                              async
+                            ></script>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="lah__search__show">
+                        <div class="iah__mb__search">
+                          <div class="iah__mb__login">
+                            {% if user.is_authenticated %}
+                            <a
+                              type="button"
+                              role="button"
+                              data-target="login"
+                              class="iah__btn__tabs"
+                              href="{% url 'authenticating:dashboard' %}"
+                            >
+                              <span class="iah__btn__tabs_wrap">
+                                <span>
+                                  <img
+                                    src="{% static 'home/images/images-Login-white.svg' %}"
+                                    role="presentation"
+                                    alt=""
+                                  />
+                                  <span class="">Dashboard</span>
+                                </span>
+                              </span>
+                            </a>
+                            {% else %}
+                            <a
+                              type="button"
+                              role="button"
+                              data-target="login"
+                              class="iah__btn__tabs"
+                              href="{% url 'authenticating:prelogin' %}"
+                            >
+                              <span class="iah__btn__tabs_wrap">
+                                <span>
+                                  <img
+                                    src="{% static 'home/images/images-Login-white.svg' %}"
+                                    role="presentation"
+                                    alt=""
+                                  />
+                                  <span class="">Log in</span>
+                                </span>
+                              </span>
+                            </a>
+                            {% endif %}
+                          </div>
+
+                          <div>
+                            <div class="iah__search-tab">
+                              <button
+                                type="button"
+                                class="iah__btn__tabs"
+                                data-target="search"
+                              >
+                                <span class="iah__btn__tabs_wrap">
+                                  <span>
+                                    <img
+                                      src="{% static 'home/images/images-searchicon_mob.svg' %}"
+                                      role="presentation"
+                                      alt=""
+                                    />
+                                    <span class="iah__search_btn-box"
+                                      >Search</span
+                                    >
+                                  </span>
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="iah__over-lay">Overlay</div>
+
+              <script
+                src="{% static 'home/js/clientlibs-clientlib_ia_headernavigation_base-_9f70e377798d49ec9c7a90a25b5fa070.min.js' %}"
+                async
+              ></script>
+            </div>
+          </header>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

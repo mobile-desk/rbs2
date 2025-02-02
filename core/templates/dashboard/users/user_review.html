@@ -1,0 +1,277 @@
+{% extends "home/users/user_base.html" %} {% block content %} {% load static %}
+<!-- ============================ Property Header Info Start================================== -->
+<section class="gray-simple">
+   <div class="container">
+      <div class="row">
+ 
+         <ul class="menu-list-users">
+<li><a href="{{ request.path }}">Home</a></li>
+
+                      
+ {% if title %}
+<li><i class="ti-angle-right menu-list-icon "></i> <a href="">{{title}}</a></li>
+ {% else %}
+<li><i class="ti-angle-right menu-list-icon "></i> Reviews</li>
+  {% endif %}
+</ul>
+      </div>
+    </div>
+</section>
+<!-- ============================ Property Header Info Start================================== -->
+<!-- ============================ Property Detail Start ================================== -->
+<section class="gray-simple">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-1 col-md-12 col-sm-12"></div>
+         <!-- property main detail -->
+         <div class="col-lg-7 col-md-12 col-sm-12">
+            <!-- Single Block Wrap -->
+   
+            <!-- Single Block Wrap -->
+            <div class="property_block_wrap style-2">
+               <div class="property_block_wrap_header">
+                  <div>
+                     <span class="write-review-a-title">Review Analysis</span>
+                     <span class="badge badge-success">578</span>
+                  </div>
+               </div>
+               <div id="clTwo" class="panel-collapse collapse show">
+                  <!-- All over Review -->
+                  <div class="rating-overview">
+                    
+                     <div class="rating-bars">
+                        <span class="rating-bars-inner">
+                        <span class="rating-bars-name">Excellent</span>
+                        <span class="rating-bars-rating excellent" data-rating="4.7">
+                        <span class="rating-bars-rating-inner" style="width: 85%;"></span>
+                        </span>
+                        <strong>85%</strong>
+                        </span>
+                        <span class="rating-bars-inner">
+                        <span class="rating-bars-name">Great</span>
+                        <span class="rating-bars-rating great" data-rating="3.9">
+                        <span class="rating-bars-rating-inner" style="width: 75%;"></span>
+                        </span>
+                        <strong>75%</strong>
+                        </span>
+                        <span class="rating-bars-inner">
+                        <span class="rating-bars-name">Average</span>
+                        <span class="rating-bars-rating average" data-rating="3.2">
+                        <span class="rating-bars-rating-inner" style="width: 52%;"></span>
+                        </span>
+                        <strong>52%</strong>
+                        </span>
+                        <span class="rating-bars-inner">
+                        <span class="rating-bars-name">Poor</span>
+                        <span class="rating-bars-rating poor" data-rating="2.0">
+                        <span class="rating-bars-rating-inner" style="width: 20%;"></span>
+                        </span>
+                        <strong>20%</strong>
+                        </span>
+                        <span class="rating-bars-inner">
+                        <span class="rating-bars-name">Bad</span>
+                        <span class="rating-bars-rating bad" data-rating="2.0">
+                        <span class="rating-bars-rating-inner" style="width: 10%;"></span>
+                        </span>
+                        <strong>10%</strong>
+                        </span>
+                     </div>
+                  </div>
+                  <!-- All over Review -->
+               </div>
+            </div>
+            <!-- Single Reviews Block -->
+            <div class="property_block_wrap style-2">
+               <div class="property_block_wrap_header">
+                  <a data-bs-toggle="collapse" data-parent="#rev" data-bs-target="#clEight"
+                     aria-controls="clEight" href="javascript:void(0);" aria-expanded="true">
+                     <h4 class="">102 Reviews</h4>
+                  </a>
+               </div>
+               <div id="clEight" class="panel-collapse collapse show">
+                  <div class="block-body">
+                     <div class="author-review">
+                        <div class="comment-list">
+                           <ul>
+                           <li class="article_comments_wrap">
+                              <article>
+                                 <div class="comment-details">
+                                    <div class="comment-meta">
+                                       <div class="comment-left-meta">
+                                          <div class="review-user-image">
+                                             <span class="icon-name">AM</span>
+                                          </div>
+                                          <span class="reviewer-name">Rosalina
+                                          Kelian</span>
+                                          <small class="float-right">6
+                                          Reviews</small>
+                                       </div>
+                                    </div>
+                                    <hr />
+                                    <img src="{% static 'home/img/star/star-4.png'%}" class="review-star-img" alt="" />
+                                    <small class="float-right"> 21 Dec 2020</small>    
+                                    <div class="review-text  text-dark">
+                                       <span class="review-title-text">handfully made arts</span>
+                                       <p>
+                                          if you're looking for a custom made art provider LoveCustomArt is here for you 
+                                          they offer hand painted photos that's handfully made by a professional artist is There's a wide range of mediums to choose from
+                                          as well as the option to pick. In addition it also offers canvas prints from photos,
+                                          Pop Art image creation and many more You'll definitely love their works. you should and must try them its worth your money
+                                       </p>
+                                    </div>
+                                 </div>
+                                 <hr />
+                                 <div>
+                                    <ul class="reviews-icon">
+                           <li><span class="reviews-icon trustscrin-reviews-icon"> <i class="ti-pencil-alt x-space-right-3"></i>Edit</span></li>
+                           <li><span class="reviews-icon trustscrin-reviews-icon"> <i class="ti-trash x-space-right-3"></i>Delete</span></li>
+                           <li><span class="reviews-icon trustscrin-reviews-icon " > <i class="ti-sharethis x-space-right-3"></i>Share</span></li>
+                           <ul>
+                           </div>
+                           </article>
+                           {% comment %} REPLY {% endcomment %}
+                           <article>
+                              <div class="reply-details">
+                                 <div class="comment-meta">
+                                    <span><i class="ti-share"></i></span>
+                                    <div class="comment-left-meta">
+                                       <span class="reviewer-name">
+                                       Reply from
+                                       Rosalina Kelian
+                                       </span>
+                                       <small class="float-right">19th
+                                       May 2018</small>
+                                    </div>
+                                 </div>
+                                 <div class="comment-text">
+                                    <p>
+                                       Excepteur sint
+                                       occaecat cupidatat
+                                       non proident, sunt
+                                       in culpa qui officia
+                                       deserunt mollit anim
+                                       laborumab.
+                                       perspiciatis unde
+                                       omnis iste natus
+                                       error.
+                                    </p>
+                                 </div>
+                              </div>
+                           </article>
+                           </li>
+                           <li class="article_comments_wrap">
+                              <article>
+                                 <div class="comment-details">
+                                    <div class="comment-meta">
+                                       <div class="comment-left-meta">
+                                          <div class="review-user-image">
+                                             <span class="icon-name">AM</span>
+                                          </div>
+                                          <span class="reviewer-name">Rosalina
+                                          Kelian</span>
+                                          <small class="float-right">6
+                                          Reviews</small>
+                                       </div>
+                                    </div>
+                                    <hr />
+                                    <img src="{% static 'home/img/star/star-2.png'%}" class="review-star-img" alt="" />
+                                    <small class="float-right"> 21 Dec 2020</small>    
+                                    <div class="review-text  text-dark">
+                                       <span class="review-title-text">handfully made arts</span>
+                                       <p>
+                                          if you're looking for a custom made art provider LoveCustomArt is here for you 
+                                          they offer hand painted photos that's handfully made by a professional artist is There's a wide range of mediums to choose from
+                                          as well as the option to pick. In addition it also offers canvas prints from photos,
+                                          Pop Art image creation and many more You'll definitely love their works. you should and must try them its worth your money
+                                       </p>
+                                    </div>
+                                 </div>
+                                 <hr />
+                                 <div>
+                                    <ul class="reviews-icon">
+                           <li><span class="reviews-icon trustscrin-reviews-icon"> <i class="ti-pencil-alt x-space-right-3"></i>Edit</span></li>
+                           <li><span class="reviews-icon trustscrin-reviews-icon"> <i class="ti-trash x-space-right-3"></i>Delete</span></li>
+                           <li><span class="reviews-icon trustscrin-reviews-icon " > <i class="ti-sharethis x-space-right-3"></i>Share</span></li>
+                           <ul>
+                           </div>
+                           </article>
+                           </li>
+                           <li class="article_comments_wrap">
+                              <article>
+                                 <div class="comment-details">
+                                    <div class="comment-meta">
+                                       <div class="comment-left-meta">
+                                          <div class="review-user-image">
+                                             <span class="icon-name">AM</span>
+                                          </div>
+                                          <span class="reviewer-name">Rosalina
+                                          Kelian</span>
+                                          <small class="float-right">6
+                                          Reviews</small>
+                                       </div>
+                                    </div>
+                                    <hr />
+                                    <img src="{% static 'home/img/star/star-3.png'%}" class="review-star-img" alt="" />
+                                    <small class="float-right"> 21 Dec 2020</small>    
+                                    <div class="review-text  text-dark">
+                                       <span class="review-title-text">handfully made arts</span>
+                                       <p>
+                                          if you're looking for a custom made art provider LoveCustomArt is here for you 
+                                          they offer hand painted photos that's handfully made by a professional artist is There's a wide range of mediums to choose from
+                                          as well as the option to pick. In addition it also offers canvas prints from photos,
+                                          Pop Art image creation and many more You'll definitely love their works. you should and must try them its worth your money
+                                       </p>
+                                    </div>
+                                 </div>
+                                 <hr />
+                                 <div>
+                                    <ul class="reviews-icon">
+                           <li><span class="reviews-icon trustscrin-reviews-icon"> <i class="ti-pencil-alt x-space-right-3"></i>Edit</span></li>
+                           <li><span class="reviews-icon trustscrin-reviews-icon"> <i class="ti-trash x-space-right-3"></i>Delete</span></li>
+                           <li><span class="reviews-icon trustscrin-reviews-icon " > <i class="ti-sharethis x-space-right-3"></i>Share</span></li>
+                           <ul>
+                           </div>
+                           </article>
+                           </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <a href="#" class="reviews-checked theme-cl">
+                     <i class="fas fa-arrow-alt-circle-down mr-2"></i>
+                     See More Reviews
+                     </a>
+                  </div>
+               </div>
+            </div>
+            <!-- Single Reviews Block -->
+         </div>
+         <!-- property Sidebar -->
+         <div class="col-lg-4 col-md-12 col-sm-12">
+            <!-- Like And Share -->
+           
+            <div class="details-sidebar">
+               <!-- Agent Detail -->
+               <!-- Featured Property -->
+               <div class="sidebar-widgets">
+                  <div class="like_share_wrap b-0">
+               <p>Click “Yes, update me” to receive emails from Trustpilot about your reviews, inspiration, tips
+               about businesses and products, information about
+               TrustScrin, and new features. You can opt out at any time.</p>
+
+                                        <div class="form-group">
+                                            <button type="button" class="btn btn-primary " type="submit">Yes, update me </button>
+                                        </div>
+                             
+                  </div>
+                  <div class="sidebar_featured_property">
+                     <!-- List Sibar Property -->
+                  </div>
+               </div>
+            </div>
+         </div>
+       
+      </div>
+   </div>
+</section>
+<!-- ============================ Property Detail End ================================== -->
+{% endblock content %}

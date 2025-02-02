@@ -1,0 +1,10 @@
+.automated-listShelf{background-color:#fff}
+.automated-listShelf.theme--white{background-color:#fff}
+.automated-listShelf.theme--warm-grey{background-color:#f2f2f8}
+.automated-listShelf.shelf-margin-automatedlist-shelf{padding:0 0 56px}
+@media(min-width:1024px) and (max-width:1255px){.automated-listShelf.shelf-margin-automatedlist-shelf{padding:0 0 56px}
+}
+@media(min-width:768px) and (max-width:1023px){.automated-listShelf.shelf-margin-automatedlist-shelf{padding:0 0 56px}
+}
+@media(max-width:767px){.automated-listShelf.shelf-margin-automatedlist-shelf{padding:0 0 56px}
+}

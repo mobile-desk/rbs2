@@ -1,0 +1,57 @@
+.et-shelf .acclink-promo.shelf-container{padding-top:32px;padding-bottom:16px}
+.et-shelf .acclink-promo.shelf-container .acclink-promo_title{margin-bottom:16px}
+.et-shelf .acclink-promo.shelf-container .acclink-promo_text{margin-bottom:32px}
+.et-shelf .acclink-promo.shelf-container .acclink-wrapper>.aem-GridColumn--default--12{padding-left:12px !important;padding-right:12px !important}
+.et-shelf .acclink-promo.shelf-container .linkpromo_compliance{padding-left:12px !important;padding-right:12px !important}
+.et-shelf .acclink-promo.shelf-container .linkpromo_compliance .compliance_wrapper{margin-top:-8px;padding-bottom:14px}
+.aem-AuthorLayer-Edit.et-shelf .acclink-promo.shelf-container .linkpromo_compliance .compliance_wrapper{margin-top:0}
+.et-shelf .acclink-promo.shelf-container .linkspromo{background:#5a287d;margin-bottom:32px}
+.et-shelf .acclink-promo.shelf-container .two-col .acclink-promo__list-card.one,.et-shelf .acclink-promo.shelf-container .two-col .acclink-promo__list-card.three{padding-right:12px}
+.et-shelf .acclink-promo.shelf-container .two-col .acclink-promo__list-card.two,.et-shelf .acclink-promo.shelf-container .two-col .acclink-promo__list-card.four{padding-left:12px}
+.et-shelf .acclink-promo.shelf-container .two-col.position0 .linkspromo,.et-shelf .acclink-promo.shelf-container .two-col.position2 .linkspromo{padding-right:12px}
+.et-shelf .acclink-promo.shelf-container .two-col.position1 .linkspromo,.et-shelf .acclink-promo.shelf-container .two-col.position2 .linkspromo{padding-left:12px}
+.et-shelf .theme-grey .link-card__accordion-cta .link-card__accordion{background:#fff}
+.et-shelf .acclink-promo .link-card__accordion{padding:12px 16px;background:#f2f2f8;border-radius:8px}
+.et-shelf .acclink-wrapper{width:100%}
+.et-shelf .acclink-wrapper.accordion-wrap{margin:0}
+.et-shelf .acclink-wrapper .acclink-promo__list-card{padding-bottom:32px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .list-card__highlight{margin-bottom:24px;height:8px;border-radius:8px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card.one .highlight__bg{background-color:#ffdbec}
+.et-shelf .acclink-wrapper .acclink-promo__list-card.two .highlight__bg{background-color:#ffeae6}
+.et-shelf .acclink-wrapper .acclink-promo__list-card.three .highlight__bg{background-color:#f2eaf9}
+.et-shelf .acclink-wrapper .acclink-promo__list-card.four .highlight__bg{background-color:#dbedfa}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .list-card__title{margin-bottom:24px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .link-card__accordion-cta .link-card_acc-cta{margin-bottom:24px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .link-card__accordion-cta .link-card_acc-cta:last-child{margin-bottom:0}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .link-card__accordion-cta .link-card_acc-cta .cta.cta-tertiary{padding:0;line-height:26px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .link-card__accordion-cta .link-card_acc-cta .cta.cta-tertiary .cta-text{line-height:26px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .link-card__accordion-cta .link-card_acc-cta .cta.cta-tertiary:focus span{background-image:none}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .link-card__accordion-cta .link-card_acc-cta.accordion-card{margin-bottom:8px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .link-card__accordion-cta .link-card__accordion .product-acr-header{width:inherit}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .link-card__accordion-cta .link-card__accordion .product-acr-header .accordion-header .acordion-header-icon{margin-left:32px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .link-card__accordion-cta .link-card__accordion .product-acr-header .accordion-header.active .acordion-icon{margin-left:32px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .link-card__accordion-cta .link-card__accordion .product-acr-container .accordian-content-wrapper{margin:0;width:100%}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .link-card__accordion-cta .link-card__accordion .product-acr-container .accordian-content-wrapper .titleWrapper{margin-left:20px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .link-card__accordion-cta .link-card__accordion .product-acr-container .accordian-content-wrapper .rteWrapper{margin-left:20px;color:#646068}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .link-card__accordion-cta .link-card__cta a{padding:0 2px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .link-card__accordion-cta.removectapadding .link-card__cta a{margin-left:0}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .list-card__compliance{margin-top:24px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .list-card__compliance p,.et-shelf .acclink-wrapper .acclink-promo__list-card .list-card__compliance ul{margin-bottom:0}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .list-card__cta{margin-top:30px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .list-card__cta a{padding:6px 0 0}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .list-card__rte{margin-bottom:24px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .list-card__rte p:last-child{margin-bottom:0}
+@media(min-width:768px) and (max-width:1023px){.et-shelf .acclink-promo.shelf-container{padding-top:24px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card{padding-bottom:32px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .list-card__cta{margin-top:30px}
+}
+@media(max-width:767px){.et-shelf .acclink-promo.shelf-container{padding-top:24px}
+.et-shelf .acclink-promo.shelf-container .acclink-wrapper>.aem-GridColumn--default--12{padding-left:10px !important;padding-right:10px !important}
+.et-shelf .acclink-promo.shelf-container .linkpromo_compliance{padding-left:10px !important;padding-right:10px !important}
+.et-shelf .acclink-promo.shelf-container .two-col .acclink-promo__list-card.one,.et-shelf .acclink-promo.shelf-container .two-col .acclink-promo__list-card.three{padding-right:0}
+.et-shelf .acclink-promo.shelf-container .two-col .acclink-promo__list-card.two,.et-shelf .acclink-promo.shelf-container .two-col .acclink-promo__list-card.four{padding-left:0}
+.et-shelf .acclink-promo.shelf-container .two-col.position0 .linkspromo,.et-shelf .acclink-promo.shelf-container .two-col.position2 .linkspromo{padding-right:0}
+.et-shelf .acclink-promo.shelf-container .two-col.position1 .linkspromo,.et-shelf .acclink-promo.shelf-container .two-col.position2 .linkspromo{padding-left:0}
+.et-shelf .acclink-wrapper .acclink-promo__list-card{padding-bottom:32px}
+.et-shelf .acclink-wrapper .acclink-promo__list-card .list-card__cta{margin-top:30px}
+}

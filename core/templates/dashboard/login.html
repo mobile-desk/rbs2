@@ -1,0 +1,105 @@
+
+ {% load static %}
+{% load app_filters %}
+{% include "dashboard/include/header.html" %}	
+{% include "dashboard/include/header_loader.html" %}	
+<!-- Page -->
+	<div class="page">
+
+		<div class="container-fluid">
+			<div class="row no-gutter">
+				<!-- The image half -->
+				<div class="col-md-6 col-lg-6 col-xl-7 d-none d-md-flex bg-primary-transparent">
+					<div class="row wd-100p mx-auto text-center">
+						<div class="col-md-12 col-lg-12 col-xl-12 my-auto mx-auto wd-100p">
+							<img src="{% static 'home/images/face.png' %}"
+								class="my-auto ht-xl-80p wd-md-100p wd-xl-80p mx-auto" alt="logo">
+						</div>
+					</div>
+				</div>
+				<!-- The content half -->
+				<div class="col-md-6 col-lg-6 col-xl-5 bg-white py-4">
+					<div class="login d-flex align-items-center py-2">
+						<!-- Demo content-->
+						<div class="container p-0">
+							<div class="row">
+								<div class="col-md-10 col-lg-10 col-xl-9 mx-auto">
+									<div class="card-sigin">
+										<div class="mb-5 d-flex">
+											<a href="">
+											</a>
+											<h1 class="main-logo1 ms-1 me-0 my-auto tx-28">Predcit<span>395</span>x</h1>
+										</div>
+										<div class="card-sigin">
+											<div class="main-signup-header">
+												<h2>Welcome back!</h2>
+												<h5 class="fw-semibold mb-4">Please sign in to continue.</h5>
+                   {% if error_message %}
+									         <div class="alert alert-danger alert-dismissible fade show" role="alert">
+										    {{ error_message }}
+											<button type="button" class="close" data-bs-dismiss="alert"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+                                         {% endif %}
+												<form  method="post" action="{% url 'cms_login' %}">
+                                {% csrf_token %}
+													<div class="form-group">
+														<label>Username</label> <input class="form-control"
+															placeholder="Enter your Username" type="text" name="username">
+													</div>
+													<div class="form-group">
+														<label>Password</label> <input class="form-control"
+															placeholder="Enter your password" type="password" name="password">
+													</div>
+													  <button type="submit"   class="btn btn-main-primary btn-block">Sign In</button>
+										
+												</form>
+												<div class="main-signin-footer mt-5">
+													<p><a href="">Forgot password?</a></p>
+													<p>Don't have an account? <a href="">Create an
+															Account</a></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div><!-- End -->
+					</div>
+				</div><!-- End -->
+			</div>
+		</div>
+
+	</div>
+	<!-- End Page -->
+
+	<!-- JQuery min js -->
+	<script src="{% static 'dashboard/plugins/jquery/jquery.min.js' %}"></script>
+
+	<!-- Bootstrap Bundle js -->
+	<script src="{% static 'dashboard/plugins/bootstrap/js/popper.min.js' %}"></script>
+	<script src="{% static 'dashboard/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+	<!-- Moment js -->
+	<script src="{% static 'dashboard/plugins/moment/moment.js' %}"></script>
+
+	<!-- P-scroll js -->
+	<script src="{% static 'dashboard/plugins/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+
+	<!-- eva-icons js -->
+	<script src="{% static 'dashboard/js/eva-icons.min.js' %}"></script>
+
+	<!--themecolor js-->
+	<script src="{% static 'dashboard/js/themecolor.js' %}"></script>
+
+	<!-- custom js -->
+	<script src="{% static 'dashboard/js/custom.js' %}"></script>
+
+	<!-- switcher-styles js -->
+	<script src="{% static 'dashboard/js/swither-styles.js' %}"></script>
+
+</body>
+
+</html>

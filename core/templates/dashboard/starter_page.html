@@ -1,0 +1,85 @@
+ {% load static %}
+{% load app_filters %}
+{% include "dashboard/include/header.html" %}	
+{% include "dashboard/include/header_loader.html" %}
+
+<!-- Page -->
+<div class="page custom-index">
+	<div>
+		{% include "dashboard/include/main_header.html" %}
+		{% include "dashboard/include/main_sidebar.html" %}
+
+	</div>
+<!-- main-content -->
+	<div class="main-content app-content">
+
+		<!-- container -->
+		<div class="main-container container-fluid">
+
+			<!-- breadcrumb -->
+			<div class="breadcrumb-header justify-content-between">
+				<div class="my-auto">
+					<h4 class="page-title">{{title}}</h4>
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="javascript:void(0);">{{title}}</a></li>
+						<li class="breadcrumb-item active" aria-current="page">page</li>
+					</ol>
+				</div>
+			</div>
+			<!-- breadcrumb -->
+
+			<!-- row -->
+			<div class="row">
+
+
+			</div>
+			<!-- row closed -->
+
+		</div>
+		<!-- Container closed -->
+	</div>
+	<!-- main-content closed -->	
+
+<!-- {% include "dashboard/include/sidebar.html" %}-->						
+{% include "dashboard/include/footer.html" %}
+
+<!--========= Scripts ===========-->
+	<!-- JQuery min js -->
+		<script src="{% static 'dashboard/plugins/jquery/jquery.min.js' %}"></script>
+
+		<!-- Bootstrap Bundle js -->
+		<script src="{% static 'dashboard/plugins/bootstrap/js/popper.min.js' %}"></script>
+		<script src="{% static 'dashboard/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+		<!-- Moment js -->
+		<script src="{% static 'dashboard/plugins/moment/moment.js' %}"></script>
+
+		<!-- P-scroll js -->
+		<script src="{% static 'dashboard/plugins/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+		<script src="{% static 'dashboard/plugins/perfect-scrollbar/p-scroll.js' %}"></script>
+
+		<!-- Sidebar js -->
+		<script src="{% static 'dashboard/plugins/side-menu/sidemenu.js' %}"></script>
+
+		<!-- Right-sidebar js -->
+		<script src="{% static 'dashboard/plugins/sidebar/sidebar.js' %}"></script>
+		<script src="{% static 'dashboard/plugins/sidebar/sidebar-custom.js' %}"></script>
+
+		<!-- Sticky js -->
+		<script src="{% static 'dashboard/js/sticky.js' %}"></script>
+
+		<!-- eva-icons js -->
+		<script src="{% static 'dashboard/js/eva-icons.min.js' %}"></script>
+
+		<!--themecolor js-->
+		<script src="{% static 'dashboard/js/themecolor.js' %}"></script>
+
+		<!-- custom js -->
+		<script src="{% static 'dashboard/js/custom.js' %}"></script>
+
+		<!-- switcher-styles js -->
+		<script src="{% static 'dashboard/js/swither-styles.js' %}"></script>
+
+
+</body>
+</html>

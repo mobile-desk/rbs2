@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    'accounts',
+    'core',
+    'wallets',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +132,7 @@ MEDIA_ROOT = '/home/theabcgame/RBS/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = '/home/theabcgame/RBS/static'
 STATIC_URL = '/static/'
+
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
+

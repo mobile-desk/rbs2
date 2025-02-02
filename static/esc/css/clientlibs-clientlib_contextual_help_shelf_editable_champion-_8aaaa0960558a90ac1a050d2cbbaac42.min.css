@@ -1,0 +1,23 @@
+.et-shelf .contextualhelp.theme-white .contextualHelpShelf .accordion-comp .panel{background-color:#f2f2f8}
+.et-shelf .contextualHelpShelf{padding-top:32px;padding-bottom:40px}
+.et-shelf .contextualHelpShelf .EnableText .title-wrapper{padding-bottom:16px}
+.et-shelf .contextualHelpShelf .EnableCompliance .title-wrapper{padding-bottom:16px}
+.et-shelf .contextualHelpShelf .contextual_help_title,.et-shelf .contextualHelpShelf .title-wrapper{padding-bottom:24px}
+.et-shelf .contextualHelpShelf .contextual_help_title.cq-Editable-dom .title-comp,.et-shelf .contextualHelpShelf .title-wrapper.cq-Editable-dom .title-comp{max-height:100%}
+.et-shelf .contextualHelpShelf .contextual_help_title .title-comp,.et-shelf .contextualHelpShelf .title-wrapper .title-comp{max-height:128px;overflow:hidden}
+.et-shelf .contextualHelpShelf .text-wrapper{padding-bottom:6px}
+.et-shelf .contextualHelpShelf .compliance_wrapper{padding-top:8px}
+.et-shelf .contextualHelpShelf .compliance_wrapper .compliance-text{padding-bottom:14px}
+.et-shelf .contextualHelpShelf .accordion-comp .panel-group .panel{background-color:#fff;border-radius:8px;margin-bottom:8px}
+.et-shelf .contextualHelpShelf .accordion-comp .panel-group .panel .panel-heading{padding:12px 16px}
+html:not(.firefox) .et-shelf .contextualHelpShelf .accordion-comp .panel-group .panel .panel-heading a:focus{outline:1px auto #5e10b1}
+html:not(.firefox) .et-shelf .contextualHelpShelf .accordion-comp .panel-group .panel .panel-heading a:focus:hover{outline:1px auto #5e10b1}
+@media(min-width:1024px) and (max-width:1255px){.et-shelf .contextualHelpShelf{padding-bottom:40px}
+.et-shelf .contextualHelpShelf .contextual_help_title .title-comp,.et-shelf .contextualHelpShelf .title-wrapper .title-comp{max-height:108px;overflow:hidden}
+}
+@media(min-width:768px) and (max-width:1023px){.et-shelf .contextualHelpShelf{padding-top:24px;padding-bottom:24px}
+.et-shelf .contextualHelpShelf .contextual_help_title .title-comp,.et-shelf .contextualHelpShelf .title-wrapper .title-comp{max-height:132px;overflow:hidden}
+}
+@media(max-width:767px){.et-shelf .contextualHelpShelf{padding-top:24px;padding-bottom:24px}
+.et-shelf .contextualHelpShelf .contextual_help_title .title-comp,.et-shelf .contextualHelpShelf .title-wrapper .title-comp{max-height:100%;overflow:hidden}
+}

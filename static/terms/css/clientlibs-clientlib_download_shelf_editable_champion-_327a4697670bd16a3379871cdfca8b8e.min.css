@@ -1,0 +1,52 @@
+.et-shelf .download_shelf{padding-top:32px;padding-bottom:48px}
+.et-shelf .download_shelf .image-wrapper{width:87%;height:auto;position:relative;aspect-ratio:3/2;text-align:center}
+.et-shelf .download_shelf .image-wrapper .comp-img-generic{width:100%;height:100%}
+.et-shelf .download_shelf .image-wrapper .comp-img-generic.svg img{width:87%;height:auto;padding:calc(87% * 0.12);text-align:center;aspect-ratio:3/2}
+.et-shelf .download_shelf .image-wrapper .comp-img-generic.svg .wider-flag{width:100%;height:100%}
+.et-shelf .download_shelf .image-wrapper .comp-img-generic img{border-radius:8px}
+.et-shelf .download_shelf .image-wrapper .image{height:100%}
+.et-shelf .download_shelf .image-wrapper.svg{margin:0 auto}
+.et-shelf .download_shelf .image-wrapper.showImageMobile{display:none}
+.et-shelf .download_shelf .image-wrapper.showImageDesktop.showImageMobile{display:block}
+.et-shelf .download_shelf .image-wrapper.showImageDesktop{display:block}
+.et-shelf .image-right .download_shelf .aem-GridColumn.image-position{float:right}
+.et-shelf .image-right .download_shelf .aem-GridColumn.image-position .image-wrapper.showImageMobile{display:none}
+.et-shelf .image-right .download_shelf .aem-GridColumn.image-position .image-wrapper.showImageDesktop{display:block}
+.et-shelf .image-right .download_shelf .aem-GridColumn.image-position .image-wrapper.showImageDesktop.showImageMobile{display:block}
+.et-shelf .image-right .download_shelf .aem-GridColumn.image-position .image-wrapper{float:right}
+.et-shelf .image-right .download_shelf .aem-GridColumn.image-position .image-wrapper.svg{float:none}
+.et-shelf .download_shelf .aem-GridColumn.image-position.hide-mob-image.show-mob-img{display:block}
+.et-shelf .download_shelf.hideTitle .aem-GridColumn.hideTitle .titleWrapper{display:none}
+.et-shelf .download_shelf .textWrapper{margin-top:24px}
+.et-shelf .download_shelf .textWrapper p{margin-bottom:0}
+.et-shelf .download_shelf.show-mob-wrapper .wrapperalign{float:left !important}
+.et-shelf .download_shelf.download--left-align .wrapperalign{float:right}
+.et-shelf .download_shelf .downloadLinkWrapper{margin-top:24px;margin-bottom:0}
+.et-shelf .download_shelf .downloadLinkWrapper a.dlinks{font-size:18px;line-height:26px;margin-bottom:20px;letter-spacing:.1px;display:inline-block}
+.et-shelf .download_shelf .cta-button{margin-bottom:-6px}
+.et-shelf .download_shelf.show-mob-wrapper .show-mob-img{display:none}
+.et-shelf .download_shelf.hideText .textWrapper{display:none}
+.et-shelf .download_shelf .dwscontent_wrapper.hideTitle .titleWrapper{display:none}
+.et-shelf .download_shelf .dwscontent_wrapper.hideTitle .downloadLinkWrapper{margin-top:0}
+.et-shelf .download_shelf.hideTitle.hideText .downloadLinkWrapper{margin-top:0}
+.et-shelf .download_shelf.hideTitle .textWrapper{margin-top:0}
+.et-shelf .download_shelf .d-links .cta-primary .cta-button,.et-shelf .download_shelf .d-links .cta-secondary .cta-button{padding-top:4px}
+.et-shelf.aem-AuthorLayer-Edit .download_shelf.hideOnlyMob .image-position{float:left}
+@media(min-width:1024px) and (max-width:1255px){.et-shelf .download_shelf .image-wrapper{width:89.2%}
+.et-shelf .download_shelf .image-wrapper .comp-img-generic.svg img{width:89.2%;height:auto;padding:calc(89.2% * 0.12)}
+}
+@media(min-width:768px) and (max-width:1023px){.et-shelf .download_shelf .image-wrapper{width:98.2%}
+.et-shelf .download_shelf .image-wrapper .comp-img-generic.svg img{width:98.2%;height:auto;padding:calc(98.2% * 0.12)}
+}
+@media(max-width:767px){.et-shelf .download_shelf{padding-top:24px;padding-bottom:32px}
+.et-shelf .download_shelf .image-wrapper{width:98%;margin:0 auto;max-width:496px}
+.et-shelf .download_shelf .image-wrapper .comp-img-generic.svg img{width:98%;height:100%;padding:calc(98% * 0.12)}
+.et-shelf .image-right .download_shelf .aem-GridColumn.image-position .image-wrapper{float:none}
+.et-shelf .download_shelf .hide-mob-image{display:none}
+.et-shelf .download_shelf.show-mob-wrapper .show-mob-img{display:block}
+.et-shelf .download_shelf.show-mob-wrapper .dwscontent_wrapper .titleWrapper{margin-top:24px}
+.et-shelf .download_shelf .hideTitle .textWrapper{margin-top:24px}
+.et-shelf .download_shelf.hideTitle.hideText .downloadLinkWrapper{margin-top:24px}
+}
+@media(max-width:1255px){.et-shelf .download_shelf .downloadLinkWrapper a.dlinks{margin-bottom:20px}
+}
