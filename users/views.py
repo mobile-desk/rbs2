@@ -32,6 +32,8 @@ from accounts.models import Passport, BTCWallet, Account
 
 
 from core.models import NSiteSettings
+import os
+from django.conf import settings
 
 
 
@@ -76,8 +78,6 @@ def register_step2(request):
 
             if 'passport' in request.FILES:
                 passport_image = request.FILES['passport']
-                request.session['passport_image'] = passport_image.name
-
                 temp_dir = os.path.join(settings.MEDIA_ROOT, 'temp')
                 os.makedirs(temp_dir, exist_ok=True)  # Create the directory if it doesn't exist
 
@@ -86,13 +86,15 @@ def register_step2(request):
                     for chunk in passport_image.chunks():
                         destination.write(chunk)
 
+                # Store the file path or name in the session instead of the file object
+                request.session['passport_image_path'] = temp_path
+
             request.session['customer_info'] = customer_info
             return redirect('authenticating:register_step3')
     else:
         forms = [form_class() for form_class in form_classes]
 
     return render(request, 'users/register_step2.html', {'forms': forms})
-
 
 
 def register_step3(request):
@@ -108,6 +110,8 @@ def register_step3(request):
         customer_number = ''.join([str(random.randint(0, 9)) for _ in range(10)])
         form = AccountSetupForm(initial={'customer_number': customer_number})
     return render(request, 'users/register_step3.html', {'form': form})
+
+
 
 def register_step4(request):
     if request.method == 'POST':
