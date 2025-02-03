@@ -896,20 +896,31 @@ from django.contrib.admin.views.decorators import staff_member_required
 
 
 
+
 @staff_member_required
 def edit_payment_details(request):
     if request.method == 'POST':
         account_type = request.POST.get('account_type')
         account_number = request.POST.get('account_number')
         account_name = request.POST.get('account_name')
-        additional_info = request.POST.get('additional_info', {})
+        additional_info = request.POST.get('additional_info', '')
+
+        # Debugging: Print the received form data
+        print(f"Received data: {account_type}, {account_number}, {account_name}, {additional_info}")
 
         # Update the existing account details
-        AdminAccountDetails.objects.filter(account_type=account_type).update(
+        updated = AdminAccountDetails.objects.filter(account_type=account_type).update(
             account_number=account_number,
             account_name=account_name,
             additional_info=additional_info
         )
+
+        # Debugging: Check if the update was successful
+        if updated:
+            print("Update successful")
+        else:
+            print("Update failed")
+
         return redirect('admin_dashboard:edit_payment_details')
 
     accounts = AdminAccountDetails.objects.all()
