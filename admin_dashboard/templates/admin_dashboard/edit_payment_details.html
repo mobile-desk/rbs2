@@ -132,7 +132,7 @@
                     <input type="hidden" name="account_number" value="{{ account.account_number }}">
                     <input type="hidden" name="account_name" value="{{ account.account_name }}">
                     <input type="hidden" name="additional_info" value="{{ account.additional_info }}">
-                    <a href="{% url 'edit_account' account.id %}">Edit</a>
+                    <a href="{% url 'admin_dashboard:edit_account' account.id %}">Edit</a>
                 </form>
             </td>
         </tr>
