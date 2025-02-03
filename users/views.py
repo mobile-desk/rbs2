@@ -35,6 +35,7 @@ from core.models import NSiteSettings
 import os
 from django.conf import settings
 
+import json
 
 
 def register_step1(request):
@@ -82,12 +83,18 @@ def register_step2(request):
                 os.makedirs(temp_dir, exist_ok=True)  # Create the directory if it doesn't exist
 
                 temp_path = os.path.join(temp_dir, passport_image.name)
+                
+                # Save file to the temp directory
                 with open(temp_path, 'wb+') as destination:
                     for chunk in passport_image.chunks():
                         destination.write(chunk)
 
-                # Store the file path or name in the session instead of the file object
+                # Store only the file path in the session (Not the file object!)
                 request.session['passport_image_path'] = temp_path
+
+            # Ensure `customer_info` is completely serializable
+            request.session['customer_info'] = json.loads(json.dumps(customer_info, default=str))
+
 
             request.session['customer_info'] = customer_info
             return redirect('authenticating:register_step3')
