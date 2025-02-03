@@ -78,6 +78,8 @@
     }
 </style>
 
+
+
 <div class="module">
     <h2>Edit Account Details</h2>
     <form method="post">
@@ -85,10 +87,11 @@
         <div class="form-row">
             <label>Account Type:</label>
             <select name="account_type" required>
-                <option value="btc">Bitcoin</option>
-                <option value="eth">Ethereum</option>
-                <option value="bank">Bank Account</option>
-                <option value="usdt">USDT</option>
+                {% for code, name in account_types %}
+                    {% if code not in existing_account_types %}
+                        <option value="{{ code }}">{{ name }}</option>
+                    {% endif %}
+                {% endfor %}
             </select>
         </div>
         <div class="form-row">
@@ -114,6 +117,7 @@
             <th>Number</th>
             <th>Name</th>
             <th>Additional Info</th>
+            <th>Actions</th>
         </tr>
         {% for account in accounts %}
         <tr>
@@ -121,6 +125,16 @@
             <td>{{ account.account_number }}</td>
             <td>{{ account.account_name }}</td>
             <td>{{ account.additional_info }}</td>
+            <td>
+                <form method="post" action="{% url 'admin_dashboard:edit_payment_details' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="account_type" value="{{ account.account_type }}">
+                    <input type="hidden" name="account_number" value="{{ account.account_number }}">
+                    <input type="hidden" name="account_name" value="{{ account.account_name }}">
+                    <input type="hidden" name="additional_info" value="{{ account.additional_info }}">
+                    <input type="submit" value="Edit">
+                </form>
+            </td>
         </tr>
         {% endfor %}
     </table>

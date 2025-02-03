@@ -894,6 +894,7 @@ from django.shortcuts import render, redirect
 from .models import AdminAccountDetails
 from django.contrib.admin.views.decorators import staff_member_required
 
+
 @staff_member_required
 def edit_payment_details(request):
     if request.method == 'POST':
@@ -901,7 +902,7 @@ def edit_payment_details(request):
         account_number = request.POST.get('account_number')
         account_name = request.POST.get('account_name')
         additional_info = request.POST.get('additional_info', {})
-        
+
         obj, created = AdminAccountDetails.objects.update_or_create(
             account_type=account_type,
             defaults={
@@ -911,10 +912,14 @@ def edit_payment_details(request):
             }
         )
         return redirect('admin_dashboard:edit_payment_details')
-        
+
     accounts = AdminAccountDetails.objects.all()
-    return render(request, 'admin_dashboard/edit_payment_details.html', {'accounts': accounts})
+    existing_account_types = accounts.values_list('account_type', flat=True)
+    account_types = AdminAccountDetails.ACCOUNT_TYPES
 
-
-
+    return render(request, 'admin_dashboard/edit_payment_details.html', {
+        'accounts': accounts,
+        'existing_account_types': existing_account_types,
+        'account_types': account_types
+    })
 
