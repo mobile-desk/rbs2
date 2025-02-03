@@ -900,20 +900,30 @@ def edit_payment_details(request):
         account_type = request.POST.get('account_type')
         account_number = request.POST.get('account_number')
         account_name = request.POST.get('account_name')
-        additional_info = request.POST.get('additional_info', {})
-        
-        obj, created = AdminAccountDetails.objects.update_or_create(
+        additional_info = request.POST.get('additional_info', '')
+
+        if AdminAccountDetails.objects.filter(account_type=account_type).exists():
+            # Prevent duplicate account types
+            return redirect('admin_dashboard:edit_payment_details')
+
+        AdminAccountDetails.objects.create(
             account_type=account_type,
-            defaults={
-                'account_number': account_number,
-                'account_name': account_name,
-                'additional_info': additional_info
-            }
+            account_number=account_number,
+            account_name=account_name,
+            additional_info=additional_info
         )
+
         return redirect('admin_dashboard:edit_payment_details')
-        
+
     accounts = AdminAccountDetails.objects.all()
-    return render(request, 'admin_dashboard/edit_payment_details.html', {'accounts': accounts})
+    existing_account_types = accounts.values_list('account_type', flat=True)
+    account_types = AdminAccountDetails.ACCOUNT_TYPES
+
+    return render(request, 'accounts/edit_payment_details.html', {
+        'accounts': accounts,
+        'existing_account_types': existing_account_types,
+        'account_types': account_types
+    })
 
 
 def edit_account(request, account_id):
@@ -925,7 +935,7 @@ def edit_account(request, account_id):
         account.additional_info = request.POST.get('additional_info', '')
         account.save()
 
-        return redirect('create_account')  # Redirect back to accounts list
+        return redirect('admin_dashboard:edit_payment_details')  # Redirect back to accounts list
 
     return render(request, 'accounts/edit_account.html', {'account': account})
 
