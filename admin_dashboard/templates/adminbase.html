@@ -136,7 +136,7 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link {% if request.resolver_match.url_name == 'edit_payment_details' %}active{% endif %}" href="{% url 'edit_payment_details' %}">
+                            <a class="nav-link {% if request.resolver_match.url_name == 'edit_payment_details' %}active{% endif %}" href="{% url 'admin_dashboard:edit_payment_details' %}">
                                 <i class="fas fa-credit-card me-2"></i> Edit Payment Details
                             </a>
                         </li>
