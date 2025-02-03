@@ -54,6 +54,7 @@
     }
 </style>
 
+
 <div class="payment-container">
     <h2>Select Payment Method</h2>
     
@@ -67,6 +68,7 @@
                 {% if payment.additional_info %}
                 <p><strong>Additional Info:</strong> <span id="info-{{ payment.account_type }}">{{ payment.additional_info }}</span></p>
                 {% endif %}
+                <button onclick="window.location.href='{% url 'confirm_payment' %}'">Confirm Payment</button>
             </div>
         </div>
         {% endfor %}

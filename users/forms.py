@@ -109,3 +109,13 @@ class CustomUserCreationForm(UserCreationForm):
             user.save()
         return user
 '''
+
+
+
+from django import forms
+from .models import PaymentConfirmation
+
+class PaymentConfirmationForm(forms.ModelForm):
+    class Meta:
+        model = PaymentConfirmation
+        fields = ['image']

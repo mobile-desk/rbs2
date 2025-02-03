@@ -1,0 +1,45 @@
+{% extends 'adminbase.html' %}
+
+{% block content %}
+<div class="module">
+    <h2>Payment Confirmations</h2>
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Image</th>
+            <th>Date</th>
+        </tr>
+        {% for confirmation in confirmations %}
+        <tr>
+            <td>{{ confirmation.user.username }}</td>
+            <td><img src="{{ confirmation.image.url }}" alt="Payment Image" width="100"></td>
+            <td>{{ confirmation.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Customer Profiles</h2>
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Customer Number</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for profile in profiles %}
+        <tr>
+            <td>{{ profile.user.username }}</td>
+            <td>{{ profile.customer_number }}</td>
+            <td>{{ profile.get_status_display }}</td>
+            <td>
+                <form method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="profile_id" value="{{ profile.id }}">
+                    <input type="submit" value="Toggle Status">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

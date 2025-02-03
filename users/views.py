@@ -588,3 +588,24 @@ def get_payment_details(request, payment_type):
         'account_name': details.account_name,
         'additional_info': details.additional_info
     })
+
+
+
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from .forms import PaymentConfirmationForm
+
+@login_required
+def confirm_payment(request):
+    if request.method == 'POST':
+        form = PaymentConfirmationForm(request.POST, request.FILES)
+        if form.is_valid():
+            payment_confirmation = form.save(commit=False)
+            payment_confirmation.user = request.user
+            payment_confirmation.save()
+            return redirect('authenticating:payment_success')  # Redirect to a success page
+    else:
+        form = PaymentConfirmationForm()
+
+    return render(request, 'users/confirm_payment.html', {'form': form})
+

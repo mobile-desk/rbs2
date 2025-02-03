@@ -43,3 +43,17 @@ class Mailbox(models.Model):
     def __str__(self):
         return f"{self.subject} - {self.date.strftime('%Y-%m-%d %H:%M')}"
 
+
+
+
+
+
+class PaymentConfirmation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='payment_confirmations/')
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Payment Confirmation by {self.user.username} on {self.date}"
+
+

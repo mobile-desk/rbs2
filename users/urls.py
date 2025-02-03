@@ -9,6 +9,8 @@ urlpatterns = [
     path('initial-deposit/', views.initial_deposit, name='initial_deposit'),
     path('payment-selection/', views.payment_selection, name='payment_selection'),
     path('payment-details/<str:payment_type>/', views.get_payment_details, name='payment_details'),
+    path('confirm_payment/', views.confirm_payment, name='confirm_payment'),
+
 
     path('register/', views.register_step1, name='register_step1'),
     path('register/step2/', views.register_step2, name='register_step2'),

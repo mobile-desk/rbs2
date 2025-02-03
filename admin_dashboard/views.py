@@ -940,3 +940,26 @@ def edit_account(request, account_id):
     return render(request, 'admin_dashboard/edit_account.html', {'account': account})
 
 
+
+
+from django.shortcuts import render, redirect
+from django.contrib.admin.views.decorators import staff_member_required
+from users.models import PaymentConfirmation, CustomerProfile
+
+@staff_member_required
+def view_submissions(request):
+    confirmations = PaymentConfirmation.objects.all()
+    profiles = CustomerProfile.objects.all()
+
+    if request.method == 'POST':
+        profile_id = request.POST.get('profile_id')
+        profile = CustomerProfile.objects.get(id=profile_id)
+        # Toggle status
+        profile.status = 'active' if profile.status == 'inactive' else 'inactive'
+        profile.save()
+        return redirect('admin_dashboard:view_submissions')
+
+    return render(request, 'admin_dashboard/view_submissions.html', {
+        'confirmations': confirmations,
+        'profiles': profiles
+    })
