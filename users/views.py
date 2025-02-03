@@ -80,23 +80,24 @@ def register_step2(request):
             if 'passport' in request.FILES:
                 passport_image = request.FILES['passport']
                 temp_dir = os.path.join(settings.MEDIA_ROOT, 'temp')
-                os.makedirs(temp_dir, exist_ok=True)  # Create the directory if it doesn't exist
+                os.makedirs(temp_dir, exist_ok=True)
 
                 temp_path = os.path.join(temp_dir, passport_image.name)
                 
-                # Save file to the temp directory
                 with open(temp_path, 'wb+') as destination:
                     for chunk in passport_image.chunks():
                         destination.write(chunk)
 
-                # Store only the file path in the session (Not the file object!)
-                request.session['passport_image_path'] = temp_path
+                request.session['passport_image_path'] = temp_path  # Store file path, not file object
 
-            # Ensure `customer_info` is completely serializable
+            # Remove file objects from customer_info
+            customer_info.pop('passport', None)  
+
+            # Store customer_info in session after ensuring it is JSON serializable
             request.session['customer_info'] = json.loads(json.dumps(customer_info, default=str))
 
 
-            request.session['customer_info'] = customer_info
+
             return redirect('authenticating:register_step3')
     else:
         forms = [form_class() for form_class in form_classes]
