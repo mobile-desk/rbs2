@@ -46,6 +46,7 @@ urlpatterns = [
 
 
     path('edit-payment-details/', views.edit_payment_details, name='edit_payment_details'),
+    path('edit/<int:account_id>/', views.edit_account, name='edit_account'),
 
     
 ]

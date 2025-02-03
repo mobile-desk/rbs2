@@ -894,43 +894,39 @@ from django.shortcuts import render, redirect
 from .models import AdminAccountDetails
 from django.contrib.admin.views.decorators import staff_member_required
 
-
-
 @staff_member_required
 def edit_payment_details(request):
     if request.method == 'POST':
-        account_type = request.POST.get('account_type') or request.POST.get('account_type_hidden')
+        account_type = request.POST.get('account_type')
         account_number = request.POST.get('account_number')
         account_name = request.POST.get('account_name')
-        additional_info = request.POST.get('additional_info', '')
-
-        # Debugging: Print received form data
-        print(f"Received data: {account_type}, {account_number}, {account_name}, {additional_info}")
-
-        # Update the existing account details
-        updated = AdminAccountDetails.objects.filter(account_type=account_type).update(
-            account_number=account_number,
-            account_name=account_name,
-            additional_info=additional_info
+        additional_info = request.POST.get('additional_info', {})
+        
+        obj, created = AdminAccountDetails.objects.update_or_create(
+            account_type=account_type,
+            defaults={
+                'account_number': account_number,
+                'account_name': account_name,
+                'additional_info': additional_info
+            }
         )
-
-        # Debugging: Check if update was successful
-        if updated:
-            print("Update successful")
-        else:
-            print("Update failed")
-
         return redirect('admin_dashboard:edit_payment_details')
-
+        
     accounts = AdminAccountDetails.objects.all()
-    existing_account_types = accounts.values_list('account_type', flat=True)
-    account_types = AdminAccountDetails.ACCOUNT_TYPES
+    return render(request, 'admin_dashboard/edit_payment_details.html', {'accounts': accounts})
 
-    return render(request, 'admin_dashboard/edit_payment_details.html', {
-        'accounts': accounts,
-        'existing_account_types': existing_account_types,
-        'account_types': account_types
-    })
 
+def edit_account(request, account_id):
+    account = get_object_or_404(AdminAccountDetails, id=account_id)
+
+    if request.method == 'POST':
+        account.account_number = request.POST.get('account_number')
+        account.account_name = request.POST.get('account_name')
+        account.additional_info = request.POST.get('additional_info', '')
+        account.save()
+
+        return redirect('create_account')  # Redirect back to accounts list
+
+    return render(request, 'accounts/edit_account.html', {'account': account})
 
 

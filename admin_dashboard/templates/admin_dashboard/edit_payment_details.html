@@ -79,32 +79,32 @@
 </style>
 
 
+
 <div class="module">
     <h2>Edit Account Details</h2>
-    <form method="post" id="account-form">
+    <form method="post">
         {% csrf_token %}
         <div class="form-row">
             <label>Account Type:</label>
-            <select name="account_type" id="account-type" required>
+            <select name="account_type" required>
                 {% for code, name in account_types %}
                     {% if code not in existing_account_types %}
                         <option value="{{ code }}">{{ name }}</option>
                     {% endif %}
                 {% endfor %}
             </select>
-            <input type="hidden" name="account_type_hidden" id="account-type-hidden">
         </div>
         <div class="form-row">
             <label>Account Number:</label>
-            <input type="text" name="account_number" id="account-number" required>
+            <input type="text" name="account_number" required>
         </div>
         <div class="form-row">
             <label>Account Name:</label>
-            <input type="text" name="account_name" id="account-name" required>
+            <input type="text" name="account_name" required>
         </div>
         <div class="form-row">
             <label>Additional Info:</label>
-            <textarea name="additional_info" id="additional-info"></textarea>
+            <textarea name="additional_info"></textarea>
         </div>
         <div class="submit-row">
             <input type="submit" value="Save">
@@ -126,42 +126,18 @@
             <td>{{ account.account_name }}</td>
             <td>{{ account.additional_info }}</td>
             <td>
-                <button type="button" class="edit-button" data-type="{{ account.account_type }}" data-number="{{ account.account_number }}" data-name="{{ account.account_name }}" data-info="{{ account.additional_info }}">Edit</button>
+                <form method="post" action="{% url 'admin_dashboard:edit_payment_details' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="account_type" value="{{ account.account_type }}">
+                    <input type="hidden" name="account_number" value="{{ account.account_number }}">
+                    <input type="hidden" name="account_name" value="{{ account.account_name }}">
+                    <input type="hidden" name="additional_info" value="{{ account.additional_info }}">
+                    <a href="{% url 'edit_account' account.id %}">Edit</a>
+                </form>
             </td>
         </tr>
         {% endfor %}
     </table>
 </div>
-
-<script>
-    document.querySelectorAll('.edit-button').forEach(button => {
-        button.addEventListener('click', function() {
-            const type = this.dataset.type;
-            const number = this.dataset.number;
-            const name = this.dataset.name;
-            const info = this.dataset.info;
-    
-            document.getElementById('account-type').value = type;
-            document.getElementById('account-number').value = number;
-            document.getElementById('account-name').value = name;
-            document.getElementById('additional-info').value = info;
-    
-            // Store the account type in the hidden field
-            document.getElementById('account-type-hidden').value = type;
-    
-            // Disable account type selection
-            document.getElementById('account-type').disabled = true;
-        });
-    });
-    
-    // Enable account-type when submitting
-    document.getElementById('account-form').addEventListener('submit', function() {
-        document.getElementById('account-type').disabled = false;
-    });
-    
-
-
-</script>
-
 
 {% endblock %}

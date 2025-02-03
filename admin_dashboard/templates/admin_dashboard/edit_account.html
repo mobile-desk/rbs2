@@ -1,0 +1,109 @@
+{% extends 'adminbase.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+.module {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.module h2, .module h3 {
+    text-align: center;
+    color: #333;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+.form-row label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-row input[type="text"],
+.form-row select,
+.form-row textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.submit-row {
+    text-align: center;
+}
+
+.submit-row input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-row input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+</style>
+
+<div class="module">
+    <h2>Edit Account Details</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-row">
+            <label>Account Type:</label>
+            <input type="text" value="{{ account.get_account_type_display }}" disabled>
+        </div>
+        <div class="form-row">
+            <label>Account Number:</label>
+            <input type="text" name="account_number" value="{{ account.account_number }}" required>
+        </div>
+        <div class="form-row">
+            <label>Account Name:</label>
+            <input type="text" name="account_name" value="{{ account.account_name }}" required>
+        </div>
+        <div class="form-row">
+            <label>Additional Info:</label>
+            <textarea name="additional_info">{{ account.additional_info }}</textarea>
+        </div>
+        <div class="submit-row">
+            <input type="submit" value="Update">
+        </div>
+    </form>
+    <a href="{% url 'create_account' %}">Back to Accounts</a>
+</div>
+
+
+{% endblock %}
