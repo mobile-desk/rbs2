@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="payment-container">
+    <h2>Select Payment Method</h2>
+    
+    <div class="payment-methods">
+        {% for payment in payment_types %}
+        <div class="payment-option" data-type="{{ payment.account_type }}">
+            <h3>{{ payment.get_account_type_display }}</h3>
+            <div class="payment-details" id="details-{{ payment.account_type }}" style="display: none;">
+                <p><strong>Account Number:</strong> <span id="number-{{ payment.account_type }}">{{ payment.account_number }}</span></p>
+                <p><strong>Account Name:</strong> <span id="name-{{ payment.account_type }}">{{ payment.account_name }}</span></p>
+                {% if payment.additional_info %}
+                <p><strong>Additional Info:</strong> <span id="info-{{ payment.account_type }}">{{ payment.additional_info }}</span></p>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+document.querySelectorAll('.payment-option').forEach(option => {
+    option.addEventListener('click', function() {
+        const type = this.dataset.type;
+        const details = document.getElementById(`details-${type}`);
+        
+        // Hide all other details
+        document.querySelectorAll('.payment-details').forEach(el => {
+            if (el !== details) el.style.display = 'none';
+        });
+        
+        // Toggle selected details
+        details.style.display = details.style.display === 'none' ? 'block' : 'none';
+    });
+});
+</script>
+{% endblock %}

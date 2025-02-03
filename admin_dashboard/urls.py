@@ -44,5 +44,8 @@ urlpatterns = [
     path('btc-wallets/edit/<int:wallet_id>/', views.edit_btc_wallet, name='edit_btc_wallet'),
     path('btc-status-control/', views.btc_status_control, name='btc_status_control'),
 
+
+    path('edit-payment-details/', views.edit_payment_details, name='edit_payment_details'),
+
     
 ]

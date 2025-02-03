@@ -63,7 +63,6 @@ function OptanonWrapper() {
 	<!--One trust cookie configuration updated -->
     
 	
-		<link rel="canonical" href="https://www.rbsinternational.com/eq-online-banking-platform.html">
 	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -89,10 +88,6 @@ function OptanonWrapper() {
     <meta property="og:title" content="eQ Banking Solutions | RBS International">
     <meta property="og:type">
     
-		<meta property="og:image" content="/content/dam/rbsinternational_com/assets/images/hero/circuit-board-res-hero-rbsi.jpg">
-	
-	
-    <meta property="og:url" content="https://www.rbsinternational.com/eq-online-banking-platform.html">
     <meta property="og:description" content="Take advantage of our multi-currency online banking solution, eQ, that&rsquo;s designed to meet your international and domestic banking needs.">
 
     
@@ -184,7 +179,6 @@ function OptanonWrapper() {
         <script
             src="{% static 'eob/js/launch-EN36e7398f32914ad28e21b622457f151b.min.js' %}">  </script>
 
-        <link rel="canonical" href="/eq-online-banking-platform.html">
 
         <script src="{% static 'eob/js/granite-jquery.min.js' %}"></script>
         <script src="{% static 'eob/js/granite-utils.min.js' %}"></script>
@@ -245,7 +239,7 @@ function OptanonWrapper() {
                     <ul class="skip-links reset" id="skiplinks">
                         <li>
                             <a accesskey="a" class="txt-p-1"
-                                href="www.rbsinternational.html">Jump to
+                                href="{% url 'core:home' %}">Jump to
                                 Accessibility</a>
                         </li>
                         <li>
@@ -293,14 +287,14 @@ function OptanonWrapper() {
 
                                                     <li>
                                                         <a
-                                                            href="www.rbsinternational.html"
+                                                            href="{% url 'core:home' %}"
                                                             data-navid="institutional banking"><span>Institutional
                                                                 Banking</span></a>
                                                     </li>
 
                                                     <li class="hide__desktop">
                                                         <a
-                                                            href="institutional-banking.html"
+                                                            href=""
                                                             data-navid="institutional"><span>Institutional</span></a>
                                                     </li>
 
@@ -315,11 +309,21 @@ function OptanonWrapper() {
                                                     href="{% static 'eob/css/clientlibs-clientlib_ia_global_login_champion-_9f70e377798d49ec9c7a90a25b5fa070.min.css' %}"
                                                     type="text/css">
 
-                                                <a class="iah__login-link"
-                                                    href="log-in.html">
-
-                                                    Log in
-                                                </a>
+                                                    {% if user.is_authenticated %}
+                                                    <a
+                                                      class="iah__login-link"
+                                                      href="{% url 'authenticating:dashboard' %}"
+                                                    >
+                                                      Dashboard
+                                                    </a>
+                                                    {% else %}
+                                                    <a
+                                                      class="iah__login-link"
+                                                      href="{% url 'authenticating:login' %}"
+                                                    >
+                                                      Log in
+                                                    </a>
+                                                    {% endif %}
 
                                             </div>
                                         </div>
@@ -333,11 +337,21 @@ function OptanonWrapper() {
 
                                             <div class="iah__login">
 
-                                                <a class="iah__login-link"
-                                                    href="log-in.html">
-
-                                                    Log in
+                                                {% if user.is_authenticated %}
+                                                <a
+                                                  class="iah__login-link"
+                                                  href="{% url 'authenticating:dashboard' %}"
+                                                >
+                                                  Dashboard
                                                 </a>
+                                                {% else %}
+                                                <a
+                                                  class="iah__login-link"
+                                                  href="{% url 'authenticating:login' %}"
+                                                >
+                                                  Log in
+                                                </a>
+                                                {% endif %}
 
                                                 <div class="bussiness__login">
 
@@ -352,7 +366,7 @@ function OptanonWrapper() {
 
                                                 <div class="iah__logo">
                                                     <a class="iah__logo-link"
-                                                        href="www.rbsinternational.html"
+                                                        href="{% url 'core:home' %}"
                                                         title="RBS International">
 
                                                         <img
@@ -388,7 +402,7 @@ function OptanonWrapper() {
                                                             class="iah__logo mobile_logo">
                                                             <a
                                                                 class="iah__logo-link mobile-logo-link"
-                                                                href="www.rbsinternational.html"
+                                                                href="{% url 'core:home' %}"
                                                                 title="RBS International">
 
                                                                 <img
@@ -418,14 +432,14 @@ function OptanonWrapper() {
                                                             <li
                                                                 class="ia-active hide__mobile">
                                                                 <a
-                                                                    href="www.rbsinternational.html"
+                                                                    href="{% url 'core:home' %}"
                                                                     data-navid="institutional banking"><span>Institutional
                                                                         Banking</span></a>
                                                             </li>
 
                                                             <li class=" ">
                                                                 <a
-                                                                    href="institutional-banking.html"
+                                                                    href=""
                                                                     data-navid="institutional"><span>Institutional
                                                                         Banking</span></a>
                                                             </li>
@@ -586,27 +600,45 @@ function OptanonWrapper() {
 
                                                     <div class="iah__mb__login">
 
-                                                        <a type="button"
-                                                            role="button"
-                                                            data-target="login"
-                                                            class="iah__btn__tabs"
-                                                            href="log-in.html">
-
-                                                            <span
-                                                                class="iah__btn__tabs_wrap">
-                                                                <span>
-
-                                                                    <img
-                                                                        src="{% static 'eob/images/images-Login-white.svg' %}"
-                                                                        role="presentation"
-                                                                        alt>
-                                                                    <span
-                                                                        class>Log
-                                                                        in</span>
-
-                                                                </span>
+                                                        {% if user.is_authenticated %}
+                                                        <a
+                                                          type="button"
+                                                          role="button"
+                                                          data-target="login"
+                                                          class="iah__btn__tabs"
+                                                          href="{% url 'authenticating:dashboard' %}"
+                                                        >
+                                                          <span class="iah__btn__tabs_wrap">
+                                                            <span>
+                                                              <img
+                                                                src="{% static 'home/images/images-Login-white.svg' %}"
+                                                                role="presentation"
+                                                                alt=""
+                                                              />
+                                                              <span class="">Dashboard</span>
                                                             </span>
+                                                          </span>
                                                         </a>
+                                                        {% else %}
+                                                        <a
+                                                          type="button"
+                                                          role="button"
+                                                          data-target="login"
+                                                          class="iah__btn__tabs"
+                                                          href="{% url 'authenticating:login' %}"
+                                                        >
+                                                          <span class="iah__btn__tabs_wrap">
+                                                            <span>
+                                                              <img
+                                                                src="{% static 'home/images/images-Login-white.svg' %}"
+                                                                role="presentation"
+                                                                alt=""
+                                                              />
+                                                              <span class="">Log in</span>
+                                                            </span>
+                                                          </span>
+                                                        </a>
+                                                        {% endif %}
                                                     </div>
 
                                                     <div>
@@ -683,7 +715,7 @@ function OptanonWrapper() {
 
                                                         <li>
                                                             <a
-                                                                href="institutional-banking.html"
+                                                                href=""
                                                                 title="Institutional Banking"><span>Institutional
                                                                     Banking</span></a>
                                                             <span
@@ -2272,7 +2304,7 @@ function OptanonWrapper() {
                                                                                                     class="cta-button"
                                                                                                     data-disable-blank="false"
                                                                                                     title="More about eQ Mobile"
-                                                                                                    href="eq-mobile.html"
+                                                                                                    href=""
                                                                                                     target="_self">
                                                                                                     <span
                                                                                                         class="cta-text">More
@@ -2455,7 +2487,7 @@ function OptanonWrapper() {
                                                                                                     class="cta-button"
                                                                                                     data-disable-blank="false"
                                                                                                     title="Opening accounts with eQ"
-                                                                                                    href="eq-account-opening.html"
+                                                                                                    href=""
                                                                                                     target="_self">
                                                                                                     <span
                                                                                                         class="cta-text">Opening
@@ -2638,7 +2670,7 @@ function OptanonWrapper() {
 
                                                                 <a
                                                                     class="cta cta-primary  "
-                                                                    href="eq-support-centre.html"
+                                                                    href=""
                                                                     title="Go to eQ Support Centre"
                                                                     target="_self"
                                                                     aria-label="Go to eQ Support Centre">
@@ -3290,7 +3322,7 @@ function OptanonWrapper() {
 
                                                                             <a
                                                                                 class="cta cta-secondary  "
-                                                                                href="who-we-are.html"
+                                                                                href=""
                                                                                 title="More about who we are"
                                                                                 target="_self"
                                                                                 aria-label="More about who we are">
@@ -3672,7 +3704,7 @@ function OptanonWrapper() {
                                                                                                                                     aria-label="Make an enquiry in Jersey"
                                                                                                                                     data-disable-blank="false"
                                                                                                                                     title="Make an enquiry in Jersey"
-                                                                                                                                    href="jersey-enquiry.html"
+                                                                                                                                    href=""
                                                                                                                                     target="_self">
                                                                                                                                     <span
                                                                                                                                         class="cta-text">Make
@@ -4059,7 +4091,7 @@ function OptanonWrapper() {
                                                                                                                                     aria-label="Make an enquiry in Guernsey"
                                                                                                                                     data-disable-blank="false"
                                                                                                                                     title="Make an enquiry in Guernsey"
-                                                                                                                                    href="guernsey-enquiry.html"
+                                                                                                                                    href=""
                                                                                                                                     target="_self">
                                                                                                                                     <span
                                                                                                                                         class="cta-text">Make
@@ -4445,7 +4477,7 @@ function OptanonWrapper() {
                                                                                                                                     aria-label="Make an enquiry in Isle of Man"
                                                                                                                                     data-disable-blank="false"
                                                                                                                                     title="Make an enquiry in Isle of Man"
-                                                                                                                                    href="isle-of-man-enquiry.html"
+                                                                                                                                    href=""
                                                                                                                                     target="_self">
                                                                                                                                     <span
                                                                                                                                         class="cta-text">Make
@@ -4833,7 +4865,7 @@ function OptanonWrapper() {
                                                                                                                                     aria-label="Make an enquiry  in Gibraltar"
                                                                                                                                     data-disable-blank="false"
                                                                                                                                     title="Make an enquiry  in Gibraltar"
-                                                                                                                                    href="gibraltar-enquiry.html"
+                                                                                                                                    href=""
                                                                                                                                     target="_self">
                                                                                                                                     <span
                                                                                                                                         class="cta-text">Make
@@ -5218,7 +5250,7 @@ function OptanonWrapper() {
                                                                                                                                     aria-label="Make an enquiry in London"
                                                                                                                                     data-disable-blank="false"
                                                                                                                                     title="Make an enquiry in London"
-                                                                                                                                    href="london-enquiry.html"
+                                                                                                                                    href=""
                                                                                                                                     target="_self">
                                                                                                                                     <span
                                                                                                                                         class="cta-text">Make
@@ -5604,7 +5636,7 @@ function OptanonWrapper() {
                                                                                                                                     aria-label="Make an enquiry  in Luxembourg"
                                                                                                                                     data-disable-blank="false"
                                                                                                                                     title="Make an enquiry  in Luxembourg"
-                                                                                                                                    href="luxembourg-enquiry.html"
+                                                                                                                                    href=""
                                                                                                                                     target="_self">
                                                                                                                                     <span
                                                                                                                                         class="cta-text">Make

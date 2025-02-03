@@ -11,6 +11,7 @@ from decimal import Decimal
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from admin_dashboard.models import VerificationSettings
+from users.models import CustomerProfile
 
 VALID_TAX_CODES = ['TX1257L12', 'TX12356', 'A1B2C3', 'X9Y8Z7', 'M5N6P7', 'Q2W3E4', 'R5T6Y7', 
                'U8I9O0', 'F4G5H6', 'J7K8L9', 'S1D2F3', 'Z9X8C7',
@@ -50,10 +51,16 @@ def check_anti_money_laundering_code(code):
 
 @login_required
 def pat(request):
+    profile = CustomerProfile.objects.get(user=request.user)
+    if profile.status == 'inactive':
+        return redirect('authenticating:initial_deposit')
     return render(request, 'transactions/pat.html')
 
 @login_required
 def transaction_list(request):
+    profile = CustomerProfile.objects.get(user=request.user)
+    if profile.status == 'inactive':
+        return redirect('authenticating:initial_deposit')
     accounts = Account.objects.filter(user=request.user)
     transactions = Transaction.objects.filter(account__in=accounts).order_by('-timestamp')
     return render(request, 'transactions/transaction_list.html', {'transactions': transactions})
@@ -70,6 +77,9 @@ def get_verification_settings():
 
 @login_required
 def submit_payment(request):
+    profile = CustomerProfile.objects.get(user=request.user)
+    if profile.status == 'inactive':
+        return redirect('authenticating:initial_deposit')
     if request.method == 'POST':
         form = PaymentForm(request.user, request.POST)
         if form.is_valid():
@@ -107,6 +117,9 @@ def submit_payment(request):
 
 @login_required
 def verify_tax_code(request):
+    profile = CustomerProfile.objects.get(user=request.user)
+    if profile.status == 'inactive':
+        return redirect('authenticating:initial_deposit')
     settings = get_verification_settings()
     if not settings.tax_code_required:
         return redirect('transactions:verify_anti_terrorist_code')
@@ -219,6 +232,9 @@ def display_receipt(request, receipt_id):
 
 @login_required
 def create_international_transfer(request):
+    profile = CustomerProfile.objects.get(user=request.user)
+    if profile.status == 'inactive':
+        return redirect('authenticating:initial_deposit')
     if request.method == 'POST':
         form = InternationalTransferForm(request.POST, user=request.user)
         if form.is_valid():

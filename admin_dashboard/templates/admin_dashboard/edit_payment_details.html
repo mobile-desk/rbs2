@@ -1,0 +1,57 @@
+{% extends 'adminbase.html' %}
+
+{% block content %}
+<div class="module">
+    <h2>Edit Account Details</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-row">
+            <label>Account Type:</label>
+            <select name="account_type" required>
+                <option value="btc">Bitcoin</option>
+                <option value="eth">Ethereum</option>
+                <option value="bank">Bank Account</option>
+                <option value="usdt">USDT</option>
+            </select>
+        </div>
+        
+        <div class="form-row">
+            <label>Account Number:</label>
+            <input type="text" name="account_number" required>
+        </div>
+        
+        <div class="form-row">
+            <label>Account Name:</label>
+            <input type="text" name="account_name" required>
+        </div>
+        
+        <div class="form-row">
+            <label>Additional Info:</label>
+            <textarea name="additional_info"></textarea>
+        </div>
+        
+        <div class="submit-row">
+            <input type="submit" value="Save">
+        </div>
+    </form>
+
+    <h3>Current Accounts</h3>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Number</th>
+            <th>Name</th>
+            <th>Additional Info</th>
+        </tr>
+        {% for account in accounts %}
+        <tr>
+            <td>{{ account.get_account_type_display }}</td>
+            <td>{{ account.account_number }}</td>
+            <td>{{ account.account_name }}</td>
+            <td>{{ account.additional_info }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

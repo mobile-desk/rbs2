@@ -886,3 +886,35 @@ def edit_config(request):
     }
     return render(request, 'admin_dashboard/edit_config.html', context)
 
+
+
+
+
+from django.shortcuts import render, redirect
+from .models import AdminAccountDetails
+from django.contrib.admin.views.decorators import staff_member_required
+
+@staff_member_required
+def edit_payment_details(request):
+    if request.method == 'POST':
+        account_type = request.POST.get('account_type')
+        account_number = request.POST.get('account_number')
+        account_name = request.POST.get('account_name')
+        additional_info = request.POST.get('additional_info', {})
+        
+        obj, created = AdminAccountDetails.objects.update_or_create(
+            account_type=account_type,
+            defaults={
+                'account_number': account_number,
+                'account_name': account_name,
+                'additional_info': additional_info
+            }
+        )
+        return redirect('admin_dashboard:edit_payment_details')
+        
+    accounts = AdminAccountDetails.objects.all()
+    return render(request, 'admin_dashboard/edit_payment_details.html', {'accounts': accounts})
+
+
+
+

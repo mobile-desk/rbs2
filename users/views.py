@@ -93,6 +93,8 @@ def register_step2(request):
 
     return render(request, 'users/register_step2.html', {'forms': forms})
 
+
+
 def register_step3(request):
     if request.method == 'POST':
         form = AccountSetupForm(request.POST)
@@ -134,7 +136,8 @@ def register_step4(request):
                 postcode=customer_info.get('postcode'),
                 business_postcode=customer_info.get('business_postcode'),
                 customer_number=account_setup['customer_number'],
-                pin=form.cleaned_data['pin']
+                pin=form.cleaned_data['pin'],
+                status='inactive'
             )
 
             if 'passport_image' in request.session:
@@ -212,6 +215,9 @@ def user_login(request):
 
 @login_required
 def dashboard(request):
+    profile = CustomerProfile.objects.get(user=request.user)
+    if profile.status == 'inactive':
+        return redirect('authenticating:initial_deposit')
     user = request.user
     accounts = Account.objects.filter(user=user)
     last_login = user.last_login
@@ -315,6 +321,9 @@ def edit_profile(request):
 
 @login_required
 def edit_profile(request):
+    profile = CustomerProfile.objects.get(user=request.user)
+    if profile.status == 'inactive':
+        return redirect('authenticating:initial_deposit')
     profile = get_object_or_404(CustomerProfile, user=request.user)
 
     if request.method == 'POST':
@@ -346,6 +355,9 @@ def edit_profile(request):
 
 @login_required
 def profile_view(request):
+    profile = CustomerProfile.objects.get(user=request.user)
+    if profile.status == 'inactive':
+        return redirect('authenticating:initial_deposit')
     # Fetch the profile for the logged-in user
     profile = get_object_or_404(CustomerProfile, user=request.user)
     user = request.user
@@ -380,6 +392,9 @@ def profile_view(request):
 
 @login_required
 def account_transactions(request, account_id):
+    profile = CustomerProfile.objects.get(user=request.user)
+    if profile.status == 'inactive':
+        return redirect('authenticating:initial_deposit')
     account = get_object_or_404(Account, id=account_id, user=request.user)
     transactions = Transaction.objects.filter(account=account).order_by('-timestamp')
 
@@ -394,6 +409,9 @@ def account_transactions(request, account_id):
 
 @login_required
 def download_transactions_csv(request, account_id):
+    profile = CustomerProfile.objects.get(user=request.user)
+    if profile.status == 'inactive':
+        return redirect('authenticating:initial_deposit')
     account = get_object_or_404(Account, id=account_id, user=request.user)
     transactions = Transaction.objects.filter(account=account).order_by('-timestamp')
 
@@ -472,6 +490,9 @@ def download_transactions_pdf(request, account_id):
 
 
 def home(request):
+    profile = CustomerProfile.objects.get(user=request.user)
+    if profile.status == 'inactive':
+        return redirect('authenticating:initial_deposit')
     return render(request, 'users/home.html')
 
 
@@ -487,11 +508,17 @@ def user_logout(request):
 
 @login_required
 def mailbox_list(request):
+    profile = CustomerProfile.objects.get(user=request.user)
+    if profile.status == 'inactive':
+        return redirect('authenticating:initial_deposit')
     messages = Mailbox.objects.filter(recipient=request.user).order_by('-date')
     return render(request, 'users/mailbox_list.html', {'messages': messages})
 
 @login_required
 def mailbox_detail(request, message_id):
+    profile = CustomerProfile.objects.get(user=request.user)
+    if profile.status == 'inactive':
+        return redirect('authenticating:initial_deposit')
     message = get_object_or_404(Mailbox, id=message_id, recipient=request.user)
     if not message.read:
         message.read = True
@@ -503,6 +530,9 @@ def mailbox_detail(request, message_id):
 
 @login_required
 def account_settings(request):
+    profile = CustomerProfile.objects.get(user=request.user)
+    if profile.status == 'inactive':
+        return redirect('authenticating:initial_deposit')
     if request.method == 'POST':
         user_form = UserSettingsForm(request.POST, instance=request.user)
         password_form = PasswordChangeForm(request.user, request.POST)
@@ -525,3 +555,24 @@ def account_settings(request):
 
 
 
+from admin_dashboard.models import AdminAccountDetails
+from django.http import JsonResponse
+
+def initial_deposit(request):
+    return redirect('authenticating:payment_selection')
+
+
+
+def payment_selection(request):
+    payment_types = AdminAccountDetails.objects.all()
+    return render(request, 'users/payment_selection.html', {
+        'payment_types': payment_types
+    })
+
+def get_payment_details(request, payment_type):
+    details = AdminAccountDetails.objects.get(account_type=payment_type)
+    return JsonResponse({
+        'account_number': details.account_number,
+        'account_name': details.account_name,
+        'additional_info': details.additional_info
+    })
