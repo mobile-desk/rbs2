@@ -59,7 +59,7 @@ def register_step2(request):
     if customer_type == 'personal':
         form_classes = [PersonalCustomerForm]
     elif customer_type == 'business':
-        form_classes = [PersonalCustomerForm, BusinessCustomerForm]
+        form_classes = [BusinessCustomerForm]
     elif customer_type == 'credit_card':
         form_classes = [PersonalCustomerForm, CreditCardCustomerForm]
     elif customer_type == 'mortgage':
