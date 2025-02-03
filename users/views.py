@@ -61,9 +61,9 @@ def register_step2(request):
     elif customer_type == 'business':
         form_classes = [BusinessCustomerForm]
     elif customer_type == 'credit_card':
-        form_classes = [PersonalCustomerForm, CreditCardCustomerForm]
+        form_classes = [CreditCardCustomerForm]
     elif customer_type == 'mortgage':
-        form_classes = [PersonalCustomerForm, MortgageCustomerForm]
+        form_classes = [MortgageCustomerForm]
     else:
         return redirect('authenticating:register_step1')
 
