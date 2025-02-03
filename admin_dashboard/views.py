@@ -919,7 +919,7 @@ def edit_payment_details(request):
     existing_account_types = accounts.values_list('account_type', flat=True)
     account_types = AdminAccountDetails.ACCOUNT_TYPES
 
-    return render(request, 'accounts/edit_payment_details.html', {
+    return render(request, 'admin_dashboard/edit_payment_details.html', {
         'accounts': accounts,
         'existing_account_types': existing_account_types,
         'account_types': account_types
@@ -937,6 +937,6 @@ def edit_account(request, account_id):
 
         return redirect('admin_dashboard:edit_payment_details')  # Redirect back to accounts list
 
-    return render(request, 'accounts/edit_account.html', {'account': account})
+    return render(request, 'admin_dashboard/edit_account.html', {'account': account})
 
 
