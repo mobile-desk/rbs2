@@ -4,7 +4,7 @@ from . import views
 app_name = 'admin_dashboard'
 
 urlpatterns = [
-    path('users/', views.user_list, name='user_list'),
+    path('', views.user_list, name='user_list'),
 
     path('change-user-password/<int:user_id>/', views.change_user_password, name='change_user_password'),
 
