@@ -92,6 +92,7 @@
                     {% endif %}
                 {% endfor %}
             </select>
+            <input type="hidden" name="account_type_hidden" id="account-type-hidden">
         </div>
         <div class="form-row">
             <label>Account Number:</label>
@@ -133,22 +134,33 @@
 </div>
 
 <script>
-document.querySelectorAll('.edit-button').forEach(button => {
-    button.addEventListener('click', function() {
-        const type = this.dataset.type;
-        const number = this.dataset.number;
-        const name = this.dataset.name;
-        const info = this.dataset.info;
-
-        document.getElementById('account-type').value = type;
-        document.getElementById('account-number').value = number;
-        document.getElementById('account-name').value = name;
-        document.getElementById('additional-info').value = info;
-
-        // Disable account type selection to prevent changing it during edit
-        document.getElementById('account-type').disabled = true;
+    document.querySelectorAll('.edit-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const type = this.dataset.type;
+            const number = this.dataset.number;
+            const name = this.dataset.name;
+            const info = this.dataset.info;
+    
+            document.getElementById('account-type').value = type;
+            document.getElementById('account-number').value = number;
+            document.getElementById('account-name').value = name;
+            document.getElementById('additional-info').value = info;
+    
+            // Store the account type in the hidden field
+            document.getElementById('account-type-hidden').value = type;
+    
+            // Disable account type selection
+            document.getElementById('account-type').disabled = true;
+        });
     });
-});
+    
+    // Enable account-type when submitting
+    document.getElementById('account-form').addEventListener('submit', function() {
+        document.getElementById('account-type').disabled = false;
+    });
+    
+
+
 </script>
 
 

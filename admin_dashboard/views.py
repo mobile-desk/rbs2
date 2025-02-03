@@ -896,16 +896,15 @@ from django.contrib.admin.views.decorators import staff_member_required
 
 
 
-
 @staff_member_required
 def edit_payment_details(request):
     if request.method == 'POST':
-        account_type = request.POST.get('account_type')
+        account_type = request.POST.get('account_type') or request.POST.get('account_type_hidden')
         account_number = request.POST.get('account_number')
         account_name = request.POST.get('account_name')
         additional_info = request.POST.get('additional_info', '')
 
-        # Debugging: Print the received form data
+        # Debugging: Print received form data
         print(f"Received data: {account_type}, {account_number}, {account_name}, {additional_info}")
 
         # Update the existing account details
@@ -915,7 +914,7 @@ def edit_payment_details(request):
             additional_info=additional_info
         )
 
-        # Debugging: Check if the update was successful
+        # Debugging: Check if update was successful
         if updated:
             print("Update successful")
         else:
@@ -932,5 +931,6 @@ def edit_payment_details(request):
         'existing_account_types': existing_account_types,
         'account_types': account_types
     })
+
 
 
