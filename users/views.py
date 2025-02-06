@@ -54,6 +54,16 @@ def register_step1(request):
 
 
 
+from django.utils import timezone
+from django.core.files import File
+
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+import os
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+import os
+
 def register_step2(request):
     customer_type = request.session.get('customer_type')
     if customer_type == 'personal':
@@ -77,32 +87,22 @@ def register_step2(request):
             if 'date_of_birth' in customer_info:
                 customer_info['date_of_birth'] = customer_info['date_of_birth'].isoformat()
 
-            if 'passport' in request.FILES:
-                passport_image = request.FILES['passport']
-                temp_dir = os.path.join(settings.MEDIA_ROOT, 'temp')
-                os.makedirs(temp_dir, exist_ok=True)
-
-                temp_path = os.path.join(temp_dir, passport_image.name)
-                
-                with open(temp_path, 'wb+') as destination:
-                    for chunk in passport_image.chunks():
-                        destination.write(chunk)
-
-                request.session['passport_image_path'] = temp_path  # Store file path, not file object
-
-            # Remove file objects from customer_info
-            customer_info.pop('passport', None)  
-
-            # Store customer_info in session after ensuring it is JSON serializable
+            # Store customer info in session
             request.session['customer_info'] = json.loads(json.dumps(customer_info, default=str))
 
-
+            # Save passport temporarily to media storage
+            if 'passport' in request.FILES:
+                passport_file = request.FILES['passport']
+                file_name = f"temp_passports/{passport_file.name}"
+                saved_path = default_storage.save(file_name, ContentFile(passport_file.read()))
+                request.session['passport_temp_path'] = saved_path  # Store path to retrieve in step 4
 
             return redirect('authenticating:register_step3')
     else:
         forms = [form_class() for form_class in form_classes]
 
     return render(request, 'users/register_step2.html', {'forms': forms})
+
 
 
 def register_step3(request):
@@ -121,6 +121,13 @@ def register_step3(request):
 
 
 
+
+
+
+from django.utils import timezone
+from django.core.files.storage import default_storage
+from django.core.files.base import File
+
 def register_step4(request):
     if request.method == 'POST':
         form = PinPasswordForm(request.POST)
@@ -131,6 +138,7 @@ def register_step4(request):
             password = form.cleaned_data['password']
             customer_number = account_setup['customer_number']
 
+            # Create user
             user = User.objects.create_user(
                 username=customer_number,
                 email=email,
@@ -140,6 +148,7 @@ def register_step4(request):
             user.last_name = customer_info['last_name']
             user.save()
 
+            # Create CustomerProfile
             CustomerProfile.objects.create(
                 user=user,
                 customer_type=request.session['customer_type'],
@@ -152,21 +161,7 @@ def register_step4(request):
                 status='inactive'
             )
 
-            if 'passport_image' in request.session:
-                passport_image_name = request.session['passport_image']
-                temp_path = os.path.join(settings.MEDIA_ROOT, 'temp', passport_image_name)
-                with open(temp_path, 'rb') as f:
-                    Passport.objects.create(
-                        user=user,
-                        passport_number='Temporary',
-                        issue_date=timezone.now().date(),
-                        expiry_date=timezone.now().date() + timezone.timedelta(days=3650),
-                        country_of_issue='Temporary',
-                        passport_image=File(f, name=passport_image_name)
-                    )
-                os.remove(temp_path)
-                del request.session['passport_image']
-
+            # Create Accounts
             Account.objects.create(
                 user=user,
                 account_number=''.join([str(random.randint(0, 9)) for _ in range(10)]),
@@ -180,12 +175,29 @@ def register_step4(request):
                 balance=0.00
             )
 
+            # Retrieve passport file from temporary storage
+            passport_path = request.session.get('passport_temp_path')
+            if passport_path and default_storage.exists(passport_path):
+                with default_storage.open(passport_path, 'rb') as f:
+                    passport_file = File(f, name=os.path.basename(passport_path))
+
+                    # Create Passport object
+                    Passport.objects.create(
+                        user=user,
+
+                        passport_image=passport_file
+                    )
+
+                # Delete temporary passport file
+                default_storage.delete(passport_path)
+
+            # Log the user in and redirect to dashboard
             login(request, user)
             return redirect('authenticating:dashboard')
     else:
         form = PinPasswordForm()
-    return render(request, 'users/register_step4.html', {'form': form})
 
+    return render(request, 'users/register_step4.html', {'form': form})
 
 
 
@@ -227,9 +239,7 @@ def user_login(request):
 
 @login_required
 def dashboard(request):
-    profile = CustomerProfile.objects.get(user=request.user)
-    if profile.status == 'inactive':
-        return redirect('authenticating:initial_deposit')
+
     user = request.user
     accounts = Account.objects.filter(user=user)
     last_login = user.last_login
@@ -333,9 +343,7 @@ def edit_profile(request):
 
 @login_required
 def edit_profile(request):
-    profile = CustomerProfile.objects.get(user=request.user)
-    if profile.status == 'inactive':
-        return redirect('authenticating:initial_deposit')
+
     profile = get_object_or_404(CustomerProfile, user=request.user)
 
     if request.method == 'POST':
@@ -367,9 +375,7 @@ def edit_profile(request):
 
 @login_required
 def profile_view(request):
-    profile = CustomerProfile.objects.get(user=request.user)
-    if profile.status == 'inactive':
-        return redirect('authenticating:initial_deposit')
+
     # Fetch the profile for the logged-in user
     profile = get_object_or_404(CustomerProfile, user=request.user)
     user = request.user
@@ -404,9 +410,7 @@ def profile_view(request):
 
 @login_required
 def account_transactions(request, account_id):
-    profile = CustomerProfile.objects.get(user=request.user)
-    if profile.status == 'inactive':
-        return redirect('authenticating:initial_deposit')
+
     account = get_object_or_404(Account, id=account_id, user=request.user)
     transactions = Transaction.objects.filter(account=account).order_by('-timestamp')
 
@@ -520,17 +524,13 @@ def user_logout(request):
 
 @login_required
 def mailbox_list(request):
-    profile = CustomerProfile.objects.get(user=request.user)
-    if profile.status == 'inactive':
-        return redirect('authenticating:initial_deposit')
+
     messages = Mailbox.objects.filter(recipient=request.user).order_by('-date')
     return render(request, 'users/mailbox_list.html', {'messages': messages})
 
 @login_required
 def mailbox_detail(request, message_id):
-    profile = CustomerProfile.objects.get(user=request.user)
-    if profile.status == 'inactive':
-        return redirect('authenticating:initial_deposit')
+
     message = get_object_or_404(Mailbox, id=message_id, recipient=request.user)
     if not message.read:
         message.read = True
@@ -543,8 +543,7 @@ def mailbox_detail(request, message_id):
 @login_required
 def account_settings(request):
     profile = CustomerProfile.objects.get(user=request.user)
-    if profile.status == 'inactive':
-        return redirect('authenticating:initial_deposit')
+
     if request.method == 'POST':
         user_form = UserSettingsForm(request.POST, instance=request.user)
         password_form = PasswordChangeForm(request.user, request.POST)

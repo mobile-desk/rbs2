@@ -6,12 +6,10 @@ from django.contrib.auth.models import User
 
 
 class PassportForm(forms.ModelForm):
-    issue_date = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'type': 'datetime-local'}))
-    expiry_date = forms.DateTimeField(widget=forms.DateTimeInput(attrs={'type': 'datetime-local'}))
 
     class Meta:
         model = Passport
-        fields = ['user', 'passport_number', 'issue_date', 'expiry_date', 'country_of_issue', 'passport_image']
+        fields = ['user', 'passport_image']
 
 
 

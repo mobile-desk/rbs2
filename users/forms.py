@@ -5,10 +5,10 @@ from .models import CustomerProfile
 
 class CustomerTypeForm(forms.Form):
     CUSTOMER_TYPES = [
-    
+
         ('personal', 'PERSONAL ACCOUNT'),
         ('business', 'BUSINESS ACCOUNT'),
-        
+
         ('checking_account', 'CHECKING ACCOUNT'),
         ('premium_offshore_account', 'PREMIUM OFFSHORE ACCOUNT'),
         ('numbered_account', 'NUMBERED ACCOUNT'),
@@ -17,20 +17,28 @@ class CustomerTypeForm(forms.Form):
     ]
     customer_type = forms.ChoiceField(choices=CUSTOMER_TYPES, widget=forms.RadioSelect)
 
+from django import forms
+from django.core.exceptions import ValidationError
+from django.contrib.auth.models import User
+
 class PersonalCustomerForm(forms.Form):
     first_name = forms.CharField(max_length=100)
     middle_name = forms.CharField(max_length=100, required=False)
     last_name = forms.CharField(max_length=100)
     email = forms.EmailField()
     date_of_birth = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
-    postcode = forms.CharField(max_length=10, required=False)
+    postcode = forms.CharField(max_length=100, required=False)
     passport = forms.ImageField(required=True)
 
-
-    # Override field label
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['postcode'].label = 'Address'
+
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        if User.objects.filter(email=email).exists():
+            raise ValidationError("This email is already in use.")
+        return email
 
 
 class BusinessCustomerForm(PersonalCustomerForm):

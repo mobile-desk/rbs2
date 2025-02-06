@@ -95,13 +95,13 @@
             gap: 10px;
             margin-top: 20px;
         }
-        
+
         .form-select, .form-input {
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-        
+
         .form-button {
             background-color: #1c7430;
             color: white;
@@ -110,7 +110,7 @@
             border-radius: 4px;
             cursor: pointer;
         }
-        
+
         .form-button:hover {
             background-color: #34ce57;
         }
@@ -124,7 +124,7 @@
         .products-sidebar {
             width: 200px;
             padding: 20px;
-            
+
         }
 
         .product-list {
@@ -143,7 +143,7 @@
                 width: 100%;
                 order: 1;
             }
-            
+
             .main-content {
                 order: 0;
             }
@@ -170,17 +170,17 @@
         }
 
 
-        
+
     </style>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/logo.svg' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'RBSI_Secondary.svg' %}">
 </head>
 <body>
     <div class="main-menu">
         <div class="logo">
             <a href="{% url 'core:home' %}">
-                <img src="{% static 'img/logo1.svg' %}" width="70"  alt="Account">
+                <img src="{% static 'RBSI_Secondary_Horizontal_Stacked_RGB_NEG_NEW.svg' %}" width="70"  alt="Account">
             </a>
-            
+
         </div>
         <button class="logout-btn"><a href="{% url 'authenticating:logout' %}">Logout</a></button>
     </div>
@@ -193,14 +193,14 @@
                 <li><a href="{% url 'transactions:transaction_list' %}">Statements</a></li>
                 <li><a href="{% url 'authenticating:mailbox_list' %}
                     ">Mailbox</a></li>
-                
+
                 <li><a href="{% url 'cards:home' %}">Cards</a></li>
-                
+
                 <li><a href="{% url 'authenticating:account_settings' %}">Security</a></li>
                 <li><a href="{% url 'authenticating:logout' %}">Log out</a></li>
             </ul>
-            
-            
+
+
 
 
             {% if messages %}
@@ -228,10 +228,10 @@
             <h3 style="color: #162159;">Our Products</h3>
             <h5 style="color: #162159;">Personal Products</h5>
             <ul class="product-list">
-                
+
                 <li><a href="">Cash ISAs</a></li>
-                
-                
+
+
                 <li><a href="">Credit Cards</a></li>
                 <li><a href="">Overdrafts</a></li>
                 <li>Loans</li>
@@ -239,7 +239,7 @@
                 <li>Insurance</li>
                 <li>Travel money</li>
                 <li>Investment products</li>
-                
+
             </ul>
         </div>
 

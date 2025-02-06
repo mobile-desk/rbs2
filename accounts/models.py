@@ -21,22 +21,19 @@ class Account(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='active')
 
 
-    
+
     def __str__(self):
         return f"{str(self.balance)} - {self.account_type} - {self.account_number}"
 
 
 class Passport(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    passport_number = models.CharField(max_length=20, unique=True)
-    issue_date = models.DateField()
-    expiry_date = models.DateField()
-    country_of_issue = models.CharField(max_length=100)
+
     passport_image = models.ImageField(upload_to='passports/', null=True, blank=True)
 
     def __str__(self):
         return f"{self.user.username}'s Passport"
-    
+
 
 
 
